@@ -2,9 +2,9 @@
 title: "Rebal-Portf"
 date: 2021-04-20
 ---
-adasdas
 
-<!DOCTYPE html>
+Análise dos efeitos de rebalanceamento em um portfólio fictício.
+
 <html>
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
