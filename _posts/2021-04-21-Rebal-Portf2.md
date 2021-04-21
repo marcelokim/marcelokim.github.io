@@ -5,6 +5,7 @@ date: 2021-04-21
 
 Aprofundamento da análise de rebalanceamento de ativos.
 
+
 <html>
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14263,19 +14264,61 @@ a.anchor-link {
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Aprofundamento-do-estudo-de-rebalanceamento-de-portf&#243;lio">Aprofundamento do estudo de rebalanceamento de portf&#243;lio<a class="anchor-link" href="#Aprofundamento-do-estudo-de-rebalanceamento-de-portf&#243;lio">&#182;</a></h1><p>Será feita uma análise mais detalhada do funcionamento do rebalanceamento numa carteira fictícia de investimentos e com técnicas de rebalanceamento mais refinadas.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">chained_assignment</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># default=&#39;warn&#39;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1)-Cria&#231;&#227;o-das-tabelas-que-ser&#227;o-utilizadas">1) Cria&#231;&#227;o das tabelas que ser&#227;o utilizadas<a class="anchor-link" href="#1)-Cria&#231;&#227;o-das-tabelas-que-ser&#227;o-utilizadas">&#182;</a></h3><h4 id="1.1)-Exporta-o-retorno-do-IBOV-para-um-dataframe">1.1) Exporta o retorno do IBOV para um dataframe<a class="anchor-link" href="#1.1)-Exporta-o-retorno-do-IBOV-para-um-dataframe">&#182;</a></h4>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="1)-Cria&#231;&#227;o-das-tabelas-que-ser&#227;o-utilizadas">1) Cria&#231;&#227;o das tabelas que ser&#227;o utilizadas<a class="anchor-link" href="#1)-Cria&#231;&#227;o-das-tabelas-que-ser&#227;o-utilizadas">&#182;</a></h2><h3 id="1.1)-Exporta-o-retorno-do-IBOV-para-um-dataframe">1.1) Exporta o retorno do IBOV para um dataframe<a class="anchor-link" href="#1.1)-Exporta-o-retorno-do-IBOV-para-um-dataframe">&#182;</a></h3>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">RV_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
+     <span class="s2">&quot;DADOS.xlsx&quot;</span><span class="p">,</span>
+     <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;openpyxl&#39;</span><span class="p">,</span>
+     <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Ibov 2001-2021&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;Growth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;Valor&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;Valor&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">RV_df</span><span class="o">.</span><span class="n">index</span><span class="o">+=</span><span class="mi">1</span>
+<span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;period&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;Mês&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;Ano&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+
+<span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;Valor&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">RV_df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;Valor&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;Valor&#39;</span><span class="p">][</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;Growth&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">RV_df</span><span class="p">);</span>
+<span class="n">RV_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Growth&#39;</span><span class="p">);</span>
+<span class="n">RV_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Valor&#39;</span><span class="p">);</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 
@@ -14436,11 +14479,44 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.2)-Exporta-o-retorno-da-taxa-DI-para-um-dataframe">1.2) Exporta o retorno da taxa DI para um dataframe<a class="anchor-link" href="#1.2)-Exporta-o-retorno-da-taxa-DI-para-um-dataframe">&#182;</a></h3>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="1.2)-Exporta-o-retorno-da-taxa-DI-para-um-dataframe">1.2) Exporta o retorno da taxa DI para um dataframe<a class="anchor-link" href="#1.2)-Exporta-o-retorno-da-taxa-DI-para-um-dataframe">&#182;</a></h2>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">RF_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
+     <span class="s2">&quot;DADOS.xlsx&quot;</span><span class="p">,</span>
+     <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;openpyxl&#39;</span><span class="p">,</span>
+     <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Taxa DI&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">RF_df</span> <span class="o">=</span> <span class="n">RF_df</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s1">&#39;%&#39;</span><span class="p">:</span><span class="s1">&#39;Growth&#39;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;period&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;Mês&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;Ano&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+
+<span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;Growth&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+<span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;Growth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;Growth&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">RF_df</span><span class="o">.</span><span class="n">index</span><span class="o">+=</span><span class="mi">1</span>
+
+<span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;Valor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+<span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;Valor&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">RF_df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;Valor&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;Valor&#39;</span><span class="p">][</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;Growth&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+
+
+<span class="n">display</span><span class="p">(</span><span class="n">RF_df</span><span class="p">);</span>
+<span class="n">RF_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Growth&#39;</span><span class="p">);</span>
+<span class="n">RF_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Valor&#39;</span><span class="p">);</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 
@@ -14601,12 +14677,35 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.3)-Cria-se-uma-c&#243;pia-de-um-dos-dataframes-para-utilizar-como-base">1.3) Cria-se uma c&#243;pia de um dos dataframes para utilizar como base<a class="anchor-link" href="#1.3)-Cria-se-uma-c&#243;pia-de-um-dos-dataframes-para-utilizar-como-base">&#182;</a></h3><p>Esta cópia é mais detalhada, e será usada para guardar valores dos ganhos de cada tipo de investimento ao longo do tempo.</p>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="1.3)-Cria-se-uma-c&#243;pia-de-um-dos-dataframes-para-utilizar-como-base">1.3) Cria-se uma c&#243;pia de um dos dataframes para utilizar como base<a class="anchor-link" href="#1.3)-Cria-se-uma-c&#243;pia-de-um-dos-dataframes-para-utilizar-como-base">&#182;</a></h2><p>Esta cópia é mais detalhada, e será usada para guardar valores dos ganhos de cada tipo de investimento ao longo do tempo.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">portfolio_df</span> <span class="o">=</span> <span class="n">RF_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">del</span> <span class="n">portfolio_df</span><span class="p">[</span><span class="s1">&#39;Growth&#39;</span><span class="p">]</span>
+<span class="k">del</span> <span class="n">portfolio_df</span><span class="p">[</span><span class="s1">&#39;Valor&#39;</span><span class="p">]</span>
+
+<span class="n">portfolio_df</span><span class="p">[</span><span class="s1">&#39;RV_invested&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+<span class="n">portfolio_df</span><span class="p">[</span><span class="s1">&#39;RV_returned&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+<span class="n">portfolio_df</span><span class="p">[</span><span class="s1">&#39;RF_invested&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+<span class="n">portfolio_df</span><span class="p">[</span><span class="s1">&#39;RF_returned&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+<span class="n">portfolio_df</span><span class="p">[</span><span class="s1">&#39;Total&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+<span class="n">portfolio_df</span><span class="p">[</span><span class="s1">&#39;Rebal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+<span class="n">portfolio_df</span><span class="p">[</span><span class="s1">&#39;RV_ratio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">portfolio_df</span><span class="p">);</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 
@@ -14803,20 +14902,98 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="2)-Criados-nossos-dataframes-da-taxa-DI,-IBOV-e-base,-podemos-come&#231;ar-a-an&#225;lise.">2) Criados nossos dataframes da taxa DI, IBOV e base, podemos come&#231;ar a an&#225;lise.<a class="anchor-link" href="#2)-Criados-nossos-dataframes-da-taxa-DI,-IBOV-e-base,-podemos-come&#231;ar-a-an&#225;lise.">&#182;</a></h3><p>Aqui é feita uma análise mais refinada que a anterior, obtendo os valores da evolução mês a mês do portfólio. O rebalanceamento aqui é feito quando o capital fica muito 'longe' do valor inicial desejado. Isto é: caso decida-se alocar 50/50, caso max_var = 0.1, sempre que RV ou RF ficar com valor acima de 60% ou abaixo de 40%, será feita realocação de recursos de forma a reequilibrar a carteira.</p>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="2)-Criados-nossos-dataframes-da-taxa-DI,-IBOV-e-base,-podemos-come&#231;ar-a-an&#225;lise.">2) Criados nossos dataframes da taxa DI, IBOV e base, podemos come&#231;ar a an&#225;lise.<a class="anchor-link" href="#2)-Criados-nossos-dataframes-da-taxa-DI,-IBOV-e-base,-podemos-come&#231;ar-a-an&#225;lise.">&#182;</a></h2><p>Aqui é feita uma análise mais refinada que a anterior, obtendo os valores da evolução mês a mês do portfólio. O rebalanceamento aqui é feito quando o capital fica muito 'longe' do valor inicial desejado. Isto é: caso decida-se alocar 50/50, caso max_var = 0.1, sempre que RV ou RF ficar com valor acima de 60% ou abaixo de 40%, será feita realocação de recursos de forma a reequilibrar a carteira.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">portfolio_growth</span><span class="p">(</span><span class="n">max_var</span><span class="p">,</span> <span class="n">initial_money</span><span class="p">,</span> <span class="n">RV</span><span class="p">):</span>
+    <span class="n">portfolio_copy_df</span> <span class="o">=</span> <span class="n">portfolio_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">RF</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">RV</span>
+    <span class="n">RV_value</span> <span class="o">=</span> <span class="n">portfolio_copy_df</span><span class="p">[</span><span class="s1">&#39;RV_invested&#39;</span><span class="p">]</span>
+    <span class="n">RV_returned</span> <span class="o">=</span> <span class="n">portfolio_copy_df</span><span class="p">[</span><span class="s1">&#39;RV_returned&#39;</span><span class="p">]</span>
+    
+    <span class="n">RF_value</span> <span class="o">=</span> <span class="n">portfolio_copy_df</span><span class="p">[</span><span class="s1">&#39;RF_invested&#39;</span><span class="p">]</span>
+    <span class="n">RF_returned</span> <span class="o">=</span> <span class="n">portfolio_copy_df</span><span class="p">[</span><span class="s1">&#39;RF_returned&#39;</span><span class="p">]</span>
+    
+    <span class="n">Total_value</span> <span class="o">=</span> <span class="n">portfolio_copy_df</span><span class="p">[</span><span class="s1">&#39;Total&#39;</span><span class="p">]</span>
+    <span class="n">Rebal_value</span> <span class="o">=</span> <span class="n">portfolio_copy_df</span><span class="p">[</span><span class="s1">&#39;Rebal&#39;</span><span class="p">]</span>
+    <span class="n">RV_ratio_value</span> <span class="o">=</span> <span class="n">portfolio_copy_df</span><span class="p">[</span><span class="s1">&#39;RV_ratio&#39;</span><span class="p">]</span>
+        
+    <span class="n">RV_value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">initial_money</span><span class="o">*</span><span class="n">RV</span>
+    <span class="n">RF_value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">initial_money</span><span class="o">*</span><span class="n">RF</span>
+    <span class="n">Total_value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">RV_value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">RF_value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="n">last_month</span> <span class="o">=</span> <span class="n">portfolio_copy_df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">last_month</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">RV_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">Total_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">RV</span><span class="o">+</span><span class="n">max_var</span><span class="p">):</span>
+            <span class="n">RV_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">Total_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">RV</span><span class="o">-</span><span class="n">max_var</span><span class="o">/</span><span class="mi">2</span>
+            <span class="n">RF_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">Total_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">RF</span><span class="o">+</span><span class="n">max_var</span><span class="o">/</span><span class="mi">2</span>
+            <span class="n">Rebal_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            
+        <span class="k">elif</span> <span class="p">(</span><span class="n">RV_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">Total_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">RV</span><span class="o">-</span><span class="n">max_var</span><span class="p">):</span>
+            <span class="n">RV_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">Total_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">RV</span><span class="o">+</span><span class="n">max_var</span><span class="o">/</span><span class="mi">2</span>
+            <span class="n">RF_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">Total_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">RF</span><span class="o">-</span><span class="n">max_var</span><span class="o">/</span><span class="mi">2</span>
+            <span class="n">Rebal_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        
+
+
+        <span class="n">RV_returned</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">RV_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;Growth&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">RV_value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">RV_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">RV_returned</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">RF_returned</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">RF_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;Growth&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">RF_value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">RF_value</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">RF_returned</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        
+        <span class="n">Total_value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">RV_value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">RF_value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        
+        <span class="n">RV_ratio_value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">RV_value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">Total_value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        
+    <span class="k">return</span> <span class="n">portfolio_copy_df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Com a função feita, podemos estudar a evolução do portfolio ao longo do tempo:</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">portfolio_growth</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">))</span>
+
+<span class="n">IBOV_copy_df</span> <span class="o">=</span> <span class="n">RV_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">IBOV_copy_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;IBOV&#39;</span><span class="p">,</span> <span class="n">xticks</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">59</span><span class="p">))</span>
+
+
+<span class="c1">#df_X.plot(x=a, y=&#39;Rebal&#39;, ax=ax1, kind=&#39;bar&#39;, color=&#39;r&#39;,  xticks=np.arange(1,240,59)) / método alternativo de adicionar linha</span>
+<span class="n">red_lines</span> <span class="o">=</span> <span class="n">df_X</span><span class="p">[</span><span class="n">df_X</span><span class="p">[</span><span class="s1">&#39;Rebal&#39;</span><span class="p">]</span><span class="o">==</span><span class="kc">True</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">xc</span> <span class="ow">in</span> <span class="n">red_lines</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xc</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+
+<span class="n">df_X</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">secondary_y</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;RV_ratio&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ratio&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">xticks</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">59</span><span class="p">));</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 
@@ -14839,14 +15016,38 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>No gráfico acima, a linha vermelha representa os meses onde existe rebalanceamento de carteira. Em cinza, podemos ver a divisão da carteira nos dois ativos (RF e RV) e em azul vemos a evolução do índice IBOV.
 Como pode ser visto, o rebalanceamento pode agir como forma de 'market timing', evitando grandes perdas: quando o IBOV sobe demais e a carteira passa a ter uma concentração muito grande esse percentual é reduzido, diminuindo o risco do portfolio.</p>
 <p>Mais especificamente a variação máxima permitida deste portfólio é de 10%, resultando em 4 rebalanceamentos ao longo dos 20 anos.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">portfolio_growth</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">))</span>
+
+<span class="n">IBOV_copy_df</span> <span class="o">=</span> <span class="n">RV_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">IBOV_copy_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;IBOV&#39;</span><span class="p">,</span> <span class="n">xticks</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">59</span><span class="p">))</span>
+
+
+<span class="c1">#df_X.plot(x=a, y=&#39;Rebal&#39;, ax=ax1, kind=&#39;bar&#39;, color=&#39;r&#39;,  xticks=np.arange(1,240,59)) / método alternativo de adicionar linha</span>
+<span class="n">red_lines</span> <span class="o">=</span> <span class="n">df_X</span><span class="p">[</span><span class="n">df_X</span><span class="p">[</span><span class="s1">&#39;Rebal&#39;</span><span class="p">]</span><span class="o">==</span><span class="kc">True</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">xc</span> <span class="ow">in</span> <span class="n">red_lines</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xc</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+
+<span class="n">df_X</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">secondary_y</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;RV_ratio&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ratio&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">xticks</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">59</span><span class="p">));</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 
@@ -14869,14 +15070,48 @@ Como pode ser visto, o rebalanceamento pode agir como forma de 'market timing', 
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Neste gráfico a máxima variação permitida é de 5%. Isto significa que provavelmente irão ocorrer um número muito maior de rebalanceamentos (como é o caso). Devido à alta frequência de rebalanceamentos, serve como reajuste de risco da carteira, porém ao mesmo tempo limita os ganhos quando comparado à técnica de rebalanceamento anterior, o que leva um retorno total menor.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">order_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.08</span><span class="p">,</span><span class="mi">9</span><span class="p">):</span> <span class="c1">#max_var</span>
+    <span class="n">order_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span> <span class="c1">#divisão do portfolio</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">portfolio_growth</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+        <span class="n">order_dict</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:][</span><span class="s1">&#39;Total&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_Table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">order_dict</span><span class="p">)</span>
+
+<span class="n">df_Table</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df_Table</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="n">df_Table</span> <span class="o">=</span> <span class="n">df_Table</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">df_Table</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;background: red&quot;</span> <span class="k">if</span> <span class="n">v</span> <span class="o">&gt;=</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">x</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 
@@ -14887,140 +15122,140 @@ Como pode ser visto, o rebalanceamento pode agir como forma de 'market timing', 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <style  type="text/css" >
-#T_84336_row0_col0,#T_84336_row0_col1,#T_84336_row0_col2,#T_84336_row0_col3,#T_84336_row0_col4,#T_84336_row0_col5,#T_84336_row0_col6,#T_84336_row0_col7,#T_84336_row0_col8,#T_84336_row1_col0,#T_84336_row1_col1,#T_84336_row1_col2,#T_84336_row1_col3,#T_84336_row1_col4,#T_84336_row1_col5,#T_84336_row1_col6,#T_84336_row2_col0,#T_84336_row2_col1,#T_84336_row2_col2,#T_84336_row2_col3,#T_84336_row2_col4,#T_84336_row2_col5,#T_84336_row2_col6,#T_84336_row2_col7,#T_84336_row3_col0,#T_84336_row3_col1,#T_84336_row3_col2,#T_84336_row3_col3,#T_84336_row3_col4,#T_84336_row3_col5,#T_84336_row3_col6,#T_84336_row3_col7,#T_84336_row3_col8,#T_84336_row4_col0,#T_84336_row4_col1,#T_84336_row4_col2,#T_84336_row4_col3,#T_84336_row4_col4,#T_84336_row4_col5,#T_84336_row4_col6,#T_84336_row4_col7,#T_84336_row4_col8,#T_84336_row5_col0,#T_84336_row5_col1,#T_84336_row5_col2,#T_84336_row5_col3,#T_84336_row5_col4,#T_84336_row5_col5,#T_84336_row5_col6,#T_84336_row5_col7,#T_84336_row5_col8,#T_84336_row6_col0,#T_84336_row6_col1,#T_84336_row6_col3,#T_84336_row6_col4,#T_84336_row6_col5,#T_84336_row6_col6,#T_84336_row6_col7,#T_84336_row6_col8,#T_84336_row7_col0,#T_84336_row7_col1,#T_84336_row7_col2,#T_84336_row7_col3,#T_84336_row7_col4,#T_84336_row7_col5,#T_84336_row7_col6,#T_84336_row7_col7,#T_84336_row7_col8,#T_84336_row8_col0,#T_84336_row8_col1,#T_84336_row8_col2,#T_84336_row8_col3,#T_84336_row8_col4,#T_84336_row8_col5,#T_84336_row8_col6,#T_84336_row8_col7,#T_84336_row8_col8,#T_84336_row9_col0,#T_84336_row9_col1,#T_84336_row9_col2,#T_84336_row9_col3,#T_84336_row9_col4,#T_84336_row9_col5,#T_84336_row10_col0,#T_84336_row10_col1,#T_84336_row10_col2,#T_84336_row10_col3,#T_84336_row10_col4,#T_84336_row10_col5,#T_84336_row10_col6,#T_84336_row10_col7,#T_84336_row10_col8{
+#T_d38be_row0_col0,#T_d38be_row0_col1,#T_d38be_row0_col2,#T_d38be_row0_col3,#T_d38be_row0_col4,#T_d38be_row0_col5,#T_d38be_row0_col6,#T_d38be_row0_col7,#T_d38be_row0_col8,#T_d38be_row1_col0,#T_d38be_row1_col1,#T_d38be_row1_col2,#T_d38be_row1_col3,#T_d38be_row1_col4,#T_d38be_row1_col5,#T_d38be_row1_col6,#T_d38be_row2_col0,#T_d38be_row2_col1,#T_d38be_row2_col2,#T_d38be_row2_col3,#T_d38be_row2_col4,#T_d38be_row2_col5,#T_d38be_row2_col6,#T_d38be_row2_col7,#T_d38be_row3_col0,#T_d38be_row3_col1,#T_d38be_row3_col2,#T_d38be_row3_col3,#T_d38be_row3_col4,#T_d38be_row3_col5,#T_d38be_row3_col6,#T_d38be_row3_col7,#T_d38be_row3_col8,#T_d38be_row4_col0,#T_d38be_row4_col1,#T_d38be_row4_col2,#T_d38be_row4_col3,#T_d38be_row4_col4,#T_d38be_row4_col5,#T_d38be_row4_col6,#T_d38be_row4_col7,#T_d38be_row4_col8,#T_d38be_row5_col0,#T_d38be_row5_col1,#T_d38be_row5_col2,#T_d38be_row5_col3,#T_d38be_row5_col4,#T_d38be_row5_col5,#T_d38be_row5_col6,#T_d38be_row5_col7,#T_d38be_row5_col8,#T_d38be_row6_col0,#T_d38be_row6_col1,#T_d38be_row6_col3,#T_d38be_row6_col4,#T_d38be_row6_col5,#T_d38be_row6_col6,#T_d38be_row6_col7,#T_d38be_row6_col8,#T_d38be_row7_col0,#T_d38be_row7_col1,#T_d38be_row7_col2,#T_d38be_row7_col3,#T_d38be_row7_col4,#T_d38be_row7_col5,#T_d38be_row7_col6,#T_d38be_row7_col7,#T_d38be_row7_col8,#T_d38be_row8_col0,#T_d38be_row8_col1,#T_d38be_row8_col2,#T_d38be_row8_col3,#T_d38be_row8_col4,#T_d38be_row8_col5,#T_d38be_row8_col6,#T_d38be_row8_col7,#T_d38be_row8_col8,#T_d38be_row9_col0,#T_d38be_row9_col1,#T_d38be_row9_col2,#T_d38be_row9_col3,#T_d38be_row9_col4,#T_d38be_row9_col5,#T_d38be_row10_col0,#T_d38be_row10_col1,#T_d38be_row10_col2,#T_d38be_row10_col3,#T_d38be_row10_col4,#T_d38be_row10_col5,#T_d38be_row10_col6,#T_d38be_row10_col7,#T_d38be_row10_col8{
             background:  red;
-        }</style><table id="T_84336_" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >0.0</th>        <th class="col_heading level0 col1" >0.01</th>        <th class="col_heading level0 col2" >0.02</th>        <th class="col_heading level0 col3" >0.03</th>        <th class="col_heading level0 col4" >0.04</th>        <th class="col_heading level0 col5" >0.05</th>        <th class="col_heading level0 col6" >0.06</th>        <th class="col_heading level0 col7" >0.07</th>        <th class="col_heading level0 col8" >0.08</th>    </tr></thead><tbody>
+        }</style><table id="T_d38be_" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >0.0</th>        <th class="col_heading level0 col1" >0.01</th>        <th class="col_heading level0 col2" >0.02</th>        <th class="col_heading level0 col3" >0.03</th>        <th class="col_heading level0 col4" >0.04</th>        <th class="col_heading level0 col5" >0.05</th>        <th class="col_heading level0 col6" >0.06</th>        <th class="col_heading level0 col7" >0.07</th>        <th class="col_heading level0 col8" >0.08</th>    </tr></thead><tbody>
                 <tr>
-                        <th id="T_84336_level0_row0" class="row_heading level0 row0" >0.0</th>
-                        <td id="T_84336_row0_col0" class="data row0 col0" >975.588644</td>
-                        <td id="T_84336_row0_col1" class="data row0 col1" >975.588644</td>
-                        <td id="T_84336_row0_col2" class="data row0 col2" >975.588644</td>
-                        <td id="T_84336_row0_col3" class="data row0 col3" >975.588644</td>
-                        <td id="T_84336_row0_col4" class="data row0 col4" >975.588644</td>
-                        <td id="T_84336_row0_col5" class="data row0 col5" >975.588644</td>
-                        <td id="T_84336_row0_col6" class="data row0 col6" >975.588644</td>
-                        <td id="T_84336_row0_col7" class="data row0 col7" >975.588644</td>
-                        <td id="T_84336_row0_col8" class="data row0 col8" >975.588644</td>
+                        <th id="T_d38be_level0_row0" class="row_heading level0 row0" >0.0</th>
+                        <td id="T_d38be_row0_col0" class="data row0 col0" >975.590000</td>
+                        <td id="T_d38be_row0_col1" class="data row0 col1" >975.590000</td>
+                        <td id="T_d38be_row0_col2" class="data row0 col2" >975.590000</td>
+                        <td id="T_d38be_row0_col3" class="data row0 col3" >975.590000</td>
+                        <td id="T_d38be_row0_col4" class="data row0 col4" >975.590000</td>
+                        <td id="T_d38be_row0_col5" class="data row0 col5" >975.590000</td>
+                        <td id="T_d38be_row0_col6" class="data row0 col6" >975.590000</td>
+                        <td id="T_d38be_row0_col7" class="data row0 col7" >975.590000</td>
+                        <td id="T_d38be_row0_col8" class="data row0 col8" >975.590000</td>
             </tr>
             <tr>
-                        <th id="T_84336_level0_row1" class="row_heading level0 row1" >0.1</th>
-                        <td id="T_84336_row1_col0" class="data row1 col0" >993.427888</td>
-                        <td id="T_84336_row1_col1" class="data row1 col1" >1000.351578</td>
-                        <td id="T_84336_row1_col2" class="data row1 col2" >1018.271250</td>
-                        <td id="T_84336_row1_col3" class="data row1 col3" >1038.711097</td>
-                        <td id="T_84336_row1_col4" class="data row1 col4" >1013.046614</td>
-                        <td id="T_84336_row1_col5" class="data row1 col5" >1023.391013</td>
-                        <td id="T_84336_row1_col6" class="data row1 col6" >1059.363440</td>
-                        <td id="T_84336_row1_col7" class="data row1 col7" >945.374763</td>
-                        <td id="T_84336_row1_col8" class="data row1 col8" >945.374763</td>
+                        <th id="T_d38be_level0_row1" class="row_heading level0 row1" >0.1</th>
+                        <td id="T_d38be_row1_col0" class="data row1 col0" >993.430000</td>
+                        <td id="T_d38be_row1_col1" class="data row1 col1" >1000.350000</td>
+                        <td id="T_d38be_row1_col2" class="data row1 col2" >1018.270000</td>
+                        <td id="T_d38be_row1_col3" class="data row1 col3" >1038.710000</td>
+                        <td id="T_d38be_row1_col4" class="data row1 col4" >1013.050000</td>
+                        <td id="T_d38be_row1_col5" class="data row1 col5" >1023.390000</td>
+                        <td id="T_d38be_row1_col6" class="data row1 col6" >1059.360000</td>
+                        <td id="T_d38be_row1_col7" class="data row1 col7" >945.370000</td>
+                        <td id="T_d38be_row1_col8" class="data row1 col8" >945.370000</td>
             </tr>
             <tr>
-                        <th id="T_84336_level0_row2" class="row_heading level0 row2" >0.2</th>
-                        <td id="T_84336_row2_col0" class="data row2 col0" >999.616502</td>
-                        <td id="T_84336_row2_col1" class="data row2 col1" >1006.639013</td>
-                        <td id="T_84336_row2_col2" class="data row2 col2" >1021.362704</td>
-                        <td id="T_84336_row2_col3" class="data row2 col3" >1024.896376</td>
-                        <td id="T_84336_row2_col4" class="data row2 col4" >1022.547628</td>
-                        <td id="T_84336_row2_col5" class="data row2 col5" >1001.546043</td>
-                        <td id="T_84336_row2_col6" class="data row2 col6" >1039.989279</td>
-                        <td id="T_84336_row2_col7" class="data row2 col7" >1035.819030</td>
-                        <td id="T_84336_row2_col8" class="data row2 col8" >988.883591</td>
+                        <th id="T_d38be_level0_row2" class="row_heading level0 row2" >0.2</th>
+                        <td id="T_d38be_row2_col0" class="data row2 col0" >999.620000</td>
+                        <td id="T_d38be_row2_col1" class="data row2 col1" >1006.640000</td>
+                        <td id="T_d38be_row2_col2" class="data row2 col2" >1021.360000</td>
+                        <td id="T_d38be_row2_col3" class="data row2 col3" >1024.900000</td>
+                        <td id="T_d38be_row2_col4" class="data row2 col4" >1022.550000</td>
+                        <td id="T_d38be_row2_col5" class="data row2 col5" >1001.550000</td>
+                        <td id="T_d38be_row2_col6" class="data row2 col6" >1039.990000</td>
+                        <td id="T_d38be_row2_col7" class="data row2 col7" >1035.820000</td>
+                        <td id="T_d38be_row2_col8" class="data row2 col8" >988.880000</td>
             </tr>
             <tr>
-                        <th id="T_84336_level0_row3" class="row_heading level0 row3" >0.30000000000000004</th>
-                        <td id="T_84336_row3_col0" class="data row3 col0" >993.836342</td>
-                        <td id="T_84336_row3_col1" class="data row3 col1" >994.745844</td>
-                        <td id="T_84336_row3_col2" class="data row3 col2" >997.483484</td>
-                        <td id="T_84336_row3_col3" class="data row3 col3" >1017.224264</td>
-                        <td id="T_84336_row3_col4" class="data row3 col4" >1027.682502</td>
-                        <td id="T_84336_row3_col5" class="data row3 col5" >1018.358065</td>
-                        <td id="T_84336_row3_col6" class="data row3 col6" >1012.887177</td>
-                        <td id="T_84336_row3_col7" class="data row3 col7" >1019.481656</td>
-                        <td id="T_84336_row3_col8" class="data row3 col8" >1040.497088</td>
+                        <th id="T_d38be_level0_row3" class="row_heading level0 row3" >0.3</th>
+                        <td id="T_d38be_row3_col0" class="data row3 col0" >993.840000</td>
+                        <td id="T_d38be_row3_col1" class="data row3 col1" >994.750000</td>
+                        <td id="T_d38be_row3_col2" class="data row3 col2" >997.480000</td>
+                        <td id="T_d38be_row3_col3" class="data row3 col3" >1017.220000</td>
+                        <td id="T_d38be_row3_col4" class="data row3 col4" >1027.680000</td>
+                        <td id="T_d38be_row3_col5" class="data row3 col5" >1018.360000</td>
+                        <td id="T_d38be_row3_col6" class="data row3 col6" >1012.890000</td>
+                        <td id="T_d38be_row3_col7" class="data row3 col7" >1019.480000</td>
+                        <td id="T_d38be_row3_col8" class="data row3 col8" >1040.500000</td>
             </tr>
             <tr>
-                        <th id="T_84336_level0_row4" class="row_heading level0 row4" >0.4</th>
-                        <td id="T_84336_row4_col0" class="data row4 col0" >976.180789</td>
-                        <td id="T_84336_row4_col1" class="data row4 col1" >977.693197</td>
-                        <td id="T_84336_row4_col2" class="data row4 col2" >978.487296</td>
-                        <td id="T_84336_row4_col3" class="data row4 col3" >1008.115169</td>
-                        <td id="T_84336_row4_col4" class="data row4 col4" >986.579048</td>
-                        <td id="T_84336_row4_col5" class="data row4 col5" >1023.512741</td>
-                        <td id="T_84336_row4_col6" class="data row4 col6" >1021.302629</td>
-                        <td id="T_84336_row4_col7" class="data row4 col7" >997.450509</td>
-                        <td id="T_84336_row4_col8" class="data row4 col8" >1019.137322</td>
+                        <th id="T_d38be_level0_row4" class="row_heading level0 row4" >0.4</th>
+                        <td id="T_d38be_row4_col0" class="data row4 col0" >976.180000</td>
+                        <td id="T_d38be_row4_col1" class="data row4 col1" >977.690000</td>
+                        <td id="T_d38be_row4_col2" class="data row4 col2" >978.490000</td>
+                        <td id="T_d38be_row4_col3" class="data row4 col3" >1008.120000</td>
+                        <td id="T_d38be_row4_col4" class="data row4 col4" >986.580000</td>
+                        <td id="T_d38be_row4_col5" class="data row4 col5" >1023.510000</td>
+                        <td id="T_d38be_row4_col6" class="data row4 col6" >1021.300000</td>
+                        <td id="T_d38be_row4_col7" class="data row4 col7" >997.450000</td>
+                        <td id="T_d38be_row4_col8" class="data row4 col8" >1019.140000</td>
             </tr>
             <tr>
-                        <th id="T_84336_level0_row5" class="row_heading level0 row5" >0.5</th>
-                        <td id="T_84336_row5_col0" class="data row5 col0" >947.155151</td>
-                        <td id="T_84336_row5_col1" class="data row5 col1" >949.388688</td>
-                        <td id="T_84336_row5_col2" class="data row5 col2" >956.401679</td>
-                        <td id="T_84336_row5_col3" class="data row5 col3" >977.678900</td>
-                        <td id="T_84336_row5_col4" class="data row5 col4" >953.179314</td>
-                        <td id="T_84336_row5_col5" class="data row5 col5" >994.324173</td>
-                        <td id="T_84336_row5_col6" class="data row5 col6" >981.064386</td>
-                        <td id="T_84336_row5_col7" class="data row5 col7" >1005.012482</td>
-                        <td id="T_84336_row5_col8" class="data row5 col8" >973.273818</td>
+                        <th id="T_d38be_level0_row5" class="row_heading level0 row5" >0.5</th>
+                        <td id="T_d38be_row5_col0" class="data row5 col0" >947.160000</td>
+                        <td id="T_d38be_row5_col1" class="data row5 col1" >949.390000</td>
+                        <td id="T_d38be_row5_col2" class="data row5 col2" >956.400000</td>
+                        <td id="T_d38be_row5_col3" class="data row5 col3" >977.680000</td>
+                        <td id="T_d38be_row5_col4" class="data row5 col4" >953.180000</td>
+                        <td id="T_d38be_row5_col5" class="data row5 col5" >994.320000</td>
+                        <td id="T_d38be_row5_col6" class="data row5 col6" >981.060000</td>
+                        <td id="T_d38be_row5_col7" class="data row5 col7" >1005.010000</td>
+                        <td id="T_d38be_row5_col8" class="data row5 col8" >973.270000</td>
             </tr>
             <tr>
-                        <th id="T_84336_level0_row6" class="row_heading level0 row6" >0.6000000000000001</th>
-                        <td id="T_84336_row6_col0" class="data row6 col0" >907.654101</td>
-                        <td id="T_84336_row6_col1" class="data row6 col1" >909.013953</td>
-                        <td id="T_84336_row6_col2" class="data row6 col2" >906.644461</td>
-                        <td id="T_84336_row6_col3" class="data row6 col3" >939.501126</td>
-                        <td id="T_84336_row6_col4" class="data row6 col4" >945.837077</td>
-                        <td id="T_84336_row6_col5" class="data row6 col5" >912.420310</td>
-                        <td id="T_84336_row6_col6" class="data row6 col6" >964.511076</td>
-                        <td id="T_84336_row6_col7" class="data row6 col7" >984.067344</td>
-                        <td id="T_84336_row6_col8" class="data row6 col8" >945.235770</td>
+                        <th id="T_d38be_level0_row6" class="row_heading level0 row6" >0.6</th>
+                        <td id="T_d38be_row6_col0" class="data row6 col0" >907.650000</td>
+                        <td id="T_d38be_row6_col1" class="data row6 col1" >909.010000</td>
+                        <td id="T_d38be_row6_col2" class="data row6 col2" >906.640000</td>
+                        <td id="T_d38be_row6_col3" class="data row6 col3" >939.500000</td>
+                        <td id="T_d38be_row6_col4" class="data row6 col4" >945.840000</td>
+                        <td id="T_d38be_row6_col5" class="data row6 col5" >912.420000</td>
+                        <td id="T_d38be_row6_col6" class="data row6 col6" >964.510000</td>
+                        <td id="T_d38be_row6_col7" class="data row6 col7" >984.070000</td>
+                        <td id="T_d38be_row6_col8" class="data row6 col8" >945.240000</td>
             </tr>
             <tr>
-                        <th id="T_84336_level0_row7" class="row_heading level0 row7" >0.7000000000000001</th>
-                        <td id="T_84336_row7_col0" class="data row7 col0" >858.917418</td>
-                        <td id="T_84336_row7_col1" class="data row7 col1" >859.347369</td>
-                        <td id="T_84336_row7_col2" class="data row7 col2" >863.868608</td>
-                        <td id="T_84336_row7_col3" class="data row7 col3" >888.021017</td>
-                        <td id="T_84336_row7_col4" class="data row7 col4" >880.331006</td>
-                        <td id="T_84336_row7_col5" class="data row7 col5" >881.906300</td>
-                        <td id="T_84336_row7_col6" class="data row7 col6" >881.870278</td>
-                        <td id="T_84336_row7_col7" class="data row7 col7" >890.235703</td>
-                        <td id="T_84336_row7_col8" class="data row7 col8" >948.372552</td>
+                        <th id="T_d38be_level0_row7" class="row_heading level0 row7" >0.7</th>
+                        <td id="T_d38be_row7_col0" class="data row7 col0" >858.920000</td>
+                        <td id="T_d38be_row7_col1" class="data row7 col1" >859.350000</td>
+                        <td id="T_d38be_row7_col2" class="data row7 col2" >863.870000</td>
+                        <td id="T_d38be_row7_col3" class="data row7 col3" >888.020000</td>
+                        <td id="T_d38be_row7_col4" class="data row7 col4" >880.330000</td>
+                        <td id="T_d38be_row7_col5" class="data row7 col5" >881.910000</td>
+                        <td id="T_d38be_row7_col6" class="data row7 col6" >881.870000</td>
+                        <td id="T_d38be_row7_col7" class="data row7 col7" >890.240000</td>
+                        <td id="T_d38be_row7_col8" class="data row7 col8" >948.370000</td>
             </tr>
             <tr>
-                        <th id="T_84336_level0_row8" class="row_heading level0 row8" >0.8</th>
-                        <td id="T_84336_row8_col0" class="data row8 col0" >802.466998</td>
-                        <td id="T_84336_row8_col1" class="data row8 col1" >806.124256</td>
-                        <td id="T_84336_row8_col2" class="data row8 col2" >816.755911</td>
-                        <td id="T_84336_row8_col3" class="data row8 col3" >833.504833</td>
-                        <td id="T_84336_row8_col4" class="data row8 col4" >819.711881</td>
-                        <td id="T_84336_row8_col5" class="data row8 col5" >826.985060</td>
-                        <td id="T_84336_row8_col6" class="data row8 col6" >851.042305</td>
-                        <td id="T_84336_row8_col7" class="data row8 col7" >870.807971</td>
-                        <td id="T_84336_row8_col8" class="data row8 col8" >824.530778</td>
+                        <th id="T_d38be_level0_row8" class="row_heading level0 row8" >0.8</th>
+                        <td id="T_d38be_row8_col0" class="data row8 col0" >802.470000</td>
+                        <td id="T_d38be_row8_col1" class="data row8 col1" >806.120000</td>
+                        <td id="T_d38be_row8_col2" class="data row8 col2" >816.760000</td>
+                        <td id="T_d38be_row8_col3" class="data row8 col3" >833.500000</td>
+                        <td id="T_d38be_row8_col4" class="data row8 col4" >819.710000</td>
+                        <td id="T_d38be_row8_col5" class="data row8 col5" >826.990000</td>
+                        <td id="T_d38be_row8_col6" class="data row8 col6" >851.040000</td>
+                        <td id="T_d38be_row8_col7" class="data row8 col7" >870.810000</td>
+                        <td id="T_d38be_row8_col8" class="data row8 col8" >824.530000</td>
             </tr>
             <tr>
-                        <th id="T_84336_level0_row9" class="row_heading level0 row9" >0.9</th>
-                        <td id="T_84336_row9_col0" class="data row9 col0" >740.029478</td>
-                        <td id="T_84336_row9_col1" class="data row9 col1" >747.735265</td>
-                        <td id="T_84336_row9_col2" class="data row9 col2" >745.682623</td>
-                        <td id="T_84336_row9_col3" class="data row9 col3" >752.735477</td>
-                        <td id="T_84336_row9_col4" class="data row9 col4" >742.127161</td>
-                        <td id="T_84336_row9_col5" class="data row9 col5" >760.909834</td>
-                        <td id="T_84336_row9_col6" class="data row9 col6" >714.689204</td>
-                        <td id="T_84336_row9_col7" class="data row9 col7" >714.701190</td>
-                        <td id="T_84336_row9_col8" class="data row9 col8" >720.330772</td>
+                        <th id="T_d38be_level0_row9" class="row_heading level0 row9" >0.9</th>
+                        <td id="T_d38be_row9_col0" class="data row9 col0" >740.030000</td>
+                        <td id="T_d38be_row9_col1" class="data row9 col1" >747.740000</td>
+                        <td id="T_d38be_row9_col2" class="data row9 col2" >745.680000</td>
+                        <td id="T_d38be_row9_col3" class="data row9 col3" >752.740000</td>
+                        <td id="T_d38be_row9_col4" class="data row9 col4" >742.130000</td>
+                        <td id="T_d38be_row9_col5" class="data row9 col5" >760.910000</td>
+                        <td id="T_d38be_row9_col6" class="data row9 col6" >714.690000</td>
+                        <td id="T_d38be_row9_col7" class="data row9 col7" >714.700000</td>
+                        <td id="T_d38be_row9_col8" class="data row9 col8" >720.330000</td>
             </tr>
             <tr>
-                        <th id="T_84336_level0_row10" class="row_heading level0 row10" >1.0</th>
-                        <td id="T_84336_row10_col0" class="data row10 col0" >673.449833</td>
-                        <td id="T_84336_row10_col1" class="data row10 col1" >673.449833</td>
-                        <td id="T_84336_row10_col2" class="data row10 col2" >673.449833</td>
-                        <td id="T_84336_row10_col3" class="data row10 col3" >673.449833</td>
-                        <td id="T_84336_row10_col4" class="data row10 col4" >673.449833</td>
-                        <td id="T_84336_row10_col5" class="data row10 col5" >673.449833</td>
-                        <td id="T_84336_row10_col6" class="data row10 col6" >673.449833</td>
-                        <td id="T_84336_row10_col7" class="data row10 col7" >673.449833</td>
-                        <td id="T_84336_row10_col8" class="data row10 col8" >673.449833</td>
+                        <th id="T_d38be_level0_row10" class="row_heading level0 row10" >1.0</th>
+                        <td id="T_d38be_row10_col0" class="data row10 col0" >673.450000</td>
+                        <td id="T_d38be_row10_col1" class="data row10 col1" >673.450000</td>
+                        <td id="T_d38be_row10_col2" class="data row10 col2" >673.450000</td>
+                        <td id="T_d38be_row10_col3" class="data row10 col3" >673.450000</td>
+                        <td id="T_d38be_row10_col4" class="data row10 col4" >673.450000</td>
+                        <td id="T_d38be_row10_col5" class="data row10 col5" >673.450000</td>
+                        <td id="T_d38be_row10_col6" class="data row10 col6" >673.450000</td>
+                        <td id="T_d38be_row10_col7" class="data row10 col7" >673.450000</td>
+                        <td id="T_d38be_row10_col8" class="data row10 col8" >673.450000</td>
             </tr>
     </tbody></table>
 </div>
@@ -15032,8 +15267,7 @@ Como pode ser visto, o rebalanceamento pode agir como forma de 'market timing', 
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Conclusão: o rebalanceamento usado de forma correta pode ser uma ferramenta muito útil para a criação de capital, porém também pode resultar em perdas.</p>
 
 </div>
