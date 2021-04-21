@@ -5,7 +5,6 @@ date: 2021-04-21
 
 Aprofundamento da análise de rebalanceamento de ativos.
 
-
 <html>
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
