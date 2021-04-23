@@ -1,6 +1,8 @@
 ---
-title: "Welcome to my blog"
+title: "Bem-vindo ao meu blog"
 ---
 
-I'm glad you are here. I plan to talk about ... Anything
-
+Este espaço será utilizado para:
+- servir de referência própria para evolução de habilidades técnicas
+- discutir assuntos dos quais tenho interesse
+- etc.
