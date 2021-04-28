@@ -4,6 +4,7 @@ date: 2021-04-20
 ---
 
 Análise dos efeitos de rebalanceamento em um portfólio fictício.
+<!--more-->
 
 <html>
 <head><meta charset="utf-8" />
