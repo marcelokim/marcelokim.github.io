@@ -4,6 +4,7 @@ date: 2021-04-21
 ---
 
 Aprofundamento da análise de rebalanceamento de ativos.
+<!--more-->
 
 <html>
 <head><meta charset="utf-8" />
