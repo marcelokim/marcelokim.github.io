@@ -3,6 +3,7 @@ title: Idéias e Testes
 author: Marcelo Kim Imai
 email: marcelo.kim2014@gmail.com
 theme: minima
+excerpt_separator: <!--more-->
 description: > # this means to ignore newlines until "baseurl:"
   Meu canto de testes, idéias e análises aleatórias.
 # social links
