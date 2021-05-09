@@ -7,6 +7,7 @@ Twitter GRab.
 <!--more-->
 
 
+
 <html>
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14265,8 +14266,7 @@ a.anchor-link {
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="API-do-Twitter-para-extrair-dados-de-contas">API do Twitter para extrair dados de contas<a class="anchor-link" href="#API-do-Twitter-para-extrair-dados-de-contas">&#182;</a></h2><h3 id="P&#225;ginas-relevantes-utilizadas">P&#225;ginas relevantes utilizadas<a class="anchor-link" href="#P&#225;ginas-relevantes-utilizadas">&#182;</a></h3><p><a href="https://docs.tweepy.org/en/v3.5.0/cursor_tutorial.html">https://docs.tweepy.org/en/v3.5.0/cursor_tutorial.html</a></p>
 <p><a href="https://medium.com/analytics-vidhya/a-treasure-map-to-twitter-data-via-tweepy-b7e3d624d88d">https://medium.com/analytics-vidhya/a-treasure-map-to-twitter-data-via-tweepy-b7e3d624d88d</a></p>
 <p>Foi utilizado a API do Twitter para extrair informações básicas de algumas contas do Twitter: "Suno Research", "Eleven", "Nord Research", "Empiricus".</p>
@@ -14278,14 +14278,13 @@ a.anchor-link {
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="1)-Inicializa-o-API-para-come&#231;ar-a-extrair-os-dados">1) Inicializa o API para come&#231;ar a extrair os dados<a class="anchor-link" href="#1)-Inicializa-o-API-para-come&#231;ar-a-extrair-os-dados">&#182;</a></h3>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tweepy</span>
@@ -14300,7 +14299,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">twitter_keys</span> <span class="o">=</span> <span class="p">{</span>
@@ -14321,14 +14320,13 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="2)-Cria-a-fun&#231;&#227;o-para-extrair-os-dados-(lista-de-followers)">2) Cria a fun&#231;&#227;o para extrair os dados (lista de followers)<a class="anchor-link" href="#2)-Cria-a-fun&#231;&#227;o-para-extrair-os-dados-(lista-de-followers)">&#182;</a></h3>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">followers_list</span><span class="p">(</span><span class="n">target_twitter</span><span class="p">):</span>
@@ -14345,15 +14343,14 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Faz um loop para extrair a lista de cada uma das contas especificadas, e mostra o número de seguidos de cada conta</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">target_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;researchnord&#39;</span><span class="p">,</span> <span class="s1">&#39;sunoresearch&#39;</span><span class="p">,</span> <span class="s1">&#39;empiricus&#39;</span><span class="p">,</span> <span class="s1">&#39;elevenfinancial&#39;</span><span class="p">]</span>
@@ -14375,14 +14372,9 @@ a.anchor-link {
 
 <div class="jp-Cell-outputWrapper">
 
-
 <div class="jp-OutputArea jp-Cell-outputArea">
 
 <div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>68
@@ -14398,15 +14390,14 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Escreve os dados num arquivo para manter guardado</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;followerstargets.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
@@ -14419,15 +14410,14 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Encontrando-a-quantidade-de-contas-seguidas-por-todas-as-contas-escolhidas-(Nord&#8745;Eleven&#8745;Empiricus&#8745;Suno)">Encontrando a quantidade de contas seguidas por todas as contas escolhidas (Nord&#8745;Eleven&#8745;Empiricus&#8745;Suno)<a class="anchor-link" href="#Encontrando-a-quantidade-de-contas-seguidas-por-todas-as-contas-escolhidas-(Nord&#8745;Eleven&#8745;Empiricus&#8745;Suno)">&#182;</a></h3><p>Extrai apenas o nome de cada 'seguido' e cria uma nova base para encontrar a interseção dos dados.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;followerstargets.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
@@ -14451,7 +14441,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp_list_to_intersect</span> <span class="o">=</span> <span class="p">[]</span>
@@ -14470,14 +14460,9 @@ a.anchor-link {
 
 <div class="jp-Cell-outputWrapper">
 
-
 <div class="jp-OutputArea jp-Cell-outputArea">
 
 <div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>{&#39;Cristiano Romero&#39;, &#39;Jornal O Globo&#39;, &#39;Rádio BandNews FM&#39;, &#39;Lauro Jardim&#39;, &#39;CVM Educacional&#39;, &#39;Henrique Bredda&#39;, &#39;Banco Central BR&#39;, &#39;GloboNews&#39;, &#39;Míriam Leitão&#39;, &#39;Broadcast&#39;, &#39;Revista ISTOÉ&#39;, &#39;G1&#39;, &#39;Estadão&#39;, &#39;VEJA&#39;, &#39;BBC News Brasil&#39;, &#39;Rico.com.vc&#39;, &#39;Broadcast Político&#39;, &#39;BNDES&#39;, &#39;Ipea&#39;, &#39;Gabriela Valente&#39;, &#39;Folha de S.Paulo&#39;, &#39;InfoMoney&#39;, &#39;Renata Lo Prete&#39;, &#39;Gerson Camarotti&#39;, &#39;Andréia Sadi&#39;, &#39;Carlos A. Sardenberg&#39;, &#39;B3&#39;, &#39;XP&#39;, &#39;Lucas de Aragão&#39;, &#39;Mansueto Almeida&#39;, &#39;Apimec São Paulo&#39;, &#39;Dinheirama.com&#39;}
@@ -14490,8 +14475,7 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>A interseção entre as contas foi feita com dados da Nord, Empiricus e Eleven. Não foi feita a intersecção com a Suno Research pois possui uma quantidade de 'seguidos' muito pequena, o que leva a um número de 0 pessoas com intersecção.</p>
 
 </div>
