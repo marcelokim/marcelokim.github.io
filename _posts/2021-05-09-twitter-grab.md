@@ -3,7 +3,7 @@ title: "Twitter Grab"
 date: 2021-05-09
 ---
 
-Twitter GRab.
+Grab data from accounts in Twitter.
 <!--more-->
 
 
