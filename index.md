@@ -1,5 +1,5 @@
 ---
-title: "Bem-vindo ao meu blog"
+title: "Bem-vindo!"
 ---
 
 Este espaço será utilizado para:
