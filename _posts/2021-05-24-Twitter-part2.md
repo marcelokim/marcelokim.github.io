@@ -1,9 +1,9 @@
 ---
-title: "Estudo de performance Ethereum"
+title: "Twitter Grab Parte 2"
 date: 2021-05-24
 ---
 
-Análise simples da performance do Ethereum no último ano.
+Utilizando a API do Twitter para criar uma base de tweets dos perfis desejados.
 <!--more-->
 
 
