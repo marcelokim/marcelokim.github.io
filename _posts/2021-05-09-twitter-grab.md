@@ -1,9 +1,10 @@
 ---
 title: "Twitter Grab"
 date: 2021-05-09
+tags: jupyter-notebook python
 ---
 
-Grab data from accounts in Twitter.
+Usando a API do Twitter para obter dados de contas.
 <!--more-->
 
 
