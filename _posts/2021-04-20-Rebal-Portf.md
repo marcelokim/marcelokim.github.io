@@ -4,7 +4,7 @@ date: 2021-04-20
 tags: jupyter-notebook python
 ---
 
-Análise dos efeitos de rebalanceamento em um portfólio fictício.!
+Análise dos efeitos de rebalanceamento em um portfólio fictício.
 <!--more-->
 
 <html>
@@ -8855,4 +8855,6353 @@ Licensed under the Apache License, Version 2.0.
   --jp-icon-terminal: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiA+CiAgICA8cmVjdCBjbGFzcz0ianAtaWNvbjIganAtaWNvbi1zZWxlY3RhYmxlIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIgMikiIGZpbGw9IiMzMzMzMzMiLz4KICAgIDxwYXRoIGNsYXNzPSJqcC1pY29uLWFjY2VudDIganAtaWNvbi1zZWxlY3RhYmxlLWludmVyc2UiIGQ9Ik01LjA1NjY0IDguNzYxNzJDNS4wNTY2NCA4LjU5NzY2IDUuMDMxMjUgOC40NTMxMiA0Ljk4MDQ3IDguMzI4MTJDNC45MzM1OSA4LjE5OTIyIDQuODU1NDcgOC4wODIwMyA0Ljc0NjA5IDcuOTc2NTZDNC42NDA2MiA3Ljg3MTA5IDQuNSA3Ljc3NTM5IDQuMzI0MjIgNy42ODk0NUM0LjE1MjM0IDcuNTk5NjEgMy45NDMzNiA3LjUxMTcyIDMuNjk3MjcgNy40MjU3OEMzLjMwMjczIDcuMjg1MTYgMi45NDMzNiA3LjEzNjcyIDIuNjE5MTQgNi45ODA0N0MyLjI5NDkyIDYuODI0MjIgMi4wMTc1OCA2LjY0MjU4IDEuNzg3MTEgNi40MzU1NUMxLjU2MDU1IDYuMjI4NTIgMS4zODQ3NyA1Ljk4ODI4IDEuMjU5NzcgNS43MTQ4NEMxLjEzNDc3IDUuNDM3NSAxLjA3MjI3IDUuMTA5MzggMS4wNzIyNyA0LjczMDQ3QzEuMDcyMjcgNC4zOTg0NCAxLjEyODkxIDQuMDk1NyAxLjI0MjE5IDMuODIyMjdDMS4zNTU0NyAzLjU0NDkyIDEuNTE1NjIgMy4zMDQ2OSAxLjcyMjY2IDMuMTAxNTZDMS45Mjk2OSAyLjg5ODQ0IDIuMTc5NjkgMi43MzQzNyAyLjQ3MjY2IDIuNjA5MzhDMi43NjU2MiAyLjQ4NDM4IDMuMDkxOCAyLjQwNDMgMy40NTExNyAyLjM2OTE0VjEuMTA5MzhINC4zODg2N1YyLjM4MDg2QzQuNzQwMjMgMi40Mjc3MyA1LjA1NjY0IDIuNTIzNDQgNS4zMzc4OSAyLjY2Nzk3QzUuNjE5MTQgMi44MTI1IDUuODU3NDIgMy4wMDE5NSA2LjA1MjczIDMuMjM2MzNDNi4yNTE5NSAzLjQ2NjggNi40MDQzIDMuNzQwMjMgNi41MDk3NyA0LjA1NjY0QzYuNjE5MTQgNC4zNjkxNCA2LjY3MzgzIDQuNzIwNyA2LjY3MzgzIDUuMTExMzNINS4wNDQ5MkM1LjA0NDkyIDQuNjM4NjcgNC45Mzc1IDQuMjgxMjUgNC43MjI2NiA0LjAzOTA2QzQuNTA3ODEgMy43OTI5NyA0LjIxNjggMy42Njk5MiAzLjg0OTYxIDMuNjY5OTJDMy42NTAzOSAzLjY2OTkyIDMuNDc2NTYgMy42OTcyNyAzLjMyODEyIDMuNzUxOTVDMy4xODM1OSAzLjgwMjczIDMuMDY0NDUgMy44NzY5NSAyLjk3MDcgMy45NzQ2MUMyLjg3Njk1IDQuMDY4MzYgMi44MDY2NCA0LjE3OTY5IDIuNzU5NzcgNC4zMDg1OUMyLjcxNjggNC40Mzc1IDIuNjk1MzEgNC41NzgxMiAyLjY5NTMxIDQuNzMwNDdDMi42OTUzMSA0Ljg4MjgxIDIuNzE2OCA1LjAxOTUzIDIuNzU5NzcgNS4xNDA2MkMyLjgwNjY0IDUuMjU3ODEgMi44ODI4MSA1LjM2NzE5IDIuOTg4MjggNS40Njg3NUMzLjA5NzY2IDUuNTcwMzEgMy4yNDAyMyA1LjY2Nzk3IDMuNDE2MDIgNS43NjE3MkMzLjU5MTggNS44NTE1NiAzLjgxMDU1IDUuOTQzMzYgNC4wNzIyNyA2LjAzNzExQzQuNDY2OCA2LjE4NTU1IDQuODI0MjIgNi4zMzk4NCA1LjE0NDUzIDYuNUM1LjQ2NDg0IDYuNjU2MjUgNS43MzgyOCA2LjgzOTg0IDUuOTY0ODQgNy4wNTA3OEM2LjE5NTMxIDcuMjU3ODEgNi4zNzEwOSA3LjUgNi40OTIxOSA3Ljc3NzM0QzYuNjE3MTkgOC4wNTA3OCA2LjY3OTY5IDguMzc1IDYuNjc5NjkgOC43NUM2LjY3OTY5IDkuMDkzNzUgNi42MjMwNSA5LjQwNDMgNi41MDk3NyA5LjY4MTY0QzYuMzk2NDggOS45NTUwOCA2LjIzNDM4IDEwLjE5MTQgNi4wMjM0NCAxMC4zOTA2QzUuODEyNSAxMC41ODk4IDUuNTU4NTkgMTAuNzUgNS4yNjE3MiAxMC44NzExQzQuOTY0ODQgMTAuOTg4MyA0LjYzMjgxIDExLjA2NDUgNC4yNjU2MiAxMS4wOTk2VjEyLjI0OEgzLjMzMzk4VjExLjA5OTZDMy4wMDE5NSAxMS4wNjg0IDIuNjc5NjkgMTAuOTk2MSAyLjM2NzE5IDEwLjg4MjhDMi4wNTQ2OSAxMC43NjU2IDEuNzc3MzQgMTAuNTk3NyAxLjUzNTE2IDEwLjM3ODlDMS4yOTY4OCAxMC4xNjAyIDEuMTA1NDcgOS44ODQ3NyAwLjk2MDkzOCA5LjU1MjczQzAuODE2NDA2IDkuMjE2OCAwLjc0NDE0MSA4LjgxNDQ1IDAuNzQ0MTQxIDguMzQ1N0gyLjM3ODkxQzIuMzc4OTEgOC42MjY5NSAyLjQxOTkyIDguODYzMjggMi41MDE5NSA5LjA1NDY5QzIuNTgzOTggOS4yNDIxOSAyLjY4OTQ1IDkuMzkyNTggMi44MTgzNiA5LjUwNTg2QzIuOTUxMTcgOS42MTUyMyAzLjEwMTU2IDkuNjkzMzYgMy4yNjk1MyA5Ljc0MDIzQzMuNDM3NSA5Ljc4NzExIDMuNjA5MzggOS44MTA1NSAzLjc4NTE2IDkuODEwNTVDNC4yMDMxMiA5LjgxMDU1IDQuNTE5NTMgOS43MTI4OSA0LjczNDM4IDkuNTE3NThDNC45NDkyMiA5LjMyMjI3IDUuMDU2NjQgOS4wNzAzMSA1LjA1NjY0IDguNzYxNzJaTTEzLjQxOCAxMi4yNzE1SDguMDc0MjJWMTFIMTMuNDE4VjEyLjI3MTVaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLjk1MjY0IDYpIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K);
   --jp-icon-text-editor: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICA8cGF0aCBjbGFzcz0ianAtaWNvbjMganAtaWNvbi1zZWxlY3RhYmxlIiBmaWxsPSIjNjE2MTYxIiBkPSJNMTUgMTVIM3YyaDEydi0yem0wLThIM3YyaDEyVjd6TTMgMTNoMTh2LTJIM3Yyem0wIDhoMTh2LTJIM3Yyek0zIDN2MmgxOFYzSDN6Ii8+Cjwvc3ZnPgo=);
   --jp-icon-trusted: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgdmlld0JveD0iMCAwIDI0IDI1Ij4KICAgIDxwYXRoIGNsYXNzPSJqcC1pY29uMiIgc3Ryb2tlPSIjMzMzMzMzIiBzdHJva2Utd2lkdGg9IjIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIgMykiIGQ9Ik0xLjg2MDk0IDExLjQ0MDlDMC44MjY0NDggOC43NzAyNyAwLjg2Mzc3OSA2LjA1NzY0IDEuMjQ5MDcgNC4xOTkzMkMyLjQ4MjA2IDMuOTMzNDcgNC4wODA2OCAzLjQwMzQ3IDUuNjAxMDIgMi44NDQ5QzcuMjM1NDkgMi4yNDQ0IDguODU2NjYgMS41ODE1IDkuOTg3NiAxLjA5NTM5QzExLjA1OTcgMS41ODM0MSAxMi42MDk0IDIuMjQ0NCAxNC4yMTggMi44NDMzOUMxNS43NTAzIDMuNDEzOTQgMTcuMzk5NSAzLjk1MjU4IDE4Ljc1MzkgNC4yMTM4NUMxOS4xMzY0IDYuMDcxNzcgMTkuMTcwOSA4Ljc3NzIyIDE4LjEzOSAxMS40NDA5QzE3LjAzMDMgMTQuMzAzMiAxNC42NjY4IDE3LjE4NDQgOS45OTk5OSAxOC45MzU0QzUuMzMzMiAxNy4xODQ0IDIuOTY5NjggMTQuMzAzMiAxLjg2MDk0IDExLjQ0MDlaIi8+CiAgICA8cGF0aCBjbGFzcz0ianAtaWNvbjIiIGZpbGw9IiMzMzMzMzMiIHN0cm9rZT0iIzMzMzMzMyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOCA5Ljg2NzE5KSIgZD0iTTIuODYwMTUgNC44NjUzNUwwLjcyNjU0OSAyLjk5OTU5TDAgMy42MzA0NUwyLjg2MDE1IDYuMTMxNTdMOCAwLjYzMDg3Mkw3LjI3ODU3IDBMMi44NjAxNSA0Ljg2NTM1WiIvPgo8L3N2Zz4K);
-  --jp-icon-undo: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBjbGFzcz0ianAtaWNvbjMiIGZpbGw9IiM2MTYxNjEiPgogICAgPHBhdGggZD0iTTEyLjUgOGMtMi42NSAwLTUuMDUuOTktNi45IDIuNkwyIDd2OWg5bC0zLjYyLTMuNjJjMS4zOS0xLjE2IDMuMTYtMS44OCA1LjEyLTEuODggM
+  --jp-icon-undo: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBjbGFzcz0ianAtaWNvbjMiIGZpbGw9IiM2MTYxNjEiPgogICAgPHBhdGggZD0iTTEyLjUgOGMtMi42NSAwLTUuMDUuOTktNi45IDIuNkwyIDd2OWg5bC0zLjYyLTMuNjJjMS4zOS0xLjE2IDMuMTYtMS44OCA1LjEyLTEuODggMy41NCAwIDYuNTUgMi4zMSA3LjYgNS41bDIuMzctLjc4QzIxLjA4IDExLjAzIDE3LjE1IDggMTIuNSA4eiIvPgogIDwvZz4KPC9zdmc+Cg==);
+  --jp-icon-vega: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgdmlld0JveD0iMCAwIDIyIDIyIj4KICA8ZyBjbGFzcz0ianAtaWNvbjEganAtaWNvbi1zZWxlY3RhYmxlIiBmaWxsPSIjMjEyMTIxIj4KICAgIDxwYXRoIGQ9Ik0xMC42IDUuNGwyLjItMy4ySDIuMnY3LjNsNC02LjZ6Ii8+CiAgICA8cGF0aCBkPSJNMTUuOCAyLjJsLTQuNCA2LjZMNyA2LjNsLTQuOCA4djUuNWgxNy42VjIuMmgtNHptLTcgMTUuNEg1LjV2LTQuNGgzLjN2NC40em00LjQgMEg5LjhWOS44aDMuNHY3Ljh6bTQuNCAwaC0zLjRWNi41aDMuNHYxMS4xeiIvPgogIDwvZz4KPC9zdmc+Cg==);
+  --jp-icon-yaml: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgdmlld0JveD0iMCAwIDIyIDIyIj4KICA8ZyBjbGFzcz0ianAtaWNvbi1jb250cmFzdDIganAtaWNvbi1zZWxlY3RhYmxlIiBmaWxsPSIjRDgxQjYwIj4KICAgIDxwYXRoIGQ9Ik03LjIgMTguNnYtNS40TDMgNS42aDMuM2wxLjQgMy4xYy4zLjkuNiAxLjYgMSAyLjUuMy0uOC42LTEuNiAxLTIuNWwxLjQtMy4xaDMuNGwtNC40IDcuNnY1LjVsLTIuOS0uMXoiLz4KICAgIDxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjE3LjYiIGN5PSIxNi41IiByPSIyLjEiLz4KICAgIDxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjE3LjYiIGN5PSIxMSIgcj0iMi4xIi8+CiAgPC9nPgo8L3N2Zz4K);
+}
+
+/* Icon CSS class declarations */
+
+.jp-AddIcon {
+  background-image: var(--jp-icon-add);
+}
+.jp-BugIcon {
+  background-image: var(--jp-icon-bug);
+}
+.jp-BuildIcon {
+  background-image: var(--jp-icon-build);
+}
+.jp-CaretDownEmptyIcon {
+  background-image: var(--jp-icon-caret-down-empty);
+}
+.jp-CaretDownEmptyThinIcon {
+  background-image: var(--jp-icon-caret-down-empty-thin);
+}
+.jp-CaretDownIcon {
+  background-image: var(--jp-icon-caret-down);
+}
+.jp-CaretLeftIcon {
+  background-image: var(--jp-icon-caret-left);
+}
+.jp-CaretRightIcon {
+  background-image: var(--jp-icon-caret-right);
+}
+.jp-CaretUpEmptyThinIcon {
+  background-image: var(--jp-icon-caret-up-empty-thin);
+}
+.jp-CaretUpIcon {
+  background-image: var(--jp-icon-caret-up);
+}
+.jp-CaseSensitiveIcon {
+  background-image: var(--jp-icon-case-sensitive);
+}
+.jp-CheckIcon {
+  background-image: var(--jp-icon-check);
+}
+.jp-CircleEmptyIcon {
+  background-image: var(--jp-icon-circle-empty);
+}
+.jp-CircleIcon {
+  background-image: var(--jp-icon-circle);
+}
+.jp-ClearIcon {
+  background-image: var(--jp-icon-clear);
+}
+.jp-CloseIcon {
+  background-image: var(--jp-icon-close);
+}
+.jp-ConsoleIcon {
+  background-image: var(--jp-icon-console);
+}
+.jp-CopyIcon {
+  background-image: var(--jp-icon-copy);
+}
+.jp-CutIcon {
+  background-image: var(--jp-icon-cut);
+}
+.jp-DownloadIcon {
+  background-image: var(--jp-icon-download);
+}
+.jp-EditIcon {
+  background-image: var(--jp-icon-edit);
+}
+.jp-EllipsesIcon {
+  background-image: var(--jp-icon-ellipses);
+}
+.jp-ExtensionIcon {
+  background-image: var(--jp-icon-extension);
+}
+.jp-FastForwardIcon {
+  background-image: var(--jp-icon-fast-forward);
+}
+.jp-FileIcon {
+  background-image: var(--jp-icon-file);
+}
+.jp-FileUploadIcon {
+  background-image: var(--jp-icon-file-upload);
+}
+.jp-FilterListIcon {
+  background-image: var(--jp-icon-filter-list);
+}
+.jp-FolderIcon {
+  background-image: var(--jp-icon-folder);
+}
+.jp-Html5Icon {
+  background-image: var(--jp-icon-html5);
+}
+.jp-ImageIcon {
+  background-image: var(--jp-icon-image);
+}
+.jp-InspectorIcon {
+  background-image: var(--jp-icon-inspector);
+}
+.jp-JsonIcon {
+  background-image: var(--jp-icon-json);
+}
+.jp-JupyterFaviconIcon {
+  background-image: var(--jp-icon-jupyter-favicon);
+}
+.jp-JupyterIcon {
+  background-image: var(--jp-icon-jupyter);
+}
+.jp-JupyterlabWordmarkIcon {
+  background-image: var(--jp-icon-jupyterlab-wordmark);
+}
+.jp-KernelIcon {
+  background-image: var(--jp-icon-kernel);
+}
+.jp-KeyboardIcon {
+  background-image: var(--jp-icon-keyboard);
+}
+.jp-LauncherIcon {
+  background-image: var(--jp-icon-launcher);
+}
+.jp-LineFormIcon {
+  background-image: var(--jp-icon-line-form);
+}
+.jp-LinkIcon {
+  background-image: var(--jp-icon-link);
+}
+.jp-ListIcon {
+  background-image: var(--jp-icon-list);
+}
+.jp-ListingsInfoIcon {
+  background-image: var(--jp-icon-listings-info);
+}
+.jp-MarkdownIcon {
+  background-image: var(--jp-icon-markdown);
+}
+.jp-NewFolderIcon {
+  background-image: var(--jp-icon-new-folder);
+}
+.jp-NotTrustedIcon {
+  background-image: var(--jp-icon-not-trusted);
+}
+.jp-NotebookIcon {
+  background-image: var(--jp-icon-notebook);
+}
+.jp-PaletteIcon {
+  background-image: var(--jp-icon-palette);
+}
+.jp-PasteIcon {
+  background-image: var(--jp-icon-paste);
+}
+.jp-PythonIcon {
+  background-image: var(--jp-icon-python);
+}
+.jp-RKernelIcon {
+  background-image: var(--jp-icon-r-kernel);
+}
+.jp-ReactIcon {
+  background-image: var(--jp-icon-react);
+}
+.jp-RefreshIcon {
+  background-image: var(--jp-icon-refresh);
+}
+.jp-RegexIcon {
+  background-image: var(--jp-icon-regex);
+}
+.jp-RunIcon {
+  background-image: var(--jp-icon-run);
+}
+.jp-RunningIcon {
+  background-image: var(--jp-icon-running);
+}
+.jp-SaveIcon {
+  background-image: var(--jp-icon-save);
+}
+.jp-SearchIcon {
+  background-image: var(--jp-icon-search);
+}
+.jp-SettingsIcon {
+  background-image: var(--jp-icon-settings);
+}
+.jp-SpreadsheetIcon {
+  background-image: var(--jp-icon-spreadsheet);
+}
+.jp-StopIcon {
+  background-image: var(--jp-icon-stop);
+}
+.jp-TabIcon {
+  background-image: var(--jp-icon-tab);
+}
+.jp-TerminalIcon {
+  background-image: var(--jp-icon-terminal);
+}
+.jp-TextEditorIcon {
+  background-image: var(--jp-icon-text-editor);
+}
+.jp-TrustedIcon {
+  background-image: var(--jp-icon-trusted);
+}
+.jp-UndoIcon {
+  background-image: var(--jp-icon-undo);
+}
+.jp-VegaIcon {
+  background-image: var(--jp-icon-vega);
+}
+.jp-YamlIcon {
+  background-image: var(--jp-icon-yaml);
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/**
+ * (DEPRECATED) Support for consuming icons as CSS background images
+ */
+
+:root {
+  --jp-icon-search-white: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTggMTgiIHdpZHRoPSIxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBjbGFzcz0ianAtaWNvbjMiIGZpbGw9IiM2MTYxNjEiPgogICAgPHBhdGggZD0iTTEyLjEsMTAuOWgtMC43bC0wLjItMC4yYzAuOC0wLjksMS4zLTIuMiwxLjMtMy41YzAtMy0yLjQtNS40LTUuNC01LjRTMS44LDQuMiwxLjgsNy4xczIuNCw1LjQsNS40LDUuNCBjMS4zLDAsMi41LTAuNSwzLjUtMS4zbDAuMiwwLjJ2MC43bDQuMSw0LjFsMS4yLTEuMkwxMi4xLDEwLjl6IE03LjEsMTAuOWMtMi4xLDAtMy43LTEuNy0zLjctMy43czEuNy0zLjcsMy43LTMuN3MzLjcsMS43LDMuNywzLjcgUzkuMiwxMC45LDcuMSwxMC45eiIvPgogIDwvZz4KPC9zdmc+Cg==);
+}
+
+.jp-Icon,
+.jp-MaterialIcon {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.jp-Icon-cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/**
+ * (DEPRECATED) Support for specific CSS icon sizes
+ */
+
+.jp-Icon-16 {
+  background-size: 16px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.jp-Icon-18 {
+  background-size: 18px;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+.jp-Icon-20 {
+  background-size: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/**
+ * Support for icons as inline SVG HTMLElements
+ */
+
+/* recolor the primary elements of an icon */
+.jp-icon0[fill] {
+  fill: var(--jp-inverse-layout-color0);
+}
+.jp-icon1[fill] {
+  fill: var(--jp-inverse-layout-color1);
+}
+.jp-icon2[fill] {
+  fill: var(--jp-inverse-layout-color2);
+}
+.jp-icon3[fill] {
+  fill: var(--jp-inverse-layout-color3);
+}
+.jp-icon4[fill] {
+  fill: var(--jp-inverse-layout-color4);
+}
+
+.jp-icon0[stroke] {
+  stroke: var(--jp-inverse-layout-color0);
+}
+.jp-icon1[stroke] {
+  stroke: var(--jp-inverse-layout-color1);
+}
+.jp-icon2[stroke] {
+  stroke: var(--jp-inverse-layout-color2);
+}
+.jp-icon3[stroke] {
+  stroke: var(--jp-inverse-layout-color3);
+}
+.jp-icon4[stroke] {
+  stroke: var(--jp-inverse-layout-color4);
+}
+/* recolor the accent elements of an icon */
+.jp-icon-accent0[fill] {
+  fill: var(--jp-layout-color0);
+}
+.jp-icon-accent1[fill] {
+  fill: var(--jp-layout-color1);
+}
+.jp-icon-accent2[fill] {
+  fill: var(--jp-layout-color2);
+}
+.jp-icon-accent3[fill] {
+  fill: var(--jp-layout-color3);
+}
+.jp-icon-accent4[fill] {
+  fill: var(--jp-layout-color4);
+}
+
+.jp-icon-accent0[stroke] {
+  stroke: var(--jp-layout-color0);
+}
+.jp-icon-accent1[stroke] {
+  stroke: var(--jp-layout-color1);
+}
+.jp-icon-accent2[stroke] {
+  stroke: var(--jp-layout-color2);
+}
+.jp-icon-accent3[stroke] {
+  stroke: var(--jp-layout-color3);
+}
+.jp-icon-accent4[stroke] {
+  stroke: var(--jp-layout-color4);
+}
+/* set the color of an icon to transparent */
+.jp-icon-none[fill] {
+  fill: none;
+}
+
+.jp-icon-none[stroke] {
+  stroke: none;
+}
+/* brand icon colors. Same for light and dark */
+.jp-icon-brand0[fill] {
+  fill: var(--jp-brand-color0);
+}
+.jp-icon-brand1[fill] {
+  fill: var(--jp-brand-color1);
+}
+.jp-icon-brand2[fill] {
+  fill: var(--jp-brand-color2);
+}
+.jp-icon-brand3[fill] {
+  fill: var(--jp-brand-color3);
+}
+.jp-icon-brand4[fill] {
+  fill: var(--jp-brand-color4);
+}
+
+.jp-icon-brand0[stroke] {
+  stroke: var(--jp-brand-color0);
+}
+.jp-icon-brand1[stroke] {
+  stroke: var(--jp-brand-color1);
+}
+.jp-icon-brand2[stroke] {
+  stroke: var(--jp-brand-color2);
+}
+.jp-icon-brand3[stroke] {
+  stroke: var(--jp-brand-color3);
+}
+.jp-icon-brand4[stroke] {
+  stroke: var(--jp-brand-color4);
+}
+/* warn icon colors. Same for light and dark */
+.jp-icon-warn0[fill] {
+  fill: var(--jp-warn-color0);
+}
+.jp-icon-warn1[fill] {
+  fill: var(--jp-warn-color1);
+}
+.jp-icon-warn2[fill] {
+  fill: var(--jp-warn-color2);
+}
+.jp-icon-warn3[fill] {
+  fill: var(--jp-warn-color3);
+}
+
+.jp-icon-warn0[stroke] {
+  stroke: var(--jp-warn-color0);
+}
+.jp-icon-warn1[stroke] {
+  stroke: var(--jp-warn-color1);
+}
+.jp-icon-warn2[stroke] {
+  stroke: var(--jp-warn-color2);
+}
+.jp-icon-warn3[stroke] {
+  stroke: var(--jp-warn-color3);
+}
+/* icon colors that contrast well with each other and most backgrounds */
+.jp-icon-contrast0[fill] {
+  fill: var(--jp-icon-contrast-color0);
+}
+.jp-icon-contrast1[fill] {
+  fill: var(--jp-icon-contrast-color1);
+}
+.jp-icon-contrast2[fill] {
+  fill: var(--jp-icon-contrast-color2);
+}
+.jp-icon-contrast3[fill] {
+  fill: var(--jp-icon-contrast-color3);
+}
+
+.jp-icon-contrast0[stroke] {
+  stroke: var(--jp-icon-contrast-color0);
+}
+.jp-icon-contrast1[stroke] {
+  stroke: var(--jp-icon-contrast-color1);
+}
+.jp-icon-contrast2[stroke] {
+  stroke: var(--jp-icon-contrast-color2);
+}
+.jp-icon-contrast3[stroke] {
+  stroke: var(--jp-icon-contrast-color3);
+}
+
+/* CSS for icons in selected items in the settings editor */
+#setting-editor .jp-PluginList .jp-mod-selected .jp-icon-selectable[fill] {
+  fill: #fff;
+}
+#setting-editor
+  .jp-PluginList
+  .jp-mod-selected
+  .jp-icon-selectable-inverse[fill] {
+  fill: var(--jp-brand-color1);
+}
+
+/* CSS for icons in selected filebrowser listing items */
+.jp-DirListing-item.jp-mod-selected .jp-icon-selectable[fill] {
+  fill: #fff;
+}
+.jp-DirListing-item.jp-mod-selected .jp-icon-selectable-inverse[fill] {
+  fill: var(--jp-brand-color1);
+}
+
+/* CSS for icons in selected tabs in the sidebar tab manager */
+#tab-manager .lm-TabBar-tab.jp-mod-active .jp-icon-selectable[fill] {
+  fill: #fff;
+}
+
+#tab-manager .lm-TabBar-tab.jp-mod-active .jp-icon-selectable-inverse[fill] {
+  fill: var(--jp-brand-color1);
+}
+#tab-manager
+  .lm-TabBar-tab.jp-mod-active
+  .jp-icon-hover
+  :hover
+  .jp-icon-selectable[fill] {
+  fill: var(--jp-brand-color1);
+}
+
+#tab-manager
+  .lm-TabBar-tab.jp-mod-active
+  .jp-icon-hover
+  :hover
+  .jp-icon-selectable-inverse[fill] {
+  fill: #fff;
+}
+
+/**
+ * TODO: come up with non css-hack solution for showing the busy icon on top
+ *  of the close icon
+ * CSS for complex behavior of close icon of tabs in the sidebar tab manager
+ */
+#tab-manager
+  .lm-TabBar-tab.jp-mod-dirty
+  > .lm-TabBar-tabCloseIcon
+  > :not(:hover)
+  > .jp-icon3[fill] {
+  fill: none;
+}
+#tab-manager
+  .lm-TabBar-tab.jp-mod-dirty
+  > .lm-TabBar-tabCloseIcon
+  > :not(:hover)
+  > .jp-icon-busy[fill] {
+  fill: var(--jp-inverse-layout-color3);
+}
+
+#tab-manager
+  .lm-TabBar-tab.jp-mod-dirty.jp-mod-active
+  > .lm-TabBar-tabCloseIcon
+  > :not(:hover)
+  > .jp-icon-busy[fill] {
+  fill: #fff;
+}
+
+/**
+* TODO: come up with non css-hack solution for showing the busy icon on top
+*  of the close icon
+* CSS for complex behavior of close icon of tabs in the main area tabbar
+*/
+.lm-DockPanel-tabBar
+  .lm-TabBar-tab.lm-mod-closable.jp-mod-dirty
+  > .lm-TabBar-tabCloseIcon
+  > :not(:hover)
+  > .jp-icon3[fill] {
+  fill: none;
+}
+.lm-DockPanel-tabBar
+  .lm-TabBar-tab.lm-mod-closable.jp-mod-dirty
+  > .lm-TabBar-tabCloseIcon
+  > :not(:hover)
+  > .jp-icon-busy[fill] {
+  fill: var(--jp-inverse-layout-color3);
+}
+
+/* CSS for icons in status bar */
+#jp-main-statusbar .jp-mod-selected .jp-icon-selectable[fill] {
+  fill: #fff;
+}
+
+#jp-main-statusbar .jp-mod-selected .jp-icon-selectable-inverse[fill] {
+  fill: var(--jp-brand-color1);
+}
+/* special handling for splash icon CSS. While the theme CSS reloads during
+   splash, the splash icon can loose theming. To prevent that, we set a
+   default for its color variable */
+:root {
+  --jp-warn-color0: var(--md-orange-700);
+}
+
+/* not sure what to do with this one, used in filebrowser listing */
+.jp-DragIcon {
+  margin-right: 4px;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/**
+ * Support for alt colors for icons as inline SVG HTMLElements
+ */
+
+/* alt recolor the primary elements of an icon */
+.jp-icon-alt .jp-icon0[fill] {
+  fill: var(--jp-layout-color0);
+}
+.jp-icon-alt .jp-icon1[fill] {
+  fill: var(--jp-layout-color1);
+}
+.jp-icon-alt .jp-icon2[fill] {
+  fill: var(--jp-layout-color2);
+}
+.jp-icon-alt .jp-icon3[fill] {
+  fill: var(--jp-layout-color3);
+}
+.jp-icon-alt .jp-icon4[fill] {
+  fill: var(--jp-layout-color4);
+}
+
+.jp-icon-alt .jp-icon0[stroke] {
+  stroke: var(--jp-layout-color0);
+}
+.jp-icon-alt .jp-icon1[stroke] {
+  stroke: var(--jp-layout-color1);
+}
+.jp-icon-alt .jp-icon2[stroke] {
+  stroke: var(--jp-layout-color2);
+}
+.jp-icon-alt .jp-icon3[stroke] {
+  stroke: var(--jp-layout-color3);
+}
+.jp-icon-alt .jp-icon4[stroke] {
+  stroke: var(--jp-layout-color4);
+}
+
+/* alt recolor the accent elements of an icon */
+.jp-icon-alt .jp-icon-accent0[fill] {
+  fill: var(--jp-inverse-layout-color0);
+}
+.jp-icon-alt .jp-icon-accent1[fill] {
+  fill: var(--jp-inverse-layout-color1);
+}
+.jp-icon-alt .jp-icon-accent2[fill] {
+  fill: var(--jp-inverse-layout-color2);
+}
+.jp-icon-alt .jp-icon-accent3[fill] {
+  fill: var(--jp-inverse-layout-color3);
+}
+.jp-icon-alt .jp-icon-accent4[fill] {
+  fill: var(--jp-inverse-layout-color4);
+}
+
+.jp-icon-alt .jp-icon-accent0[stroke] {
+  stroke: var(--jp-inverse-layout-color0);
+}
+.jp-icon-alt .jp-icon-accent1[stroke] {
+  stroke: var(--jp-inverse-layout-color1);
+}
+.jp-icon-alt .jp-icon-accent2[stroke] {
+  stroke: var(--jp-inverse-layout-color2);
+}
+.jp-icon-alt .jp-icon-accent3[stroke] {
+  stroke: var(--jp-inverse-layout-color3);
+}
+.jp-icon-alt .jp-icon-accent4[stroke] {
+  stroke: var(--jp-inverse-layout-color4);
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+.jp-icon-hoverShow:not(:hover) svg {
+  display: none !important;
+}
+
+/**
+ * Support for hover colors for icons as inline SVG HTMLElements
+ */
+
+/**
+ * regular colors
+ */
+
+/* recolor the primary elements of an icon */
+.jp-icon-hover :hover .jp-icon0-hover[fill] {
+  fill: var(--jp-inverse-layout-color0);
+}
+.jp-icon-hover :hover .jp-icon1-hover[fill] {
+  fill: var(--jp-inverse-layout-color1);
+}
+.jp-icon-hover :hover .jp-icon2-hover[fill] {
+  fill: var(--jp-inverse-layout-color2);
+}
+.jp-icon-hover :hover .jp-icon3-hover[fill] {
+  fill: var(--jp-inverse-layout-color3);
+}
+.jp-icon-hover :hover .jp-icon4-hover[fill] {
+  fill: var(--jp-inverse-layout-color4);
+}
+
+.jp-icon-hover :hover .jp-icon0-hover[stroke] {
+  stroke: var(--jp-inverse-layout-color0);
+}
+.jp-icon-hover :hover .jp-icon1-hover[stroke] {
+  stroke: var(--jp-inverse-layout-color1);
+}
+.jp-icon-hover :hover .jp-icon2-hover[stroke] {
+  stroke: var(--jp-inverse-layout-color2);
+}
+.jp-icon-hover :hover .jp-icon3-hover[stroke] {
+  stroke: var(--jp-inverse-layout-color3);
+}
+.jp-icon-hover :hover .jp-icon4-hover[stroke] {
+  stroke: var(--jp-inverse-layout-color4);
+}
+
+/* recolor the accent elements of an icon */
+.jp-icon-hover :hover .jp-icon-accent0-hover[fill] {
+  fill: var(--jp-layout-color0);
+}
+.jp-icon-hover :hover .jp-icon-accent1-hover[fill] {
+  fill: var(--jp-layout-color1);
+}
+.jp-icon-hover :hover .jp-icon-accent2-hover[fill] {
+  fill: var(--jp-layout-color2);
+}
+.jp-icon-hover :hover .jp-icon-accent3-hover[fill] {
+  fill: var(--jp-layout-color3);
+}
+.jp-icon-hover :hover .jp-icon-accent4-hover[fill] {
+  fill: var(--jp-layout-color4);
+}
+
+.jp-icon-hover :hover .jp-icon-accent0-hover[stroke] {
+  stroke: var(--jp-layout-color0);
+}
+.jp-icon-hover :hover .jp-icon-accent1-hover[stroke] {
+  stroke: var(--jp-layout-color1);
+}
+.jp-icon-hover :hover .jp-icon-accent2-hover[stroke] {
+  stroke: var(--jp-layout-color2);
+}
+.jp-icon-hover :hover .jp-icon-accent3-hover[stroke] {
+  stroke: var(--jp-layout-color3);
+}
+.jp-icon-hover :hover .jp-icon-accent4-hover[stroke] {
+  stroke: var(--jp-layout-color4);
+}
+
+/* set the color of an icon to transparent */
+.jp-icon-hover :hover .jp-icon-none-hover[fill] {
+  fill: none;
+}
+
+.jp-icon-hover :hover .jp-icon-none-hover[stroke] {
+  stroke: none;
+}
+
+/**
+ * inverse colors
+ */
+
+/* inverse recolor the primary elements of an icon */
+.jp-icon-hover.jp-icon-alt :hover .jp-icon0-hover[fill] {
+  fill: var(--jp-layout-color0);
+}
+.jp-icon-hover.jp-icon-alt :hover .jp-icon1-hover[fill] {
+  fill: var(--jp-layout-color1);
+}
+.jp-icon-hover.jp-icon-alt :hover .jp-icon2-hover[fill] {
+  fill: var(--jp-layout-color2);
+}
+.jp-icon-hover.jp-icon-alt :hover .jp-icon3-hover[fill] {
+  fill: var(--jp-layout-color3);
+}
+.jp-icon-hover.jp-icon-alt :hover .jp-icon4-hover[fill] {
+  fill: var(--jp-layout-color4);
+}
+
+.jp-icon-hover.jp-icon-alt :hover .jp-icon0-hover[stroke] {
+  stroke: var(--jp-layout-color0);
+}
+.jp-icon-hover.jp-icon-alt :hover .jp-icon1-hover[stroke] {
+  stroke: var(--jp-layout-color1);
+}
+.jp-icon-hover.jp-icon-alt :hover .jp-icon2-hover[stroke] {
+  stroke: var(--jp-layout-color2);
+}
+.jp-icon-hover.jp-icon-alt :hover .jp-icon3-hover[stroke] {
+  stroke: var(--jp-layout-color3);
+}
+.jp-icon-hover.jp-icon-alt :hover .jp-icon4-hover[stroke] {
+  stroke: var(--jp-layout-color4);
+}
+
+/* inverse recolor the accent elements of an icon */
+.jp-icon-hover.jp-icon-alt :hover .jp-icon-accent0-hover[fill] {
+  fill: var(--jp-inverse-layout-color0);
+}
+.jp-icon-hover.jp-icon-alt :hover .jp-icon-accent1-hover[fill] {
+  fill: var(--jp-inverse-layout-color1);
+}
+.jp-icon-hover.jp-icon-alt :hover .jp-icon-accent2-hover[fill] {
+  fill: var(--jp-inverse-layout-color2);
+}
+.jp-icon-hover.jp-icon-alt :hover .jp-icon-accent3-hover[fill] {
+  fill: var(--jp-inverse-layout-color3);
+}
+.jp-icon-hover.jp-icon-alt :hover .jp-icon-accent4-hover[fill] {
+  fill: var(--jp-inverse-layout-color4);
+}
+
+.jp-icon-hover.jp-icon-alt :hover .jp-icon-accent0-hover[stroke] {
+  stroke: var(--jp-inverse-layout-color0);
+}
+.jp-icon-hover.jp-icon-alt :hover .jp-icon-accent1-hover[stroke] {
+  stroke: var(--jp-inverse-layout-color1);
+}
+.jp-icon-hover.jp-icon-alt :hover .jp-icon-accent2-hover[stroke] {
+  stroke: var(--jp-inverse-layout-color2);
+}
+.jp-icon-hover.jp-icon-alt :hover .jp-icon-accent3-hover[stroke] {
+  stroke: var(--jp-inverse-layout-color3);
+}
+.jp-icon-hover.jp-icon-alt :hover .jp-icon-accent4-hover[stroke] {
+  stroke: var(--jp-inverse-layout-color4);
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/* Sibling imports */
+
+/* Override Blueprint's _reset.scss styles */
+html {
+  box-sizing: unset;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: unset;
+}
+
+body {
+  color: unset;
+  font-family: var(--jp-ui-font-family);
+}
+
+p {
+  margin-top: unset;
+  margin-bottom: unset;
+}
+
+small {
+  font-size: unset;
+}
+
+strong {
+  font-weight: unset;
+}
+
+/* Override Blueprint's _typography.scss styles */
+a {
+  text-decoration: unset;
+  color: unset;
+}
+a:hover {
+  text-decoration: unset;
+  color: unset;
+}
+
+/* Override Blueprint's _accessibility.scss styles */
+:focus {
+  outline: unset;
+  outline-offset: unset;
+  -moz-outline-radius: unset;
+}
+
+/* Styles for ui-components */
+.jp-Button {
+  border-radius: var(--jp-border-radius);
+  padding: 0px 12px;
+  font-size: var(--jp-ui-font-size1);
+}
+
+/* Use our own theme for hover styles */
+button.jp-Button.bp3-button.bp3-minimal:hover {
+  background-color: var(--jp-layout-color2);
+}
+.jp-Button.minimal {
+  color: unset !important;
+}
+
+.jp-Button.jp-ToolbarButtonComponent {
+  text-transform: none;
+}
+
+.jp-InputGroup input {
+  box-sizing: border-box;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--jp-ui-font-color0);
+  box-shadow: inset 0 0 0 var(--jp-border-width) var(--jp-input-border-color);
+}
+
+.jp-InputGroup input:focus {
+  box-shadow: inset 0 0 0 var(--jp-border-width)
+      var(--jp-input-active-box-shadow-color),
+    inset 0 0 0 3px var(--jp-input-active-box-shadow-color);
+}
+
+.jp-InputGroup input::placeholder,
+input::placeholder {
+  color: var(--jp-ui-font-color3);
+}
+
+.jp-BPIcon {
+  display: inline-block;
+  vertical-align: middle;
+  margin: auto;
+}
+
+/* Stop blueprint futzing with our icon fills */
+.bp3-icon.jp-BPIcon > svg:not([fill]) {
+  fill: var(--jp-inverse-layout-color3);
+}
+
+.jp-InputGroupAction {
+  padding: 6px;
+}
+
+.jp-HTMLSelect.jp-DefaultStyle select {
+  background-color: initial;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--jp-ui-font-color0);
+  display: block;
+  font-size: var(--jp-ui-font-size1);
+  height: 24px;
+  line-height: 14px;
+  padding: 0 25px 0 10px;
+  text-align: left;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Use our own theme for hover and option styles */
+.jp-HTMLSelect.jp-DefaultStyle select:hover,
+.jp-HTMLSelect.jp-DefaultStyle select > option {
+  background-color: var(--jp-layout-color2);
+  color: var(--jp-ui-font-color0);
+}
+select {
+  box-sizing: border-box;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/* This file was auto-generated by ensurePackage() in @jupyterlab/buildutils */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+.jp-Collapse {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-top: 1px solid var(--jp-border-color2);
+  border-bottom: 1px solid var(--jp-border-color2);
+}
+
+.jp-Collapse-header {
+  padding: 1px 12px;
+  color: var(--jp-ui-font-color1);
+  background-color: var(--jp-layout-color1);
+  font-size: var(--jp-ui-font-size2);
+}
+
+.jp-Collapse-header:hover {
+  background-color: var(--jp-layout-color2);
+}
+
+.jp-Collapse-contents {
+  padding: 0px 12px 0px 12px;
+  background-color: var(--jp-layout-color1);
+  color: var(--jp-ui-font-color1);
+  overflow: auto;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+| Variables
+|----------------------------------------------------------------------------*/
+
+:root {
+  --jp-private-commandpalette-search-height: 28px;
+}
+
+/*-----------------------------------------------------------------------------
+| Overall styles
+|----------------------------------------------------------------------------*/
+
+.lm-CommandPalette {
+  padding-bottom: 0px;
+  color: var(--jp-ui-font-color1);
+  background: var(--jp-layout-color1);
+  /* This is needed so that all font sizing of children done in ems is
+   * relative to this base size */
+  font-size: var(--jp-ui-font-size1);
+}
+
+/*-----------------------------------------------------------------------------
+| Search
+|----------------------------------------------------------------------------*/
+
+.lm-CommandPalette-search {
+  padding: 4px;
+  background-color: var(--jp-layout-color1);
+  z-index: 2;
+}
+
+.lm-CommandPalette-wrapper {
+  overflow: overlay;
+  padding: 0px 9px;
+  background-color: var(--jp-input-active-background);
+  height: 30px;
+  box-shadow: inset 0 0 0 var(--jp-border-width) var(--jp-input-border-color);
+}
+
+.lm-CommandPalette.lm-mod-focused .lm-CommandPalette-wrapper {
+  box-shadow: inset 0 0 0 1px var(--jp-input-active-box-shadow-color),
+    inset 0 0 0 3px var(--jp-input-active-box-shadow-color);
+}
+
+.lm-CommandPalette-wrapper::after {
+  content: ' ';
+  color: white;
+  background-color: var(--jp-brand-color1);
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  height: 30px;
+  width: 10px;
+  padding: 0px 10px;
+  background-image: var(--jp-icon-search-white);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.lm-CommandPalette-input {
+  background: transparent;
+  width: calc(100% - 18px);
+  float: left;
+  border: none;
+  outline: none;
+  font-size: var(--jp-ui-font-size1);
+  color: var(--jp-ui-font-color0);
+  line-height: var(--jp-private-commandpalette-search-height);
+}
+
+.lm-CommandPalette-input::-webkit-input-placeholder,
+.lm-CommandPalette-input::-moz-placeholder,
+.lm-CommandPalette-input:-ms-input-placeholder {
+  color: var(--jp-ui-font-color3);
+  font-size: var(--jp-ui-font-size1);
+}
+
+/*-----------------------------------------------------------------------------
+| Results
+|----------------------------------------------------------------------------*/
+
+.lm-CommandPalette-header:first-child {
+  margin-top: 0px;
+}
+
+.lm-CommandPalette-header {
+  border-bottom: solid var(--jp-border-width) var(--jp-border-color2);
+  color: var(--jp-ui-font-color1);
+  cursor: pointer;
+  display: flex;
+  font-size: var(--jp-ui-font-size0);
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 8px;
+  padding: 8px 0 8px 12px;
+  text-transform: uppercase;
+}
+
+.lm-CommandPalette-header.lm-mod-active {
+  background: var(--jp-layout-color2);
+}
+
+.lm-CommandPalette-header > mark {
+  background-color: transparent;
+  font-weight: bold;
+  color: var(--jp-ui-font-color1);
+}
+
+.lm-CommandPalette-item {
+  padding: 4px 12px 4px 4px;
+  color: var(--jp-ui-font-color1);
+  font-size: var(--jp-ui-font-size1);
+  font-weight: 400;
+  display: flex;
+}
+
+.lm-CommandPalette-item.lm-mod-disabled {
+  color: var(--jp-ui-font-color3);
+}
+
+.lm-CommandPalette-item.lm-mod-active {
+  background: var(--jp-layout-color3);
+}
+
+.lm-CommandPalette-item.lm-mod-active:hover:not(.lm-mod-disabled) {
+  background: var(--jp-layout-color4);
+}
+
+.lm-CommandPalette-item:hover:not(.lm-mod-active):not(.lm-mod-disabled) {
+  background: var(--jp-layout-color2);
+}
+
+.lm-CommandPalette-itemContent {
+  overflow: hidden;
+}
+
+.lm-CommandPalette-itemLabel > mark {
+  color: var(--jp-ui-font-color0);
+  background-color: transparent;
+  font-weight: bold;
+}
+
+.lm-CommandPalette-item.lm-mod-disabled mark {
+  color: var(--jp-ui-font-color3);
+}
+
+.lm-CommandPalette-item .lm-CommandPalette-itemIcon {
+  margin: 0 4px 0 0;
+  position: relative;
+  width: 16px;
+  top: 2px;
+  flex: 0 0 auto;
+}
+
+.lm-CommandPalette-item.lm-mod-disabled .lm-CommandPalette-itemIcon {
+  opacity: 0.4;
+}
+
+.lm-CommandPalette-item .lm-CommandPalette-itemShortcut {
+  flex: 0 0 auto;
+}
+
+.lm-CommandPalette-itemCaption {
+  display: none;
+}
+
+.lm-CommandPalette-content {
+  background-color: var(--jp-layout-color1);
+}
+
+.lm-CommandPalette-content:empty:after {
+  content: 'No results';
+  margin: auto;
+  margin-top: 20px;
+  width: 100px;
+  display: block;
+  font-size: var(--jp-ui-font-size2);
+  font-family: var(--jp-ui-font-family);
+  font-weight: lighter;
+}
+
+.lm-CommandPalette-emptyMessage {
+  text-align: center;
+  margin-top: 24px;
+  line-height: 1.32;
+  padding: 0px 8px;
+  color: var(--jp-content-font-color3);
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2017, Jupyter Development Team.
+|
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+.jp-Dialog {
+  position: absolute;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0px;
+  left: 0px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--jp-dialog-background);
+}
+
+.jp-Dialog-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--jp-layout-color1);
+  padding: 24px;
+  padding-bottom: 12px;
+  min-width: 300px;
+  min-height: 150px;
+  max-width: 1000px;
+  max-height: 500px;
+  box-sizing: border-box;
+  box-shadow: var(--jp-elevation-z20);
+  word-wrap: break-word;
+  border-radius: var(--jp-border-radius);
+  /* This is needed so that all font sizing of children done in ems is
+   * relative to this base size */
+  font-size: var(--jp-ui-font-size1);
+  color: var(--jp-ui-font-color1);
+}
+
+.jp-Dialog-button {
+  overflow: visible;
+}
+
+button.jp-Dialog-button:focus {
+  outline: 1px solid var(--jp-brand-color1);
+  outline-offset: 4px;
+  -moz-outline-radius: 0px;
+}
+
+button.jp-Dialog-button:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.jp-Dialog-header {
+  flex: 0 0 auto;
+  padding-bottom: 12px;
+  font-size: var(--jp-ui-font-size3);
+  font-weight: 400;
+  color: var(--jp-ui-font-color0);
+}
+
+.jp-Dialog-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  font-size: var(--jp-ui-font-size1);
+  background: var(--jp-layout-color1);
+  overflow: auto;
+}
+
+.jp-Dialog-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+  margin-left: -12px;
+  margin-right: -12px;
+  padding: 12px;
+}
+
+.jp-Dialog-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.jp-Dialog-body > .jp-select-wrapper {
+  width: 100%;
+}
+
+.jp-Dialog-body > button {
+  padding: 0px 16px;
+}
+
+.jp-Dialog-body > label {
+  line-height: 1.4;
+  color: var(--jp-ui-font-color0);
+}
+
+.jp-Dialog-button.jp-mod-styled:not(:last-child) {
+  margin-right: 12px;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2016, Jupyter Development Team.
+|
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+.jp-HoverBox {
+  position: fixed;
+}
+
+.jp-HoverBox.jp-mod-outofview {
+  display: none;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+.jp-IFrame {
+  width: 100%;
+  height: 100%;
+}
+
+.jp-IFrame > iframe {
+  border: none;
+}
+
+/*
+When drag events occur, `p-mod-override-cursor` is added to the body.
+Because iframes steal all cursor events, the following two rules are necessary
+to suppress pointer events while resize drags are occurring. There may be a
+better solution to this problem.
+*/
+body.lm-mod-override-cursor .jp-IFrame {
+  position: relative;
+}
+
+body.lm-mod-override-cursor .jp-IFrame:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2016, Jupyter Development Team.
+|
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+.jp-MainAreaWidget > :focus {
+  outline: none;
+}
+
+/**
+ * google-material-color v1.2.6
+ * https://github.com/danlevan/google-material-color
+ */
+:root {
+  --md-red-50: #ffebee;
+  --md-red-100: #ffcdd2;
+  --md-red-200: #ef9a9a;
+  --md-red-300: #e57373;
+  --md-red-400: #ef5350;
+  --md-red-500: #f44336;
+  --md-red-600: #e53935;
+  --md-red-700: #d32f2f;
+  --md-red-800: #c62828;
+  --md-red-900: #b71c1c;
+  --md-red-A100: #ff8a80;
+  --md-red-A200: #ff5252;
+  --md-red-A400: #ff1744;
+  --md-red-A700: #d50000;
+
+  --md-pink-50: #fce4ec;
+  --md-pink-100: #f8bbd0;
+  --md-pink-200: #f48fb1;
+  --md-pink-300: #f06292;
+  --md-pink-400: #ec407a;
+  --md-pink-500: #e91e63;
+  --md-pink-600: #d81b60;
+  --md-pink-700: #c2185b;
+  --md-pink-800: #ad1457;
+  --md-pink-900: #880e4f;
+  --md-pink-A100: #ff80ab;
+  --md-pink-A200: #ff4081;
+  --md-pink-A400: #f50057;
+  --md-pink-A700: #c51162;
+
+  --md-purple-50: #f3e5f5;
+  --md-purple-100: #e1bee7;
+  --md-purple-200: #ce93d8;
+  --md-purple-300: #ba68c8;
+  --md-purple-400: #ab47bc;
+  --md-purple-500: #9c27b0;
+  --md-purple-600: #8e24aa;
+  --md-purple-700: #7b1fa2;
+  --md-purple-800: #6a1b9a;
+  --md-purple-900: #4a148c;
+  --md-purple-A100: #ea80fc;
+  --md-purple-A200: #e040fb;
+  --md-purple-A400: #d500f9;
+  --md-purple-A700: #aa00ff;
+
+  --md-deep-purple-50: #ede7f6;
+  --md-deep-purple-100: #d1c4e9;
+  --md-deep-purple-200: #b39ddb;
+  --md-deep-purple-300: #9575cd;
+  --md-deep-purple-400: #7e57c2;
+  --md-deep-purple-500: #673ab7;
+  --md-deep-purple-600: #5e35b1;
+  --md-deep-purple-700: #512da8;
+  --md-deep-purple-800: #4527a0;
+  --md-deep-purple-900: #311b92;
+  --md-deep-purple-A100: #b388ff;
+  --md-deep-purple-A200: #7c4dff;
+  --md-deep-purple-A400: #651fff;
+  --md-deep-purple-A700: #6200ea;
+
+  --md-indigo-50: #e8eaf6;
+  --md-indigo-100: #c5cae9;
+  --md-indigo-200: #9fa8da;
+  --md-indigo-300: #7986cb;
+  --md-indigo-400: #5c6bc0;
+  --md-indigo-500: #3f51b5;
+  --md-indigo-600: #3949ab;
+  --md-indigo-700: #303f9f;
+  --md-indigo-800: #283593;
+  --md-indigo-900: #1a237e;
+  --md-indigo-A100: #8c9eff;
+  --md-indigo-A200: #536dfe;
+  --md-indigo-A400: #3d5afe;
+  --md-indigo-A700: #304ffe;
+
+  --md-blue-50: #e3f2fd;
+  --md-blue-100: #bbdefb;
+  --md-blue-200: #90caf9;
+  --md-blue-300: #64b5f6;
+  --md-blue-400: #42a5f5;
+  --md-blue-500: #2196f3;
+  --md-blue-600: #1e88e5;
+  --md-blue-700: #1976d2;
+  --md-blue-800: #1565c0;
+  --md-blue-900: #0d47a1;
+  --md-blue-A100: #82b1ff;
+  --md-blue-A200: #448aff;
+  --md-blue-A400: #2979ff;
+  --md-blue-A700: #2962ff;
+
+  --md-light-blue-50: #e1f5fe;
+  --md-light-blue-100: #b3e5fc;
+  --md-light-blue-200: #81d4fa;
+  --md-light-blue-300: #4fc3f7;
+  --md-light-blue-400: #29b6f6;
+  --md-light-blue-500: #03a9f4;
+  --md-light-blue-600: #039be5;
+  --md-light-blue-700: #0288d1;
+  --md-light-blue-800: #0277bd;
+  --md-light-blue-900: #01579b;
+  --md-light-blue-A100: #80d8ff;
+  --md-light-blue-A200: #40c4ff;
+  --md-light-blue-A400: #00b0ff;
+  --md-light-blue-A700: #0091ea;
+
+  --md-cyan-50: #e0f7fa;
+  --md-cyan-100: #b2ebf2;
+  --md-cyan-200: #80deea;
+  --md-cyan-300: #4dd0e1;
+  --md-cyan-400: #26c6da;
+  --md-cyan-500: #00bcd4;
+  --md-cyan-600: #00acc1;
+  --md-cyan-700: #0097a7;
+  --md-cyan-800: #00838f;
+  --md-cyan-900: #006064;
+  --md-cyan-A100: #84ffff;
+  --md-cyan-A200: #18ffff;
+  --md-cyan-A400: #00e5ff;
+  --md-cyan-A700: #00b8d4;
+
+  --md-teal-50: #e0f2f1;
+  --md-teal-100: #b2dfdb;
+  --md-teal-200: #80cbc4;
+  --md-teal-300: #4db6ac;
+  --md-teal-400: #26a69a;
+  --md-teal-500: #009688;
+  --md-teal-600: #00897b;
+  --md-teal-700: #00796b;
+  --md-teal-800: #00695c;
+  --md-teal-900: #004d40;
+  --md-teal-A100: #a7ffeb;
+  --md-teal-A200: #64ffda;
+  --md-teal-A400: #1de9b6;
+  --md-teal-A700: #00bfa5;
+
+  --md-green-50: #e8f5e9;
+  --md-green-100: #c8e6c9;
+  --md-green-200: #a5d6a7;
+  --md-green-300: #81c784;
+  --md-green-400: #66bb6a;
+  --md-green-500: #4caf50;
+  --md-green-600: #43a047;
+  --md-green-700: #388e3c;
+  --md-green-800: #2e7d32;
+  --md-green-900: #1b5e20;
+  --md-green-A100: #b9f6ca;
+  --md-green-A200: #69f0ae;
+  --md-green-A400: #00e676;
+  --md-green-A700: #00c853;
+
+  --md-light-green-50: #f1f8e9;
+  --md-light-green-100: #dcedc8;
+  --md-light-green-200: #c5e1a5;
+  --md-light-green-300: #aed581;
+  --md-light-green-400: #9ccc65;
+  --md-light-green-500: #8bc34a;
+  --md-light-green-600: #7cb342;
+  --md-light-green-700: #689f38;
+  --md-light-green-800: #558b2f;
+  --md-light-green-900: #33691e;
+  --md-light-green-A100: #ccff90;
+  --md-light-green-A200: #b2ff59;
+  --md-light-green-A400: #76ff03;
+  --md-light-green-A700: #64dd17;
+
+  --md-lime-50: #f9fbe7;
+  --md-lime-100: #f0f4c3;
+  --md-lime-200: #e6ee9c;
+  --md-lime-300: #dce775;
+  --md-lime-400: #d4e157;
+  --md-lime-500: #cddc39;
+  --md-lime-600: #c0ca33;
+  --md-lime-700: #afb42b;
+  --md-lime-800: #9e9d24;
+  --md-lime-900: #827717;
+  --md-lime-A100: #f4ff81;
+  --md-lime-A200: #eeff41;
+  --md-lime-A400: #c6ff00;
+  --md-lime-A700: #aeea00;
+
+  --md-yellow-50: #fffde7;
+  --md-yellow-100: #fff9c4;
+  --md-yellow-200: #fff59d;
+  --md-yellow-300: #fff176;
+  --md-yellow-400: #ffee58;
+  --md-yellow-500: #ffeb3b;
+  --md-yellow-600: #fdd835;
+  --md-yellow-700: #fbc02d;
+  --md-yellow-800: #f9a825;
+  --md-yellow-900: #f57f17;
+  --md-yellow-A100: #ffff8d;
+  --md-yellow-A200: #ffff00;
+  --md-yellow-A400: #ffea00;
+  --md-yellow-A700: #ffd600;
+
+  --md-amber-50: #fff8e1;
+  --md-amber-100: #ffecb3;
+  --md-amber-200: #ffe082;
+  --md-amber-300: #ffd54f;
+  --md-amber-400: #ffca28;
+  --md-amber-500: #ffc107;
+  --md-amber-600: #ffb300;
+  --md-amber-700: #ffa000;
+  --md-amber-800: #ff8f00;
+  --md-amber-900: #ff6f00;
+  --md-amber-A100: #ffe57f;
+  --md-amber-A200: #ffd740;
+  --md-amber-A400: #ffc400;
+  --md-amber-A700: #ffab00;
+
+  --md-orange-50: #fff3e0;
+  --md-orange-100: #ffe0b2;
+  --md-orange-200: #ffcc80;
+  --md-orange-300: #ffb74d;
+  --md-orange-400: #ffa726;
+  --md-orange-500: #ff9800;
+  --md-orange-600: #fb8c00;
+  --md-orange-700: #f57c00;
+  --md-orange-800: #ef6c00;
+  --md-orange-900: #e65100;
+  --md-orange-A100: #ffd180;
+  --md-orange-A200: #ffab40;
+  --md-orange-A400: #ff9100;
+  --md-orange-A700: #ff6d00;
+
+  --md-deep-orange-50: #fbe9e7;
+  --md-deep-orange-100: #ffccbc;
+  --md-deep-orange-200: #ffab91;
+  --md-deep-orange-300: #ff8a65;
+  --md-deep-orange-400: #ff7043;
+  --md-deep-orange-500: #ff5722;
+  --md-deep-orange-600: #f4511e;
+  --md-deep-orange-700: #e64a19;
+  --md-deep-orange-800: #d84315;
+  --md-deep-orange-900: #bf360c;
+  --md-deep-orange-A100: #ff9e80;
+  --md-deep-orange-A200: #ff6e40;
+  --md-deep-orange-A400: #ff3d00;
+  --md-deep-orange-A700: #dd2c00;
+
+  --md-brown-50: #efebe9;
+  --md-brown-100: #d7ccc8;
+  --md-brown-200: #bcaaa4;
+  --md-brown-300: #a1887f;
+  --md-brown-400: #8d6e63;
+  --md-brown-500: #795548;
+  --md-brown-600: #6d4c41;
+  --md-brown-700: #5d4037;
+  --md-brown-800: #4e342e;
+  --md-brown-900: #3e2723;
+
+  --md-grey-50: #fafafa;
+  --md-grey-100: #f5f5f5;
+  --md-grey-200: #eeeeee;
+  --md-grey-300: #e0e0e0;
+  --md-grey-400: #bdbdbd;
+  --md-grey-500: #9e9e9e;
+  --md-grey-600: #757575;
+  --md-grey-700: #616161;
+  --md-grey-800: #424242;
+  --md-grey-900: #212121;
+
+  --md-blue-grey-50: #eceff1;
+  --md-blue-grey-100: #cfd8dc;
+  --md-blue-grey-200: #b0bec5;
+  --md-blue-grey-300: #90a4ae;
+  --md-blue-grey-400: #78909c;
+  --md-blue-grey-500: #607d8b;
+  --md-blue-grey-600: #546e7a;
+  --md-blue-grey-700: #455a64;
+  --md-blue-grey-800: #37474f;
+  --md-blue-grey-900: #263238;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) 2017, Jupyter Development Team.
+|
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+.jp-Spinner {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--jp-layout-color0);
+  outline: none;
+}
+
+.jp-SpinnerContent {
+  font-size: 10px;
+  margin: 50px auto;
+  text-indent: -9999em;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background: var(--jp-brand-color3);
+  background: linear-gradient(
+    to right,
+    #f37626 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
+  position: relative;
+  animation: load3 1s infinite linear, fadeIn 1s;
+}
+
+.jp-SpinnerContent:before {
+  width: 50%;
+  height: 50%;
+  background: #f37626;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+
+.jp-SpinnerContent:after {
+  background: var(--jp-layout-color0);
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes load3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2017, Jupyter Development Team.
+|
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+button.jp-mod-styled {
+  font-size: var(--jp-ui-font-size1);
+  color: var(--jp-ui-font-color0);
+  border: none;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 32px;
+  height: 32px;
+  padding: 0px 12px;
+  letter-spacing: 0.8px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input.jp-mod-styled {
+  background: var(--jp-input-background);
+  height: 28px;
+  box-sizing: border-box;
+  border: var(--jp-border-width) solid var(--jp-border-color1);
+  padding-left: 7px;
+  padding-right: 7px;
+  font-size: var(--jp-ui-font-size2);
+  color: var(--jp-ui-font-color0);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input.jp-mod-styled:focus {
+  border: var(--jp-border-width) solid var(--md-blue-500);
+  box-shadow: inset 0 0 4px var(--md-blue-300);
+}
+
+.jp-select-wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: 1px;
+  background-color: var(--jp-layout-color1);
+  height: 28px;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+}
+
+.jp-select-wrapper.jp-mod-focused select.jp-mod-styled {
+  border: var(--jp-border-width) solid var(--jp-input-active-border-color);
+  box-shadow: var(--jp-input-box-shadow);
+  background-color: var(--jp-input-active-background);
+}
+
+select.jp-mod-styled:hover {
+  background-color: var(--jp-layout-color1);
+  cursor: pointer;
+  color: var(--jp-ui-font-color0);
+  background-color: var(--jp-input-hover-background);
+  box-shadow: inset 0 0px 1px rgba(0, 0, 0, 0.5);
+}
+
+select.jp-mod-styled {
+  flex: 1 1 auto;
+  height: 32px;
+  width: 100%;
+  font-size: var(--jp-ui-font-size2);
+  background: var(--jp-input-background);
+  color: var(--jp-ui-font-color0);
+  padding: 0 25px 0 8px;
+  border: var(--jp-border-width) solid var(--jp-input-border-color);
+  border-radius: 0px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2016, Jupyter Development Team.
+|
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+:root {
+  --jp-private-toolbar-height: calc(
+    28px + var(--jp-border-width)
+  ); /* leave 28px for content */
+}
+
+.jp-Toolbar {
+  color: var(--jp-ui-font-color1);
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  border-bottom: var(--jp-border-width) solid var(--jp-toolbar-border-color);
+  box-shadow: var(--jp-toolbar-box-shadow);
+  background: var(--jp-toolbar-background);
+  min-height: var(--jp-toolbar-micro-height);
+  padding: 2px;
+  z-index: 1;
+}
+
+/* Toolbar items */
+
+.jp-Toolbar > .jp-Toolbar-item.jp-Toolbar-spacer {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.jp-Toolbar-item.jp-Toolbar-kernelStatus {
+  display: inline-block;
+  width: 32px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px;
+}
+
+.jp-Toolbar > .jp-Toolbar-item {
+  flex: 0 0 auto;
+  display: flex;
+  padding-left: 1px;
+  padding-right: 1px;
+  font-size: var(--jp-ui-font-size1);
+  line-height: var(--jp-private-toolbar-height);
+  height: 100%;
+}
+
+/* Toolbar buttons */
+
+/* This is the div we use to wrap the react component into a Widget */
+div.jp-ToolbarButton {
+  color: transparent;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+button.jp-ToolbarButtonComponent {
+  background: var(--jp-layout-color1);
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 0px 6px;
+  margin: 0px;
+  height: 24px;
+  border-radius: var(--jp-border-radius);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  min-width: unset;
+  min-height: unset;
+}
+
+button.jp-ToolbarButtonComponent:disabled {
+  opacity: 0.4;
+}
+
+button.jp-ToolbarButtonComponent span {
+  padding: 0px;
+  flex: 0 0 auto;
+}
+
+button.jp-ToolbarButtonComponent .jp-ToolbarButtonComponent-label {
+  font-size: var(--jp-ui-font-size1);
+  line-height: 100%;
+  padding-left: 2px;
+  color: var(--jp-ui-font-color1);
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2017, Jupyter Development Team.
+|
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/* This file was auto-generated by ensurePackage() in @jupyterlab/buildutils */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+
+/* <DEPRECATED> */ body.p-mod-override-cursor *, /* </DEPRECATED> */
+body.lm-mod-override-cursor * {
+  cursor: inherit !important;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2016, Jupyter Development Team.
+|
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+.jp-JSONEditor {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.jp-JSONEditor-host {
+  flex: 1 1 auto;
+  border: var(--jp-border-width) solid var(--jp-input-border-color);
+  border-radius: 0px;
+  background: var(--jp-layout-color0);
+  min-height: 50px;
+  padding: 1px;
+}
+
+.jp-JSONEditor.jp-mod-error .jp-JSONEditor-host {
+  border-color: red;
+  outline-color: red;
+}
+
+.jp-JSONEditor-header {
+  display: flex;
+  flex: 1 0 auto;
+  padding: 0 0 0 12px;
+}
+
+.jp-JSONEditor-header label {
+  flex: 0 0 auto;
+}
+
+.jp-JSONEditor-commitButton {
+  height: 16px;
+  width: 16px;
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.jp-JSONEditor-host.jp-mod-focused {
+  background-color: var(--jp-input-active-background);
+  border: 1px solid var(--jp-input-active-border-color);
+  box-shadow: var(--jp-input-box-shadow);
+}
+
+.jp-Editor.jp-mod-dropTarget {
+  border: var(--jp-border-width) solid var(--jp-input-active-border-color);
+  box-shadow: var(--jp-input-box-shadow);
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/* This file was auto-generated by ensurePackage() in @jupyterlab/buildutils */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/* BASICS */
+
+.CodeMirror {
+  /* Set height, width, borders, and global font properties here */
+  font-family: monospace;
+  height: 300px;
+  color: black;
+  direction: ltr;
+}
+
+/* PADDING */
+
+.CodeMirror-lines {
+  padding: 4px 0; /* Vertical padding around content */
+}
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror pre.CodeMirror-line-like {
+  padding: 0 4px; /* Horizontal padding of content */
+}
+
+.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  background-color: white; /* The little square between H and V scrollbars */
+}
+
+/* GUTTER */
+
+.CodeMirror-gutters {
+  border-right: 1px solid #ddd;
+  background-color: #f7f7f7;
+  white-space: nowrap;
+}
+.CodeMirror-linenumbers {}
+.CodeMirror-linenumber {
+  padding: 0 3px 0 5px;
+  min-width: 20px;
+  text-align: right;
+  color: #999;
+  white-space: nowrap;
+}
+
+.CodeMirror-guttermarker { color: black; }
+.CodeMirror-guttermarker-subtle { color: #999; }
+
+/* CURSOR */
+
+.CodeMirror-cursor {
+  border-left: 1px solid black;
+  border-right: none;
+  width: 0;
+}
+/* Shown when moving in bi-directional text */
+.CodeMirror div.CodeMirror-secondarycursor {
+  border-left: 1px solid silver;
+}
+.cm-fat-cursor .CodeMirror-cursor {
+  width: auto;
+  border: 0 !important;
+  background: #7e7;
+}
+.cm-fat-cursor div.CodeMirror-cursors {
+  z-index: 1;
+}
+.cm-fat-cursor-mark {
+  background-color: rgba(20, 255, 20, 0.5);
+  -webkit-animation: blink 1.06s steps(1) infinite;
+  -moz-animation: blink 1.06s steps(1) infinite;
+  animation: blink 1.06s steps(1) infinite;
+}
+.cm-animate-fat-cursor {
+  width: auto;
+  border: 0;
+  -webkit-animation: blink 1.06s steps(1) infinite;
+  -moz-animation: blink 1.06s steps(1) infinite;
+  animation: blink 1.06s steps(1) infinite;
+  background-color: #7e7;
+}
+@-moz-keyframes blink {
+  0% {}
+  50% { background-color: transparent; }
+  100% {}
+}
+@-webkit-keyframes blink {
+  0% {}
+  50% { background-color: transparent; }
+  100% {}
+}
+@keyframes blink {
+  0% {}
+  50% { background-color: transparent; }
+  100% {}
+}
+
+/* Can style cursor different in overwrite (non-insert) mode */
+.CodeMirror-overwrite .CodeMirror-cursor {}
+
+.cm-tab { display: inline-block; text-decoration: inherit; }
+
+.CodeMirror-rulers {
+  position: absolute;
+  left: 0; right: 0; top: -50px; bottom: 0;
+  overflow: hidden;
+}
+.CodeMirror-ruler {
+  border-left: 1px solid #ccc;
+  top: 0; bottom: 0;
+  position: absolute;
+}
+
+/* DEFAULT THEME */
+
+.cm-s-default .cm-header {color: blue;}
+.cm-s-default .cm-quote {color: #090;}
+.cm-negative {color: #d44;}
+.cm-positive {color: #292;}
+.cm-header, .cm-strong {font-weight: bold;}
+.cm-em {font-style: italic;}
+.cm-link {text-decoration: underline;}
+.cm-strikethrough {text-decoration: line-through;}
+
+.cm-s-default .cm-keyword {color: #708;}
+.cm-s-default .cm-atom {color: #219;}
+.cm-s-default .cm-number {color: #164;}
+.cm-s-default .cm-def {color: #00f;}
+.cm-s-default .cm-variable,
+.cm-s-default .cm-punctuation,
+.cm-s-default .cm-property,
+.cm-s-default .cm-operator {}
+.cm-s-default .cm-variable-2 {color: #05a;}
+.cm-s-default .cm-variable-3, .cm-s-default .cm-type {color: #085;}
+.cm-s-default .cm-comment {color: #a50;}
+.cm-s-default .cm-string {color: #a11;}
+.cm-s-default .cm-string-2 {color: #f50;}
+.cm-s-default .cm-meta {color: #555;}
+.cm-s-default .cm-qualifier {color: #555;}
+.cm-s-default .cm-builtin {color: #30a;}
+.cm-s-default .cm-bracket {color: #997;}
+.cm-s-default .cm-tag {color: #170;}
+.cm-s-default .cm-attribute {color: #00c;}
+.cm-s-default .cm-hr {color: #999;}
+.cm-s-default .cm-link {color: #00c;}
+
+.cm-s-default .cm-error {color: #f00;}
+.cm-invalidchar {color: #f00;}
+
+.CodeMirror-composing { border-bottom: 2px solid; }
+
+/* Default styles for common addons */
+
+div.CodeMirror span.CodeMirror-matchingbracket {color: #0b0;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #a22;}
+.CodeMirror-matchingtag { background: rgba(255, 150, 0, .3); }
+.CodeMirror-activeline-background {background: #e8f2ff;}
+
+/* STOP */
+
+/* The rest of this file contains styles related to the mechanics of
+   the editor. You probably shouldn't touch them. */
+
+.CodeMirror {
+  position: relative;
+  overflow: hidden;
+  background: white;
+}
+
+.CodeMirror-scroll {
+  overflow: scroll !important; /* Things will break if this is overridden */
+  /* 30px is the magic margin used to hide the element's real scrollbars */
+  /* See overflow: hidden in .CodeMirror */
+  margin-bottom: -30px; margin-right: -30px;
+  padding-bottom: 30px;
+  height: 100%;
+  outline: none; /* Prevent dragging from highlighting the element */
+  position: relative;
+}
+.CodeMirror-sizer {
+  position: relative;
+  border-right: 30px solid transparent;
+}
+
+/* The fake, visible scrollbars. Used to force redraw during scrolling
+   before actual scrolling happens, thus preventing shaking and
+   flickering artifacts. */
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  position: absolute;
+  z-index: 6;
+  display: none;
+}
+.CodeMirror-vscrollbar {
+  right: 0; top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.CodeMirror-hscrollbar {
+  bottom: 0; left: 0;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.CodeMirror-scrollbar-filler {
+  right: 0; bottom: 0;
+}
+.CodeMirror-gutter-filler {
+  left: 0; bottom: 0;
+}
+
+.CodeMirror-gutters {
+  position: absolute; left: 0; top: 0;
+  min-height: 100%;
+  z-index: 3;
+}
+.CodeMirror-gutter {
+  white-space: normal;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: -30px;
+}
+.CodeMirror-gutter-wrapper {
+  position: absolute;
+  z-index: 4;
+  background: none !important;
+  border: none !important;
+}
+.CodeMirror-gutter-background {
+  position: absolute;
+  top: 0; bottom: 0;
+  z-index: 4;
+}
+.CodeMirror-gutter-elt {
+  position: absolute;
+  cursor: default;
+  z-index: 4;
+}
+.CodeMirror-gutter-wrapper ::selection { background-color: transparent }
+.CodeMirror-gutter-wrapper ::-moz-selection { background-color: transparent }
+
+.CodeMirror-lines {
+  cursor: text;
+  min-height: 1px; /* prevents collapsing before first draw */
+}
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror pre.CodeMirror-line-like {
+  /* Reset some styles that the rest of the page might have set */
+  -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
+  border-width: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  white-space: pre;
+  word-wrap: normal;
+  line-height: inherit;
+  color: inherit;
+  z-index: 2;
+  position: relative;
+  overflow: visible;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-variant-ligatures: contextual;
+  font-variant-ligatures: contextual;
+}
+.CodeMirror-wrap pre.CodeMirror-line,
+.CodeMirror-wrap pre.CodeMirror-line-like {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal;
+}
+
+.CodeMirror-linebackground {
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: 0;
+}
+
+.CodeMirror-linewidget {
+  position: relative;
+  z-index: 2;
+  padding: 0.1px; /* Force widget margins to stay inside of the container */
+}
+
+.CodeMirror-widget {}
+
+.CodeMirror-rtl pre { direction: rtl; }
+
+.CodeMirror-code {
+  outline: none;
+}
+
+/* Force content-box sizing for the elements where we expect it */
+.CodeMirror-scroll,
+.CodeMirror-sizer,
+.CodeMirror-gutter,
+.CodeMirror-gutters,
+.CodeMirror-linenumber {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.CodeMirror-measure {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.CodeMirror-cursor {
+  position: absolute;
+  pointer-events: none;
+}
+.CodeMirror-measure pre { position: static; }
+
+div.CodeMirror-cursors {
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+div.CodeMirror-dragcursors {
+  visibility: visible;
+}
+
+.CodeMirror-focused div.CodeMirror-cursors {
+  visibility: visible;
+}
+
+.CodeMirror-selected { background: #d9d9d9; }
+.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }
+.CodeMirror-crosshair { cursor: crosshair; }
+.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: #d7d4f0; }
+.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: #d7d4f0; }
+
+.cm-searching {
+  background-color: #ffa;
+  background-color: rgba(255, 255, 0, .4);
+}
+
+/* Used to force a border model for a node */
+.cm-force-border { padding-right: .1px; }
+
+@media print {
+  /* Hide the cursor when printing */
+  .CodeMirror div.CodeMirror-cursors {
+    visibility: hidden;
+  }
+}
+
+/* See issue #2901 */
+.cm-tab-wrap-hack:after { content: ''; }
+
+/* Help users use markselection to safely style text background */
+span.CodeMirror-selectedtext { background: none; }
+
+.CodeMirror-dialog {
+  position: absolute;
+  left: 0; right: 0;
+  background: inherit;
+  z-index: 15;
+  padding: .1em .8em;
+  overflow: hidden;
+  color: inherit;
+}
+
+.CodeMirror-dialog-top {
+  border-bottom: 1px solid #eee;
+  top: 0;
+}
+
+.CodeMirror-dialog-bottom {
+  border-top: 1px solid #eee;
+  bottom: 0;
+}
+
+.CodeMirror-dialog input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 20em;
+  color: inherit;
+  font-family: monospace;
+}
+
+.CodeMirror-dialog button {
+  font-size: 70%;
+}
+
+.CodeMirror-foldmarker {
+  color: blue;
+  text-shadow: #b9f 1px 1px 2px, #b9f -1px -1px 2px, #b9f 1px -1px 2px, #b9f -1px 1px 2px;
+  font-family: arial;
+  line-height: .3;
+  cursor: pointer;
+}
+.CodeMirror-foldgutter {
+  width: .7em;
+}
+.CodeMirror-foldgutter-open,
+.CodeMirror-foldgutter-folded {
+  cursor: pointer;
+}
+.CodeMirror-foldgutter-open:after {
+  content: "\25BE";
+}
+.CodeMirror-foldgutter-folded:after {
+  content: "\25B8";
+}
+
+/*
+  Name:       material
+  Author:     Mattia Astorino (http://github.com/equinusocio)
+  Website:    https://material-theme.site/
+*/
+
+.cm-s-material.CodeMirror {
+  background-color: #263238;
+  color: #EEFFFF;
+}
+
+.cm-s-material .CodeMirror-gutters {
+  background: #263238;
+  color: #546E7A;
+  border: none;
+}
+
+.cm-s-material .CodeMirror-guttermarker,
+.cm-s-material .CodeMirror-guttermarker-subtle,
+.cm-s-material .CodeMirror-linenumber {
+  color: #546E7A;
+}
+
+.cm-s-material .CodeMirror-cursor {
+  border-left: 1px solid #FFCC00;
+}
+
+.cm-s-material div.CodeMirror-selected {
+  background: rgba(128, 203, 196, 0.2);
+}
+
+.cm-s-material.CodeMirror-focused div.CodeMirror-selected {
+  background: rgba(128, 203, 196, 0.2);
+}
+
+.cm-s-material .CodeMirror-line::selection,
+.cm-s-material .CodeMirror-line>span::selection,
+.cm-s-material .CodeMirror-line>span>span::selection {
+  background: rgba(128, 203, 196, 0.2);
+}
+
+.cm-s-material .CodeMirror-line::-moz-selection,
+.cm-s-material .CodeMirror-line>span::-moz-selection,
+.cm-s-material .CodeMirror-line>span>span::-moz-selection {
+  background: rgba(128, 203, 196, 0.2);
+}
+
+.cm-s-material .CodeMirror-activeline-background {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.cm-s-material .cm-keyword {
+  color: #C792EA;
+}
+
+.cm-s-material .cm-operator {
+  color: #89DDFF;
+}
+
+.cm-s-material .cm-variable-2 {
+  color: #EEFFFF;
+}
+
+.cm-s-material .cm-variable-3,
+.cm-s-material .cm-type {
+  color: #f07178;
+}
+
+.cm-s-material .cm-builtin {
+  color: #FFCB6B;
+}
+
+.cm-s-material .cm-atom {
+  color: #F78C6C;
+}
+
+.cm-s-material .cm-number {
+  color: #FF5370;
+}
+
+.cm-s-material .cm-def {
+  color: #82AAFF;
+}
+
+.cm-s-material .cm-string {
+  color: #C3E88D;
+}
+
+.cm-s-material .cm-string-2 {
+  color: #f07178;
+}
+
+.cm-s-material .cm-comment {
+  color: #546E7A;
+}
+
+.cm-s-material .cm-variable {
+  color: #f07178;
+}
+
+.cm-s-material .cm-tag {
+  color: #FF5370;
+}
+
+.cm-s-material .cm-meta {
+  color: #FFCB6B;
+}
+
+.cm-s-material .cm-attribute {
+  color: #C792EA;
+}
+
+.cm-s-material .cm-property {
+  color: #C792EA;
+}
+
+.cm-s-material .cm-qualifier {
+  color: #DECB6B;
+}
+
+.cm-s-material .cm-variable-3,
+.cm-s-material .cm-type {
+  color: #DECB6B;
+}
+
+
+.cm-s-material .cm-error {
+  color: rgba(255, 255, 255, 1.0);
+  background-color: #FF5370;
+}
+
+.cm-s-material .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: white !important;
+}
+/**
+ * "
+ *  Using Zenburn color palette from the Emacs Zenburn Theme
+ *  https://github.com/bbatsov/zenburn-emacs/blob/master/zenburn-theme.el
+ *
+ *  Also using parts of https://github.com/xavi/coderay-lighttable-theme
+ * "
+ * From: https://github.com/wisenomad/zenburn-lighttable-theme/blob/master/zenburn.css
+ */
+
+.cm-s-zenburn .CodeMirror-gutters { background: #3f3f3f !important; }
+.cm-s-zenburn .CodeMirror-foldgutter-open, .CodeMirror-foldgutter-folded { color: #999; }
+.cm-s-zenburn .CodeMirror-cursor { border-left: 1px solid white; }
+.cm-s-zenburn { background-color: #3f3f3f; color: #dcdccc; }
+.cm-s-zenburn span.cm-builtin { color: #dcdccc; font-weight: bold; }
+.cm-s-zenburn span.cm-comment { color: #7f9f7f; }
+.cm-s-zenburn span.cm-keyword { color: #f0dfaf; font-weight: bold; }
+.cm-s-zenburn span.cm-atom { color: #bfebbf; }
+.cm-s-zenburn span.cm-def { color: #dcdccc; }
+.cm-s-zenburn span.cm-variable { color: #dfaf8f; }
+.cm-s-zenburn span.cm-variable-2 { color: #dcdccc; }
+.cm-s-zenburn span.cm-string { color: #cc9393; }
+.cm-s-zenburn span.cm-string-2 { color: #cc9393; }
+.cm-s-zenburn span.cm-number { color: #dcdccc; }
+.cm-s-zenburn span.cm-tag { color: #93e0e3; }
+.cm-s-zenburn span.cm-property { color: #dfaf8f; }
+.cm-s-zenburn span.cm-attribute { color: #dfaf8f; }
+.cm-s-zenburn span.cm-qualifier { color: #7cb8bb; }
+.cm-s-zenburn span.cm-meta { color: #f0dfaf; }
+.cm-s-zenburn span.cm-header { color: #f0efd0; }
+.cm-s-zenburn span.cm-operator { color: #f0efd0; }
+.cm-s-zenburn span.CodeMirror-matchingbracket { box-sizing: border-box; background: transparent; border-bottom: 1px solid; }
+.cm-s-zenburn span.CodeMirror-nonmatchingbracket { border-bottom: 1px solid; background: none; }
+.cm-s-zenburn .CodeMirror-activeline { background: #000000; }
+.cm-s-zenburn .CodeMirror-activeline-background { background: #000000; }
+.cm-s-zenburn div.CodeMirror-selected { background: #545454; }
+.cm-s-zenburn .CodeMirror-focused div.CodeMirror-selected { background: #4f4f4f; }
+
+.cm-s-abcdef.CodeMirror { background: #0f0f0f; color: #defdef; }
+.cm-s-abcdef div.CodeMirror-selected { background: #515151; }
+.cm-s-abcdef .CodeMirror-line::selection, .cm-s-abcdef .CodeMirror-line > span::selection, .cm-s-abcdef .CodeMirror-line > span > span::selection { background: rgba(56, 56, 56, 0.99); }
+.cm-s-abcdef .CodeMirror-line::-moz-selection, .cm-s-abcdef .CodeMirror-line > span::-moz-selection, .cm-s-abcdef .CodeMirror-line > span > span::-moz-selection { background: rgba(56, 56, 56, 0.99); }
+.cm-s-abcdef .CodeMirror-gutters { background: #555; border-right: 2px solid #314151; }
+.cm-s-abcdef .CodeMirror-guttermarker { color: #222; }
+.cm-s-abcdef .CodeMirror-guttermarker-subtle { color: azure; }
+.cm-s-abcdef .CodeMirror-linenumber { color: #FFFFFF; }
+.cm-s-abcdef .CodeMirror-cursor { border-left: 1px solid #00FF00; }
+
+.cm-s-abcdef span.cm-keyword { color: darkgoldenrod; font-weight: bold; }
+.cm-s-abcdef span.cm-atom { color: #77F; }
+.cm-s-abcdef span.cm-number { color: violet; }
+.cm-s-abcdef span.cm-def { color: #fffabc; }
+.cm-s-abcdef span.cm-variable { color: #abcdef; }
+.cm-s-abcdef span.cm-variable-2 { color: #cacbcc; }
+.cm-s-abcdef span.cm-variable-3, .cm-s-abcdef span.cm-type { color: #def; }
+.cm-s-abcdef span.cm-property { color: #fedcba; }
+.cm-s-abcdef span.cm-operator { color: #ff0; }
+.cm-s-abcdef span.cm-comment { color: #7a7b7c; font-style: italic;}
+.cm-s-abcdef span.cm-string { color: #2b4; }
+.cm-s-abcdef span.cm-meta { color: #C9F; }
+.cm-s-abcdef span.cm-qualifier { color: #FFF700; }
+.cm-s-abcdef span.cm-builtin { color: #30aabc; }
+.cm-s-abcdef span.cm-bracket { color: #8a8a8a; }
+.cm-s-abcdef span.cm-tag { color: #FFDD44; }
+.cm-s-abcdef span.cm-attribute { color: #DDFF00; }
+.cm-s-abcdef span.cm-error { color: #FF0000; }
+.cm-s-abcdef span.cm-header { color: aquamarine; font-weight: bold; }
+.cm-s-abcdef span.cm-link { color: blueviolet; }
+
+.cm-s-abcdef .CodeMirror-activeline-background { background: #314151; }
+
+/*
+
+    Name:       Base16 Default Light
+    Author:     Chris Kempson (http://chriskempson.com)
+
+    CodeMirror template by Jan T. Sott (https://github.com/idleberg/base16-codemirror)
+    Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
+
+*/
+
+.cm-s-base16-light.CodeMirror { background: #f5f5f5; color: #202020; }
+.cm-s-base16-light div.CodeMirror-selected { background: #e0e0e0; }
+.cm-s-base16-light .CodeMirror-line::selection, .cm-s-base16-light .CodeMirror-line > span::selection, .cm-s-base16-light .CodeMirror-line > span > span::selection { background: #e0e0e0; }
+.cm-s-base16-light .CodeMirror-line::-moz-selection, .cm-s-base16-light .CodeMirror-line > span::-moz-selection, .cm-s-base16-light .CodeMirror-line > span > span::-moz-selection { background: #e0e0e0; }
+.cm-s-base16-light .CodeMirror-gutters { background: #f5f5f5; border-right: 0px; }
+.cm-s-base16-light .CodeMirror-guttermarker { color: #ac4142; }
+.cm-s-base16-light .CodeMirror-guttermarker-subtle { color: #b0b0b0; }
+.cm-s-base16-light .CodeMirror-linenumber { color: #b0b0b0; }
+.cm-s-base16-light .CodeMirror-cursor { border-left: 1px solid #505050; }
+
+.cm-s-base16-light span.cm-comment { color: #8f5536; }
+.cm-s-base16-light span.cm-atom { color: #aa759f; }
+.cm-s-base16-light span.cm-number { color: #aa759f; }
+
+.cm-s-base16-light span.cm-property, .cm-s-base16-light span.cm-attribute { color: #90a959; }
+.cm-s-base16-light span.cm-keyword { color: #ac4142; }
+.cm-s-base16-light span.cm-string { color: #f4bf75; }
+
+.cm-s-base16-light span.cm-variable { color: #90a959; }
+.cm-s-base16-light span.cm-variable-2 { color: #6a9fb5; }
+.cm-s-base16-light span.cm-def { color: #d28445; }
+.cm-s-base16-light span.cm-bracket { color: #202020; }
+.cm-s-base16-light span.cm-tag { color: #ac4142; }
+.cm-s-base16-light span.cm-link { color: #aa759f; }
+.cm-s-base16-light span.cm-error { background: #ac4142; color: #505050; }
+
+.cm-s-base16-light .CodeMirror-activeline-background { background: #DDDCDC; }
+.cm-s-base16-light .CodeMirror-matchingbracket { color: #f5f5f5 !important; background-color: #6A9FB5 !important}
+
+/*
+
+    Name:       Base16 Default Dark
+    Author:     Chris Kempson (http://chriskempson.com)
+
+    CodeMirror template by Jan T. Sott (https://github.com/idleberg/base16-codemirror)
+    Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
+
+*/
+
+.cm-s-base16-dark.CodeMirror { background: #151515; color: #e0e0e0; }
+.cm-s-base16-dark div.CodeMirror-selected { background: #303030; }
+.cm-s-base16-dark .CodeMirror-line::selection, .cm-s-base16-dark .CodeMirror-line > span::selection, .cm-s-base16-dark .CodeMirror-line > span > span::selection { background: rgba(48, 48, 48, .99); }
+.cm-s-base16-dark .CodeMirror-line::-moz-selection, .cm-s-base16-dark .CodeMirror-line > span::-moz-selection, .cm-s-base16-dark .CodeMirror-line > span > span::-moz-selection { background: rgba(48, 48, 48, .99); }
+.cm-s-base16-dark .CodeMirror-gutters { background: #151515; border-right: 0px; }
+.cm-s-base16-dark .CodeMirror-guttermarker { color: #ac4142; }
+.cm-s-base16-dark .CodeMirror-guttermarker-subtle { color: #505050; }
+.cm-s-base16-dark .CodeMirror-linenumber { color: #505050; }
+.cm-s-base16-dark .CodeMirror-cursor { border-left: 1px solid #b0b0b0; }
+
+.cm-s-base16-dark span.cm-comment { color: #8f5536; }
+.cm-s-base16-dark span.cm-atom { color: #aa759f; }
+.cm-s-base16-dark span.cm-number { color: #aa759f; }
+
+.cm-s-base16-dark span.cm-property, .cm-s-base16-dark span.cm-attribute { color: #90a959; }
+.cm-s-base16-dark span.cm-keyword { color: #ac4142; }
+.cm-s-base16-dark span.cm-string { color: #f4bf75; }
+
+.cm-s-base16-dark span.cm-variable { color: #90a959; }
+.cm-s-base16-dark span.cm-variable-2 { color: #6a9fb5; }
+.cm-s-base16-dark span.cm-def { color: #d28445; }
+.cm-s-base16-dark span.cm-bracket { color: #e0e0e0; }
+.cm-s-base16-dark span.cm-tag { color: #ac4142; }
+.cm-s-base16-dark span.cm-link { color: #aa759f; }
+.cm-s-base16-dark span.cm-error { background: #ac4142; color: #b0b0b0; }
+
+.cm-s-base16-dark .CodeMirror-activeline-background { background: #202020; }
+.cm-s-base16-dark .CodeMirror-matchingbracket { text-decoration: underline; color: white !important; }
+
+/*
+
+    Name:       dracula
+    Author:     Michael Kaminsky (http://github.com/mkaminsky11)
+
+    Original dracula color scheme by Zeno Rocha (https://github.com/zenorocha/dracula-theme)
+
+*/
+
+
+.cm-s-dracula.CodeMirror, .cm-s-dracula .CodeMirror-gutters {
+  background-color: #282a36 !important;
+  color: #f8f8f2 !important;
+  border: none;
+}
+.cm-s-dracula .CodeMirror-gutters { color: #282a36; }
+.cm-s-dracula .CodeMirror-cursor { border-left: solid thin #f8f8f0; }
+.cm-s-dracula .CodeMirror-linenumber { color: #6D8A88; }
+.cm-s-dracula .CodeMirror-selected { background: rgba(255, 255, 255, 0.10); }
+.cm-s-dracula .CodeMirror-line::selection, .cm-s-dracula .CodeMirror-line > span::selection, .cm-s-dracula .CodeMirror-line > span > span::selection { background: rgba(255, 255, 255, 0.10); }
+.cm-s-dracula .CodeMirror-line::-moz-selection, .cm-s-dracula .CodeMirror-line > span::-moz-selection, .cm-s-dracula .CodeMirror-line > span > span::-moz-selection { background: rgba(255, 255, 255, 0.10); }
+.cm-s-dracula span.cm-comment { color: #6272a4; }
+.cm-s-dracula span.cm-string, .cm-s-dracula span.cm-string-2 { color: #f1fa8c; }
+.cm-s-dracula span.cm-number { color: #bd93f9; }
+.cm-s-dracula span.cm-variable { color: #50fa7b; }
+.cm-s-dracula span.cm-variable-2 { color: white; }
+.cm-s-dracula span.cm-def { color: #50fa7b; }
+.cm-s-dracula span.cm-operator { color: #ff79c6; }
+.cm-s-dracula span.cm-keyword { color: #ff79c6; }
+.cm-s-dracula span.cm-atom { color: #bd93f9; }
+.cm-s-dracula span.cm-meta { color: #f8f8f2; }
+.cm-s-dracula span.cm-tag { color: #ff79c6; }
+.cm-s-dracula span.cm-attribute { color: #50fa7b; }
+.cm-s-dracula span.cm-qualifier { color: #50fa7b; }
+.cm-s-dracula span.cm-property { color: #66d9ef; }
+.cm-s-dracula span.cm-builtin { color: #50fa7b; }
+.cm-s-dracula span.cm-variable-3, .cm-s-dracula span.cm-type { color: #ffb86c; }
+
+.cm-s-dracula .CodeMirror-activeline-background { background: rgba(255,255,255,0.1); }
+.cm-s-dracula .CodeMirror-matchingbracket { text-decoration: underline; color: white !important; }
+
+/*
+
+    Name:       Hopscotch
+    Author:     Jan T. Sott
+
+    CodeMirror template by Jan T. Sott (https://github.com/idleberg/base16-codemirror)
+    Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
+
+*/
+
+.cm-s-hopscotch.CodeMirror {background: #322931; color: #d5d3d5;}
+.cm-s-hopscotch div.CodeMirror-selected {background: #433b42 !important;}
+.cm-s-hopscotch .CodeMirror-gutters {background: #322931; border-right: 0px;}
+.cm-s-hopscotch .CodeMirror-linenumber {color: #797379;}
+.cm-s-hopscotch .CodeMirror-cursor {border-left: 1px solid #989498 !important;}
+
+.cm-s-hopscotch span.cm-comment {color: #b33508;}
+.cm-s-hopscotch span.cm-atom {color: #c85e7c;}
+.cm-s-hopscotch span.cm-number {color: #c85e7c;}
+
+.cm-s-hopscotch span.cm-property, .cm-s-hopscotch span.cm-attribute {color: #8fc13e;}
+.cm-s-hopscotch span.cm-keyword {color: #dd464c;}
+.cm-s-hopscotch span.cm-string {color: #fdcc59;}
+
+.cm-s-hopscotch span.cm-variable {color: #8fc13e;}
+.cm-s-hopscotch span.cm-variable-2 {color: #1290bf;}
+.cm-s-hopscotch span.cm-def {color: #fd8b19;}
+.cm-s-hopscotch span.cm-error {background: #dd464c; color: #989498;}
+.cm-s-hopscotch span.cm-bracket {color: #d5d3d5;}
+.cm-s-hopscotch span.cm-tag {color: #dd464c;}
+.cm-s-hopscotch span.cm-link {color: #c85e7c;}
+
+.cm-s-hopscotch .CodeMirror-matchingbracket { text-decoration: underline; color: white !important;}
+.cm-s-hopscotch .CodeMirror-activeline-background { background: #302020; }
+
+/****************************************************************/
+/*   Based on mbonaci's Brackets mbo theme                      */
+/*   https://github.com/mbonaci/global/blob/master/Mbo.tmTheme  */
+/*   Create your own: http://tmtheme-editor.herokuapp.com       */
+/****************************************************************/
+
+.cm-s-mbo.CodeMirror { background: #2c2c2c; color: #ffffec; }
+.cm-s-mbo div.CodeMirror-selected { background: #716C62; }
+.cm-s-mbo .CodeMirror-line::selection, .cm-s-mbo .CodeMirror-line > span::selection, .cm-s-mbo .CodeMirror-line > span > span::selection { background: rgba(113, 108, 98, .99); }
+.cm-s-mbo .CodeMirror-line::-moz-selection, .cm-s-mbo .CodeMirror-line > span::-moz-selection, .cm-s-mbo .CodeMirror-line > span > span::-moz-selection { background: rgba(113, 108, 98, .99); }
+.cm-s-mbo .CodeMirror-gutters { background: #4e4e4e; border-right: 0px; }
+.cm-s-mbo .CodeMirror-guttermarker { color: white; }
+.cm-s-mbo .CodeMirror-guttermarker-subtle { color: grey; }
+.cm-s-mbo .CodeMirror-linenumber { color: #dadada; }
+.cm-s-mbo .CodeMirror-cursor { border-left: 1px solid #ffffec; }
+
+.cm-s-mbo span.cm-comment { color: #95958a; }
+.cm-s-mbo span.cm-atom { color: #00a8c6; }
+.cm-s-mbo span.cm-number { color: #00a8c6; }
+
+.cm-s-mbo span.cm-property, .cm-s-mbo span.cm-attribute { color: #9ddfe9; }
+.cm-s-mbo span.cm-keyword { color: #ffb928; }
+.cm-s-mbo span.cm-string { color: #ffcf6c; }
+.cm-s-mbo span.cm-string.cm-property { color: #ffffec; }
+
+.cm-s-mbo span.cm-variable { color: #ffffec; }
+.cm-s-mbo span.cm-variable-2 { color: #00a8c6; }
+.cm-s-mbo span.cm-def { color: #ffffec; }
+.cm-s-mbo span.cm-bracket { color: #fffffc; font-weight: bold; }
+.cm-s-mbo span.cm-tag { color: #9ddfe9; }
+.cm-s-mbo span.cm-link { color: #f54b07; }
+.cm-s-mbo span.cm-error { border-bottom: #636363; color: #ffffec; }
+.cm-s-mbo span.cm-qualifier { color: #ffffec; }
+
+.cm-s-mbo .CodeMirror-activeline-background { background: #494b41; }
+.cm-s-mbo .CodeMirror-matchingbracket { color: #ffb928 !important; }
+.cm-s-mbo .CodeMirror-matchingtag { background: rgba(255, 255, 255, .37); }
+
+/*
+  MDN-LIKE Theme - Mozilla
+  Ported to CodeMirror by Peter Kroon <plakroon@gmail.com>
+  Report bugs/issues here: https://github.com/codemirror/CodeMirror/issues
+  GitHub: @peterkroon
+
+  The mdn-like theme is inspired on the displayed code examples at: https://developer.mozilla.org/en-US/docs/Web/CSS/animation
+
+*/
+.cm-s-mdn-like.CodeMirror { color: #999; background-color: #fff; }
+.cm-s-mdn-like div.CodeMirror-selected { background: #cfc; }
+.cm-s-mdn-like .CodeMirror-line::selection, .cm-s-mdn-like .CodeMirror-line > span::selection, .cm-s-mdn-like .CodeMirror-line > span > span::selection { background: #cfc; }
+.cm-s-mdn-like .CodeMirror-line::-moz-selection, .cm-s-mdn-like .CodeMirror-line > span::-moz-selection, .cm-s-mdn-like .CodeMirror-line > span > span::-moz-selection { background: #cfc; }
+
+.cm-s-mdn-like .CodeMirror-gutters { background: #f8f8f8; border-left: 6px solid rgba(0,83,159,0.65); color: #333; }
+.cm-s-mdn-like .CodeMirror-linenumber { color: #aaa; padding-left: 8px; }
+.cm-s-mdn-like .CodeMirror-cursor { border-left: 2px solid #222; }
+
+.cm-s-mdn-like .cm-keyword { color: #6262FF; }
+.cm-s-mdn-like .cm-atom { color: #F90; }
+.cm-s-mdn-like .cm-number { color:  #ca7841; }
+.cm-s-mdn-like .cm-def { color: #8DA6CE; }
+.cm-s-mdn-like span.cm-variable-2, .cm-s-mdn-like span.cm-tag { color: #690; }
+.cm-s-mdn-like span.cm-variable-3, .cm-s-mdn-like span.cm-def, .cm-s-mdn-like span.cm-type { color: #07a; }
+
+.cm-s-mdn-like .cm-variable { color: #07a; }
+.cm-s-mdn-like .cm-property { color: #905; }
+.cm-s-mdn-like .cm-qualifier { color: #690; }
+
+.cm-s-mdn-like .cm-operator { color: #cda869; }
+.cm-s-mdn-like .cm-comment { color:#777; font-weight:normal; }
+.cm-s-mdn-like .cm-string { color:#07a; font-style:italic; }
+.cm-s-mdn-like .cm-string-2 { color:#bd6b18; } /*?*/
+.cm-s-mdn-like .cm-meta { color: #000; } /*?*/
+.cm-s-mdn-like .cm-builtin { color: #9B7536; } /*?*/
+.cm-s-mdn-like .cm-tag { color: #997643; }
+.cm-s-mdn-like .cm-attribute { color: #d6bb6d; } /*?*/
+.cm-s-mdn-like .cm-header { color: #FF6400; }
+.cm-s-mdn-like .cm-hr { color: #AEAEAE; }
+.cm-s-mdn-like .cm-link { color:#ad9361; font-style:italic; text-decoration:none; }
+.cm-s-mdn-like .cm-error { border-bottom: 1px solid red; }
+
+div.cm-s-mdn-like .CodeMirror-activeline-background { background: #efefff; }
+div.cm-s-mdn-like span.CodeMirror-matchingbracket { outline:1px solid grey; color: inherit; }
+
+.cm-s-mdn-like.CodeMirror { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFcAAAAyCAYAAAAp8UeFAAAHvklEQVR42s2b63bcNgyEQZCSHCdt2vd/0tWF7I+Q6XgMXiTtuvU5Pl57ZQKkKHzEAOtF5KeIJBGJ8uvL599FRFREZhFx8DeXv8trn68RuGaC8TRfo3SNp9dlDDHedyLyTUTeRWStXKPZrjtpZxaRw5hPqozRs1N8/enzIiQRWcCgy4MUA0f+XWliDhyL8Lfyvx7ei/Ae3iQFHyw7U/59pQVIMEEPEz0G7XiwdRjzSfC3UTtz9vchIntxvry5iMgfIhJoEflOz2CQr3F5h/HfeFe+GTdLaKcu9L8LTeQb/R/7GgbsfKedyNdoHsN31uRPWrfZ5wsj/NzzRQHuToIdU3ahwnsKPxXCjJITuOsi7XLc7SG/v5GdALs7wf8JjTFiB5+QvTEfRyGOfX3Lrx8wxyQi3sNq46O7QahQiCsRFgqddjBouVEHOKDgXAQHD9gJCr5sMKkEdjwsarG/ww3BMHBU7OBjXnzdyY7SfCxf5/z6ATccrwlKuwC/jhznnPF4CgVzhhVf4xp2EixcBActO75iZ8/fM9zAs2OMzKdslgXWJ9XG8PQoOAMA5fGcsvORgv0doBXyHrCwfLJAOwo71QLNkb8n2Pl6EWiR7OCibtkPaz4Kc/0NNAze2gju3zOwekALDaCFPI5vjPFmgGY5AZqyGEvH1x7QfIb8YtxMnA/b+QQ0aQDAwc6JMFg8CbQZ4qoYEEHbRwNojuK3EHwd7VALSgq+MNDKzfT58T8qdpADrgW0GmgcAS1lhzztJmkAzcPNOQbsWEALBDSlMKUG0Eq4CLAQWvEVQ9WU57gZJwZtgPO3r9oBTQ9WO8TjqXINx8R0EYpiZEUWOF3FxkbJkgU9B2f41YBrIj5ZfsQa0M5kTgiAAqM3ShXLgu8XMqcrQBvJ0CL5pnTsfMB13oB8athpAq2XOQmcGmoACCLydx7nToa23ATaSIY2ichfOdPTGxlasXMLaL0MLZAOwAKIM+y8CmicobGdCcbbK9DzN+yYGVoNNI5iUKTMyYOjPse4A8SM1MmcXgU0toOq1yO/v8FOxlASyc7TgeYaAMBJHcY1CcCwGI/TK4AmDbDyKYBBtFUkRwto8gygiQEaByFgJ00BH2M8JWwQS1nafDXQCidWyOI8AcjDCSjCLk8ngObuAm3JAHAdubAmOaK06V8MNEsKPJOhobSprwQa6gD7DclRQdqcwL4zxqgBrQcabUiBLclRDKAlWp+etPkBaNMA0AKlrHwTdEByZAA4GM+SNluSY6wAzcMNewxmgig5Ks0nkrSpBvSaQHMdKTBAnLojOdYyGpQ254602ZILPdTD1hdlggdIm74jbTp8vDwF5ZYUeLWGJpWsh6XNyXgcYwVoJQTEhhTYkxzZjiU5npU2TaB979TQehlaAVq4kaGpiPwwwLkYUuBbQwocyQTv1tA0+1UFWoJF3iv1oq+qoSk8EQdJmwHkziIF7oOZk14EGitibAdjLYYK78H5vZOhtWpoI0ATGHs0Q8OMb4Ey+2bU2UYztCtA0wFAs7TplGLRVQCcqaFdGSPCeTI1QNIC52iWNzof6Uib7xjEp07mNNoUYmVosVItHrHzRlLgBn9LFyRHaQCtVUMbtTNhoXWiTOO9k/V8BdAc1Oq0ArSQs6/5SU0hckNy9NnXqQY0PGYo5dWJ7nINaN6o958FWin27aBaWRka1r5myvLOAm0j30eBJqCxHLReVclxhxOEN2JfDWjxBtAC7MIH1fVaGdoOp4qJYDgKtKPSFNID2gSnGldrCqkFZ+5UeQXQBIRrSwocbdZYQT/2LwRahBPBXoHrB8nxaGROST62DKUbQOMMzZIC9abkuELfQzQALWTnDNAm8KHWFOJgJ5+SHIvTPcmx1xQyZRhNL5Qci689aXMEaN/uNIWkEwDAvFpOZmgsBaaGnbs1NPa1Jm32gBZAIh1pCtG7TSH4aE0y1uVY4uqoFPisGlpP2rSA5qTecWn5agK6BzSpgAyD+wFaqhnYoSZ1Vwr8CmlTQbrcO3ZaX0NAEyMbYaAlyquFoLKK3SPby9CeVUPThrSJmkCAE0CrKUQadi4DrdSlWhmah0YL9z9vClH59YGbHx1J8VZTyAjQepJjmXwAKTDQI3omc3p1U4gDUf6RfcdYfrUp5ClAi2J3Ba6UOXGo+K+bQrjjssitG2SJzshaLwMtXgRagUNpYYoVkMSBLM+9GGiJZMvduG6DRZ4qc04DMPtQQxOjEtACmhO7K1AbNbQDEggZyJwscFpAGwENhoBeUwh3bWolhe8BTYVKxQEWrSUn/uhcM5KhvUu/+eQu0Lzhi+VrK0PrZZNDQKs9cpYUuFYgMVpD4/NxenJTiMCNqdUEUf1qZWjppLT5qSkkUZbCwkbZMSuVnu80hfSkzRbQeqCZSAh6huR4VtoM2gHAlLf72smuWgE+VV7XpE25Ab2WFDgyhnSuKbs4GuGzCjR+tIoUuMFg3kgcWKLTwRqanJQ2W00hAsenfaApRC42hbCvK1SlE0HtE9BGgneJO+ELamitD1YjjOYnNYVcraGhtKkW0EqVVeDx733I2NH581k1NNxNLG0i0IJ8/NjVaOZ0tYZ2Vtr0Xv7tPV3hkWp9EFkgS/J0vosngTaSoaG06WHi+xObQkaAdlbanP8B2+2l0f90LmUAAAAASUVORK5CYII=); }
+
+/*
+
+    Name:       seti
+    Author:     Michael Kaminsky (http://github.com/mkaminsky11)
+
+    Original seti color scheme by Jesse Weed (https://github.com/jesseweed/seti-syntax)
+
+*/
+
+
+.cm-s-seti.CodeMirror {
+  background-color: #151718 !important;
+  color: #CFD2D1 !important;
+  border: none;
+}
+.cm-s-seti .CodeMirror-gutters {
+  color: #404b53;
+  background-color: #0E1112;
+  border: none;
+}
+.cm-s-seti .CodeMirror-cursor { border-left: solid thin #f8f8f0; }
+.cm-s-seti .CodeMirror-linenumber { color: #6D8A88; }
+.cm-s-seti.CodeMirror-focused div.CodeMirror-selected { background: rgba(255, 255, 255, 0.10); }
+.cm-s-seti .CodeMirror-line::selection, .cm-s-seti .CodeMirror-line > span::selection, .cm-s-seti .CodeMirror-line > span > span::selection { background: rgba(255, 255, 255, 0.10); }
+.cm-s-seti .CodeMirror-line::-moz-selection, .cm-s-seti .CodeMirror-line > span::-moz-selection, .cm-s-seti .CodeMirror-line > span > span::-moz-selection { background: rgba(255, 255, 255, 0.10); }
+.cm-s-seti span.cm-comment { color: #41535b; }
+.cm-s-seti span.cm-string, .cm-s-seti span.cm-string-2 { color: #55b5db; }
+.cm-s-seti span.cm-number { color: #cd3f45; }
+.cm-s-seti span.cm-variable { color: #55b5db; }
+.cm-s-seti span.cm-variable-2 { color: #a074c4; }
+.cm-s-seti span.cm-def { color: #55b5db; }
+.cm-s-seti span.cm-keyword { color: #ff79c6; }
+.cm-s-seti span.cm-operator { color: #9fca56; }
+.cm-s-seti span.cm-keyword { color: #e6cd69; }
+.cm-s-seti span.cm-atom { color: #cd3f45; }
+.cm-s-seti span.cm-meta { color: #55b5db; }
+.cm-s-seti span.cm-tag { color: #55b5db; }
+.cm-s-seti span.cm-attribute { color: #9fca56; }
+.cm-s-seti span.cm-qualifier { color: #9fca56; }
+.cm-s-seti span.cm-property { color: #a074c4; }
+.cm-s-seti span.cm-variable-3, .cm-s-seti span.cm-type { color: #9fca56; }
+.cm-s-seti span.cm-builtin { color: #9fca56; }
+.cm-s-seti .CodeMirror-activeline-background { background: #101213; }
+.cm-s-seti .CodeMirror-matchingbracket { text-decoration: underline; color: white !important; }
+
+/*
+Solarized theme for code-mirror
+http://ethanschoonover.com/solarized
+*/
+
+/*
+Solarized color palette
+http://ethanschoonover.com/solarized/img/solarized-palette.png
+*/
+
+.solarized.base03 { color: #002b36; }
+.solarized.base02 { color: #073642; }
+.solarized.base01 { color: #586e75; }
+.solarized.base00 { color: #657b83; }
+.solarized.base0 { color: #839496; }
+.solarized.base1 { color: #93a1a1; }
+.solarized.base2 { color: #eee8d5; }
+.solarized.base3  { color: #fdf6e3; }
+.solarized.solar-yellow  { color: #b58900; }
+.solarized.solar-orange  { color: #cb4b16; }
+.solarized.solar-red { color: #dc322f; }
+.solarized.solar-magenta { color: #d33682; }
+.solarized.solar-violet  { color: #6c71c4; }
+.solarized.solar-blue { color: #268bd2; }
+.solarized.solar-cyan { color: #2aa198; }
+.solarized.solar-green { color: #859900; }
+
+/* Color scheme for code-mirror */
+
+.cm-s-solarized {
+  line-height: 1.45em;
+  color-profile: sRGB;
+  rendering-intent: auto;
+}
+.cm-s-solarized.cm-s-dark {
+  color: #839496;
+  background-color: #002b36;
+  text-shadow: #002b36 0 1px;
+}
+.cm-s-solarized.cm-s-light {
+  background-color: #fdf6e3;
+  color: #657b83;
+  text-shadow: #eee8d5 0 1px;
+}
+
+.cm-s-solarized .CodeMirror-widget {
+  text-shadow: none;
+}
+
+.cm-s-solarized .cm-header { color: #586e75; }
+.cm-s-solarized .cm-quote { color: #93a1a1; }
+
+.cm-s-solarized .cm-keyword { color: #cb4b16; }
+.cm-s-solarized .cm-atom { color: #d33682; }
+.cm-s-solarized .cm-number { color: #d33682; }
+.cm-s-solarized .cm-def { color: #2aa198; }
+
+.cm-s-solarized .cm-variable { color: #839496; }
+.cm-s-solarized .cm-variable-2 { color: #b58900; }
+.cm-s-solarized .cm-variable-3, .cm-s-solarized .cm-type { color: #6c71c4; }
+
+.cm-s-solarized .cm-property { color: #2aa198; }
+.cm-s-solarized .cm-operator { color: #6c71c4; }
+
+.cm-s-solarized .cm-comment { color: #586e75; font-style:italic; }
+
+.cm-s-solarized .cm-string { color: #859900; }
+.cm-s-solarized .cm-string-2 { color: #b58900; }
+
+.cm-s-solarized .cm-meta { color: #859900; }
+.cm-s-solarized .cm-qualifier { color: #b58900; }
+.cm-s-solarized .cm-builtin { color: #d33682; }
+.cm-s-solarized .cm-bracket { color: #cb4b16; }
+.cm-s-solarized .CodeMirror-matchingbracket { color: #859900; }
+.cm-s-solarized .CodeMirror-nonmatchingbracket { color: #dc322f; }
+.cm-s-solarized .cm-tag { color: #93a1a1; }
+.cm-s-solarized .cm-attribute { color: #2aa198; }
+.cm-s-solarized .cm-hr {
+  color: transparent;
+  border-top: 1px solid #586e75;
+  display: block;
+}
+.cm-s-solarized .cm-link { color: #93a1a1; cursor: pointer; }
+.cm-s-solarized .cm-special { color: #6c71c4; }
+.cm-s-solarized .cm-em {
+  color: #999;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+.cm-s-solarized .cm-error,
+.cm-s-solarized .cm-invalidchar {
+  color: #586e75;
+  border-bottom: 1px dotted #dc322f;
+}
+
+.cm-s-solarized.cm-s-dark div.CodeMirror-selected { background: #073642; }
+.cm-s-solarized.cm-s-dark.CodeMirror ::selection { background: rgba(7, 54, 66, 0.99); }
+.cm-s-solarized.cm-s-dark .CodeMirror-line::-moz-selection, .cm-s-dark .CodeMirror-line > span::-moz-selection, .cm-s-dark .CodeMirror-line > span > span::-moz-selection { background: rgba(7, 54, 66, 0.99); }
+
+.cm-s-solarized.cm-s-light div.CodeMirror-selected { background: #eee8d5; }
+.cm-s-solarized.cm-s-light .CodeMirror-line::selection, .cm-s-light .CodeMirror-line > span::selection, .cm-s-light .CodeMirror-line > span > span::selection { background: #eee8d5; }
+.cm-s-solarized.cm-s-light .CodeMirror-line::-moz-selection, .cm-s-ligh .CodeMirror-line > span::-moz-selection, .cm-s-ligh .CodeMirror-line > span > span::-moz-selection { background: #eee8d5; }
+
+/* Editor styling */
+
+
+
+/* Little shadow on the view-port of the buffer view */
+.cm-s-solarized.CodeMirror {
+  -moz-box-shadow: inset 7px 0 12px -6px #000;
+  -webkit-box-shadow: inset 7px 0 12px -6px #000;
+  box-shadow: inset 7px 0 12px -6px #000;
+}
+
+/* Remove gutter border */
+.cm-s-solarized .CodeMirror-gutters {
+  border-right: 0;
+}
+
+/* Gutter colors and line number styling based of color scheme (dark / light) */
+
+/* Dark */
+.cm-s-solarized.cm-s-dark .CodeMirror-gutters {
+  background-color: #073642;
+}
+
+.cm-s-solarized.cm-s-dark .CodeMirror-linenumber {
+  color: #586e75;
+  text-shadow: #021014 0 -1px;
+}
+
+/* Light */
+.cm-s-solarized.cm-s-light .CodeMirror-gutters {
+  background-color: #eee8d5;
+}
+
+.cm-s-solarized.cm-s-light .CodeMirror-linenumber {
+  color: #839496;
+}
+
+/* Common */
+.cm-s-solarized .CodeMirror-linenumber {
+  padding: 0 5px;
+}
+.cm-s-solarized .CodeMirror-guttermarker-subtle { color: #586e75; }
+.cm-s-solarized.cm-s-dark .CodeMirror-guttermarker { color: #ddd; }
+.cm-s-solarized.cm-s-light .CodeMirror-guttermarker { color: #cb4b16; }
+
+.cm-s-solarized .CodeMirror-gutter .CodeMirror-gutter-text {
+  color: #586e75;
+}
+
+/* Cursor */
+.cm-s-solarized .CodeMirror-cursor { border-left: 1px solid #819090; }
+
+/* Fat cursor */
+.cm-s-solarized.cm-s-light.cm-fat-cursor .CodeMirror-cursor { background: #77ee77; }
+.cm-s-solarized.cm-s-light .cm-animate-fat-cursor { background-color: #77ee77; }
+.cm-s-solarized.cm-s-dark.cm-fat-cursor .CodeMirror-cursor { background: #586e75; }
+.cm-s-solarized.cm-s-dark .cm-animate-fat-cursor { background-color: #586e75; }
+
+/* Active line */
+.cm-s-solarized.cm-s-dark .CodeMirror-activeline-background {
+  background: rgba(255, 255, 255, 0.06);
+}
+.cm-s-solarized.cm-s-light .CodeMirror-activeline-background {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.cm-s-the-matrix.CodeMirror { background: #000000; color: #00FF00; }
+.cm-s-the-matrix div.CodeMirror-selected { background: #2D2D2D; }
+.cm-s-the-matrix .CodeMirror-line::selection, .cm-s-the-matrix .CodeMirror-line > span::selection, .cm-s-the-matrix .CodeMirror-line > span > span::selection { background: rgba(45, 45, 45, 0.99); }
+.cm-s-the-matrix .CodeMirror-line::-moz-selection, .cm-s-the-matrix .CodeMirror-line > span::-moz-selection, .cm-s-the-matrix .CodeMirror-line > span > span::-moz-selection { background: rgba(45, 45, 45, 0.99); }
+.cm-s-the-matrix .CodeMirror-gutters { background: #060; border-right: 2px solid #00FF00; }
+.cm-s-the-matrix .CodeMirror-guttermarker { color: #0f0; }
+.cm-s-the-matrix .CodeMirror-guttermarker-subtle { color: white; }
+.cm-s-the-matrix .CodeMirror-linenumber { color: #FFFFFF; }
+.cm-s-the-matrix .CodeMirror-cursor { border-left: 1px solid #00FF00; }
+
+.cm-s-the-matrix span.cm-keyword { color: #008803; font-weight: bold; }
+.cm-s-the-matrix span.cm-atom { color: #3FF; }
+.cm-s-the-matrix span.cm-number { color: #FFB94F; }
+.cm-s-the-matrix span.cm-def { color: #99C; }
+.cm-s-the-matrix span.cm-variable { color: #F6C; }
+.cm-s-the-matrix span.cm-variable-2 { color: #C6F; }
+.cm-s-the-matrix span.cm-variable-3, .cm-s-the-matrix span.cm-type { color: #96F; }
+.cm-s-the-matrix span.cm-property { color: #62FFA0; }
+.cm-s-the-matrix span.cm-operator { color: #999; }
+.cm-s-the-matrix span.cm-comment { color: #CCCCCC; }
+.cm-s-the-matrix span.cm-string { color: #39C; }
+.cm-s-the-matrix span.cm-meta { color: #C9F; }
+.cm-s-the-matrix span.cm-qualifier { color: #FFF700; }
+.cm-s-the-matrix span.cm-builtin { color: #30a; }
+.cm-s-the-matrix span.cm-bracket { color: #cc7; }
+.cm-s-the-matrix span.cm-tag { color: #FFBD40; }
+.cm-s-the-matrix span.cm-attribute { color: #FFF700; }
+.cm-s-the-matrix span.cm-error { color: #FF0000; }
+
+.cm-s-the-matrix .CodeMirror-activeline-background { background: #040; }
+
+/*
+Copyright (C) 2011 by MarkLogic Corporation
+Author: Mike Brevoort <mike@brevoort.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+.cm-s-xq-light span.cm-keyword { line-height: 1em; font-weight: bold; color: #5A5CAD; }
+.cm-s-xq-light span.cm-atom { color: #6C8CD5; }
+.cm-s-xq-light span.cm-number { color: #164; }
+.cm-s-xq-light span.cm-def { text-decoration:underline; }
+.cm-s-xq-light span.cm-variable { color: black; }
+.cm-s-xq-light span.cm-variable-2 { color:black; }
+.cm-s-xq-light span.cm-variable-3, .cm-s-xq-light span.cm-type { color: black; }
+.cm-s-xq-light span.cm-property {}
+.cm-s-xq-light span.cm-operator {}
+.cm-s-xq-light span.cm-comment { color: #0080FF; font-style: italic; }
+.cm-s-xq-light span.cm-string { color: red; }
+.cm-s-xq-light span.cm-meta { color: yellow; }
+.cm-s-xq-light span.cm-qualifier { color: grey; }
+.cm-s-xq-light span.cm-builtin { color: #7EA656; }
+.cm-s-xq-light span.cm-bracket { color: #cc7; }
+.cm-s-xq-light span.cm-tag { color: #3F7F7F; }
+.cm-s-xq-light span.cm-attribute { color: #7F007F; }
+.cm-s-xq-light span.cm-error { color: #f00; }
+
+.cm-s-xq-light .CodeMirror-activeline-background { background: #e8f2ff; }
+.cm-s-xq-light .CodeMirror-matchingbracket { outline:1px solid grey;color:black !important;background:yellow; }
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+.CodeMirror {
+  line-height: var(--jp-code-line-height);
+  font-size: var(--jp-code-font-size);
+  font-family: var(--jp-code-font-family);
+  border: 0;
+  border-radius: 0;
+  height: auto;
+  /* Changed to auto to autogrow */
+}
+
+.CodeMirror pre {
+  padding: 0 var(--jp-code-padding);
+}
+
+.jp-CodeMirrorEditor[data-type='inline'] .CodeMirror-dialog {
+  background-color: var(--jp-layout-color0);
+  color: var(--jp-content-font-color1);
+}
+
+/* This causes https://github.com/jupyter/jupyterlab/issues/522 */
+/* May not cause it not because we changed it! */
+.CodeMirror-lines {
+  padding: var(--jp-code-padding) 0;
+}
+
+.CodeMirror-linenumber {
+  padding: 0 8px;
+}
+
+.jp-CodeMirrorEditor-static {
+  margin: var(--jp-code-padding);
+}
+
+.jp-CodeMirrorEditor,
+.jp-CodeMirrorEditor-static {
+  cursor: text;
+}
+
+.jp-CodeMirrorEditor[data-type='inline'] .CodeMirror-cursor {
+  border-left: var(--jp-code-cursor-width0) solid var(--jp-editor-cursor-color);
+}
+
+/* When zoomed out 67% and 33% on a screen of 1440 width x 900 height */
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .jp-CodeMirrorEditor[data-type='inline'] .CodeMirror-cursor {
+    border-left: var(--jp-code-cursor-width1) solid
+      var(--jp-editor-cursor-color);
+  }
+}
+
+/* When zoomed out less than 33% */
+@media screen and (min-width: 4320px) {
+  .jp-CodeMirrorEditor[data-type='inline'] .CodeMirror-cursor {
+    border-left: var(--jp-code-cursor-width2) solid
+      var(--jp-editor-cursor-color);
+  }
+}
+
+.CodeMirror.jp-mod-readOnly .CodeMirror-cursor {
+  display: none;
+}
+
+.CodeMirror-gutters {
+  border-right: 1px solid var(--jp-border-color2);
+  background-color: var(--jp-layout-color0);
+}
+
+.jp-CollaboratorCursor {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: none;
+  border-bottom: 3px solid;
+  background-clip: content-box;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.CodeMirror-selectedtext.cm-searching {
+  background-color: var(--jp-search-selected-match-background-color) !important;
+  color: var(--jp-search-selected-match-color) !important;
+}
+
+.cm-searching {
+  background-color: var(
+    --jp-search-unselected-match-background-color
+  ) !important;
+  color: var(--jp-search-unselected-match-color) !important;
+}
+
+.CodeMirror-focused .CodeMirror-selected {
+  background-color: var(--jp-editor-selected-focused-background);
+}
+
+.CodeMirror-selected {
+  background-color: var(--jp-editor-selected-background);
+}
+
+.jp-CollaboratorCursor-hover {
+  position: absolute;
+  z-index: 1;
+  transform: translateX(-50%);
+  color: white;
+  border-radius: 3px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  text-align: center;
+  font-size: var(--jp-ui-font-size1);
+  white-space: nowrap;
+}
+
+.jp-CodeMirror-ruler {
+  border-left: 1px dashed var(--jp-border-color2);
+}
+
+/**
+ * Here is our jupyter theme for CodeMirror syntax highlighting
+ * This is used in our marked.js syntax highlighting and CodeMirror itself
+ * The string "jupyter" is set in ../codemirror/widget.DEFAULT_CODEMIRROR_THEME
+ * This came from the classic notebook, which came form highlight.js/GitHub
+ */
+
+/**
+ * CodeMirror themes are handling the background/color in this way. This works
+ * fine for CodeMirror editors outside the notebook, but the notebook styles
+ * these things differently.
+ */
+.CodeMirror.cm-s-jupyter {
+  background: var(--jp-layout-color0);
+  color: var(--jp-content-font-color1);
+}
+
+/* In the notebook, we want this styling to be handled by its container */
+.jp-CodeConsole .CodeMirror.cm-s-jupyter,
+.jp-Notebook .CodeMirror.cm-s-jupyter {
+  background: transparent;
+}
+
+.cm-s-jupyter .CodeMirror-cursor {
+  border-left: var(--jp-code-cursor-width0) solid var(--jp-editor-cursor-color);
+}
+.cm-s-jupyter span.cm-keyword {
+  color: var(--jp-mirror-editor-keyword-color);
+  font-weight: bold;
+}
+.cm-s-jupyter span.cm-atom {
+  color: var(--jp-mirror-editor-atom-color);
+}
+.cm-s-jupyter span.cm-number {
+  color: var(--jp-mirror-editor-number-color);
+}
+.cm-s-jupyter span.cm-def {
+  color: var(--jp-mirror-editor-def-color);
+}
+.cm-s-jupyter span.cm-variable {
+  color: var(--jp-mirror-editor-variable-color);
+}
+.cm-s-jupyter span.cm-variable-2 {
+  color: var(--jp-mirror-editor-variable-2-color);
+}
+.cm-s-jupyter span.cm-variable-3 {
+  color: var(--jp-mirror-editor-variable-3-color);
+}
+.cm-s-jupyter span.cm-punctuation {
+  color: var(--jp-mirror-editor-punctuation-color);
+}
+.cm-s-jupyter span.cm-property {
+  color: var(--jp-mirror-editor-property-color);
+}
+.cm-s-jupyter span.cm-operator {
+  color: var(--jp-mirror-editor-operator-color);
+  font-weight: bold;
+}
+.cm-s-jupyter span.cm-comment {
+  color: var(--jp-mirror-editor-comment-color);
+  font-style: italic;
+}
+.cm-s-jupyter span.cm-string {
+  color: var(--jp-mirror-editor-string-color);
+}
+.cm-s-jupyter span.cm-string-2 {
+  color: var(--jp-mirror-editor-string-2-color);
+}
+.cm-s-jupyter span.cm-meta {
+  color: var(--jp-mirror-editor-meta-color);
+}
+.cm-s-jupyter span.cm-qualifier {
+  color: var(--jp-mirror-editor-qualifier-color);
+}
+.cm-s-jupyter span.cm-builtin {
+  color: var(--jp-mirror-editor-builtin-color);
+}
+.cm-s-jupyter span.cm-bracket {
+  color: var(--jp-mirror-editor-bracket-color);
+}
+.cm-s-jupyter span.cm-tag {
+  color: var(--jp-mirror-editor-tag-color);
+}
+.cm-s-jupyter span.cm-attribute {
+  color: var(--jp-mirror-editor-attribute-color);
+}
+.cm-s-jupyter span.cm-header {
+  color: var(--jp-mirror-editor-header-color);
+}
+.cm-s-jupyter span.cm-quote {
+  color: var(--jp-mirror-editor-quote-color);
+}
+.cm-s-jupyter span.cm-link {
+  color: var(--jp-mirror-editor-link-color);
+}
+.cm-s-jupyter span.cm-error {
+  color: var(--jp-mirror-editor-error-color);
+}
+.cm-s-jupyter span.cm-hr {
+  color: #999;
+}
+
+.cm-s-jupyter span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.cm-s-jupyter .CodeMirror-activeline-background,
+.cm-s-jupyter .CodeMirror-gutter {
+  background-color: var(--jp-layout-color2);
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/* This file was auto-generated by ensurePackage() in @jupyterlab/buildutils */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+| RenderedText
+|----------------------------------------------------------------------------*/
+
+.jp-RenderedText {
+  text-align: left;
+  padding-left: var(--jp-code-padding);
+  line-height: var(--jp-code-line-height);
+  font-family: var(--jp-code-font-family);
+}
+
+.jp-RenderedText pre,
+.jp-RenderedJavaScript pre,
+.jp-RenderedHTMLCommon pre {
+  color: var(--jp-content-font-color1);
+  font-size: var(--jp-code-font-size);
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  line-height: normal;
+}
+
+.jp-RenderedText pre a:link {
+  text-decoration: none;
+  color: var(--jp-content-link-color);
+}
+.jp-RenderedText pre a:hover {
+  text-decoration: underline;
+  color: var(--jp-content-link-color);
+}
+.jp-RenderedText pre a:visited {
+  text-decoration: none;
+  color: var(--jp-content-link-color);
+}
+
+/* console foregrounds and backgrounds */
+.jp-RenderedText pre .ansi-black-fg {
+  color: #3e424d;
+}
+.jp-RenderedText pre .ansi-red-fg {
+  color: #e75c58;
+}
+.jp-RenderedText pre .ansi-green-fg {
+  color: #00a250;
+}
+.jp-RenderedText pre .ansi-yellow-fg {
+  color: #ddb62b;
+}
+.jp-RenderedText pre .ansi-blue-fg {
+  color: #208ffb;
+}
+.jp-RenderedText pre .ansi-magenta-fg {
+  color: #d160c4;
+}
+.jp-RenderedText pre .ansi-cyan-fg {
+  color: #60c6c8;
+}
+.jp-RenderedText pre .ansi-white-fg {
+  color: #c5c1b4;
+}
+
+.jp-RenderedText pre .ansi-black-bg {
+  background-color: #3e424d;
+}
+.jp-RenderedText pre .ansi-red-bg {
+  background-color: #e75c58;
+}
+.jp-RenderedText pre .ansi-green-bg {
+  background-color: #00a250;
+}
+.jp-RenderedText pre .ansi-yellow-bg {
+  background-color: #ddb62b;
+}
+.jp-RenderedText pre .ansi-blue-bg {
+  background-color: #208ffb;
+}
+.jp-RenderedText pre .ansi-magenta-bg {
+  background-color: #d160c4;
+}
+.jp-RenderedText pre .ansi-cyan-bg {
+  background-color: #60c6c8;
+}
+.jp-RenderedText pre .ansi-white-bg {
+  background-color: #c5c1b4;
+}
+
+.jp-RenderedText pre .ansi-black-intense-fg {
+  color: #282c36;
+}
+.jp-RenderedText pre .ansi-red-intense-fg {
+  color: #b22b31;
+}
+.jp-RenderedText pre .ansi-green-intense-fg {
+  color: #007427;
+}
+.jp-RenderedText pre .ansi-yellow-intense-fg {
+  color: #b27d12;
+}
+.jp-RenderedText pre .ansi-blue-intense-fg {
+  color: #0065ca;
+}
+.jp-RenderedText pre .ansi-magenta-intense-fg {
+  color: #a03196;
+}
+.jp-RenderedText pre .ansi-cyan-intense-fg {
+  color: #258f8f;
+}
+.jp-RenderedText pre .ansi-white-intense-fg {
+  color: #a1a6b2;
+}
+
+.jp-RenderedText pre .ansi-black-intense-bg {
+  background-color: #282c36;
+}
+.jp-RenderedText pre .ansi-red-intense-bg {
+  background-color: #b22b31;
+}
+.jp-RenderedText pre .ansi-green-intense-bg {
+  background-color: #007427;
+}
+.jp-RenderedText pre .ansi-yellow-intense-bg {
+  background-color: #b27d12;
+}
+.jp-RenderedText pre .ansi-blue-intense-bg {
+  background-color: #0065ca;
+}
+.jp-RenderedText pre .ansi-magenta-intense-bg {
+  background-color: #a03196;
+}
+.jp-RenderedText pre .ansi-cyan-intense-bg {
+  background-color: #258f8f;
+}
+.jp-RenderedText pre .ansi-white-intense-bg {
+  background-color: #a1a6b2;
+}
+
+.jp-RenderedText pre .ansi-default-inverse-fg {
+  color: var(--jp-ui-inverse-font-color0);
+}
+.jp-RenderedText pre .ansi-default-inverse-bg {
+  background-color: var(--jp-inverse-layout-color0);
+}
+
+.jp-RenderedText pre .ansi-bold {
+  font-weight: bold;
+}
+.jp-RenderedText pre .ansi-underline {
+  text-decoration: underline;
+}
+
+.jp-RenderedText[data-mime-type='application/vnd.jupyter.stderr'] {
+  background: var(--jp-rendermime-error-background);
+  padding-top: var(--jp-code-padding);
+}
+
+/*-----------------------------------------------------------------------------
+| RenderedLatex
+|----------------------------------------------------------------------------*/
+
+.jp-RenderedLatex {
+  color: var(--jp-content-font-color1);
+  font-size: var(--jp-content-font-size1);
+  line-height: var(--jp-content-line-height);
+}
+
+/* Left-justify outputs.*/
+.jp-OutputArea-output.jp-RenderedLatex {
+  padding: var(--jp-code-padding);
+  text-align: left;
+}
+
+/*-----------------------------------------------------------------------------
+| RenderedHTML
+|----------------------------------------------------------------------------*/
+
+.jp-RenderedHTMLCommon {
+  color: var(--jp-content-font-color1);
+  font-family: var(--jp-content-font-family);
+  font-size: var(--jp-content-font-size1);
+  line-height: var(--jp-content-line-height);
+  /* Give a bit more R padding on Markdown text to keep line lengths reasonable */
+  padding-right: 20px;
+}
+
+.jp-RenderedHTMLCommon em {
+  font-style: italic;
+}
+
+.jp-RenderedHTMLCommon strong {
+  font-weight: bold;
+}
+
+.jp-RenderedHTMLCommon u {
+  text-decoration: underline;
+}
+
+.jp-RenderedHTMLCommon a:link {
+  text-decoration: none;
+  color: var(--jp-content-link-color);
+}
+
+.jp-RenderedHTMLCommon a:hover {
+  text-decoration: underline;
+  color: var(--jp-content-link-color);
+}
+
+.jp-RenderedHTMLCommon a:visited {
+  text-decoration: none;
+  color: var(--jp-content-link-color);
+}
+
+/* Headings */
+
+.jp-RenderedHTMLCommon h1,
+.jp-RenderedHTMLCommon h2,
+.jp-RenderedHTMLCommon h3,
+.jp-RenderedHTMLCommon h4,
+.jp-RenderedHTMLCommon h5,
+.jp-RenderedHTMLCommon h6 {
+  line-height: var(--jp-content-heading-line-height);
+  font-weight: var(--jp-content-heading-font-weight);
+  font-style: normal;
+  margin: var(--jp-content-heading-margin-top) 0
+    var(--jp-content-heading-margin-bottom) 0;
+}
+
+.jp-RenderedHTMLCommon h1:first-child,
+.jp-RenderedHTMLCommon h2:first-child,
+.jp-RenderedHTMLCommon h3:first-child,
+.jp-RenderedHTMLCommon h4:first-child,
+.jp-RenderedHTMLCommon h5:first-child,
+.jp-RenderedHTMLCommon h6:first-child {
+  margin-top: calc(0.5 * var(--jp-content-heading-margin-top));
+}
+
+.jp-RenderedHTMLCommon h1:last-child,
+.jp-RenderedHTMLCommon h2:last-child,
+.jp-RenderedHTMLCommon h3:last-child,
+.jp-RenderedHTMLCommon h4:last-child,
+.jp-RenderedHTMLCommon h5:last-child,
+.jp-RenderedHTMLCommon h6:last-child {
+  margin-bottom: calc(0.5 * var(--jp-content-heading-margin-bottom));
+}
+
+.jp-RenderedHTMLCommon h1 {
+  font-size: var(--jp-content-font-size5);
+}
+
+.jp-RenderedHTMLCommon h2 {
+  font-size: var(--jp-content-font-size4);
+}
+
+.jp-RenderedHTMLCommon h3 {
+  font-size: var(--jp-content-font-size3);
+}
+
+.jp-RenderedHTMLCommon h4 {
+  font-size: var(--jp-content-font-size2);
+}
+
+.jp-RenderedHTMLCommon h5 {
+  font-size: var(--jp-content-font-size1);
+}
+
+.jp-RenderedHTMLCommon h6 {
+  font-size: var(--jp-content-font-size0);
+}
+
+/* Lists */
+
+.jp-RenderedHTMLCommon ul:not(.list-inline),
+.jp-RenderedHTMLCommon ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+.jp-RenderedHTMLCommon ul {
+  list-style: disc;
+}
+
+.jp-RenderedHTMLCommon ul ul {
+  list-style: square;
+}
+
+.jp-RenderedHTMLCommon ul ul ul {
+  list-style: circle;
+}
+
+.jp-RenderedHTMLCommon ol {
+  list-style: decimal;
+}
+
+.jp-RenderedHTMLCommon ol ol {
+  list-style: upper-alpha;
+}
+
+.jp-RenderedHTMLCommon ol ol ol {
+  list-style: lower-alpha;
+}
+
+.jp-RenderedHTMLCommon ol ol ol ol {
+  list-style: lower-roman;
+}
+
+.jp-RenderedHTMLCommon ol ol ol ol ol {
+  list-style: decimal;
+}
+
+.jp-RenderedHTMLCommon ol,
+.jp-RenderedHTMLCommon ul {
+  margin-bottom: 1em;
+}
+
+.jp-RenderedHTMLCommon ul ul,
+.jp-RenderedHTMLCommon ul ol,
+.jp-RenderedHTMLCommon ol ul,
+.jp-RenderedHTMLCommon ol ol {
+  margin-bottom: 0em;
+}
+
+.jp-RenderedHTMLCommon hr {
+  color: var(--jp-border-color2);
+  background-color: var(--jp-border-color1);
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.jp-RenderedHTMLCommon > pre {
+  margin: 1.5em 2em;
+}
+
+.jp-RenderedHTMLCommon pre,
+.jp-RenderedHTMLCommon code {
+  border: 0;
+  background-color: var(--jp-layout-color0);
+  color: var(--jp-content-font-color1);
+  font-family: var(--jp-code-font-family);
+  font-size: inherit;
+  line-height: var(--jp-code-line-height);
+  padding: 0;
+  white-space: pre-wrap;
+}
+
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background-color: var(--jp-layout-color2);
+  padding: 1px 5px;
+}
+
+/* Tables */
+
+.jp-RenderedHTMLCommon table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: none;
+  color: var(--jp-ui-font-color1);
+  font-size: 12px;
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.jp-RenderedHTMLCommon thead {
+  border-bottom: var(--jp-border-width) solid var(--jp-border-color1);
+  vertical-align: bottom;
+}
+
+.jp-RenderedHTMLCommon td,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon tr {
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+
+.jp-RenderedMarkdown.jp-RenderedHTMLCommon td,
+.jp-RenderedMarkdown.jp-RenderedHTMLCommon th {
+  max-width: none;
+}
+
+:not(.jp-RenderedMarkdown).jp-RenderedHTMLCommon td,
+:not(.jp-RenderedMarkdown).jp-RenderedHTMLCommon th,
+:not(.jp-RenderedMarkdown).jp-RenderedHTMLCommon tr {
+  text-align: right;
+}
+
+.jp-RenderedHTMLCommon th {
+  font-weight: bold;
+}
+
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd) {
+  background: var(--jp-layout-color0);
+}
+
+.jp-RenderedHTMLCommon tbody tr:nth-child(even) {
+  background: var(--jp-rendermime-table-row-background);
+}
+
+.jp-RenderedHTMLCommon tbody tr:hover {
+  background: var(--jp-rendermime-table-row-hover-background);
+}
+
+.jp-RenderedHTMLCommon table {
+  margin-bottom: 1em;
+}
+
+.jp-RenderedHTMLCommon p {
+  text-align: left;
+  margin: 0px;
+}
+
+.jp-RenderedHTMLCommon p {
+  margin-bottom: 1em;
+}
+
+.jp-RenderedHTMLCommon img {
+  -moz-force-broken-image-icon: 1;
+}
+
+/* Restrict to direct children as other images could be nested in other content. */
+.jp-RenderedHTMLCommon > img {
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 1em;
+}
+
+/* Change color behind transparent images if they need it... */
+[data-jp-theme-light='false'] .jp-RenderedImage img.jp-needs-light-background {
+  background-color: var(--jp-inverse-layout-color1);
+}
+[data-jp-theme-light='true'] .jp-RenderedImage img.jp-needs-dark-background {
+  background-color: var(--jp-inverse-layout-color1);
+}
+/* ...or leave it untouched if they don't */
+[data-jp-theme-light='false'] .jp-RenderedImage img.jp-needs-dark-background {
+}
+[data-jp-theme-light='true'] .jp-RenderedImage img.jp-needs-light-background {
+}
+
+.jp-RenderedHTMLCommon img,
+.jp-RenderedImage img,
+.jp-RenderedHTMLCommon svg,
+.jp-RenderedSVG svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.jp-RenderedHTMLCommon img.jp-mod-unconfined,
+.jp-RenderedImage img.jp-mod-unconfined,
+.jp-RenderedHTMLCommon svg.jp-mod-unconfined,
+.jp-RenderedSVG svg.jp-mod-unconfined {
+  max-width: none;
+}
+
+.jp-RenderedHTMLCommon .alert {
+  padding: var(--jp-notebook-padding);
+  border: var(--jp-border-width) solid transparent;
+  border-radius: var(--jp-border-radius);
+  margin-bottom: 1em;
+}
+
+.jp-RenderedHTMLCommon .alert-info {
+  color: var(--jp-info-color0);
+  background-color: var(--jp-info-color3);
+  border-color: var(--jp-info-color2);
+}
+.jp-RenderedHTMLCommon .alert-info hr {
+  border-color: var(--jp-info-color3);
+}
+.jp-RenderedHTMLCommon .alert-info > p:last-child,
+.jp-RenderedHTMLCommon .alert-info > ul:last-child {
+  margin-bottom: 0;
+}
+
+.jp-RenderedHTMLCommon .alert-warning {
+  color: var(--jp-warn-color0);
+  background-color: var(--jp-warn-color3);
+  border-color: var(--jp-warn-color2);
+}
+.jp-RenderedHTMLCommon .alert-warning hr {
+  border-color: var(--jp-warn-color3);
+}
+.jp-RenderedHTMLCommon .alert-warning > p:last-child,
+.jp-RenderedHTMLCommon .alert-warning > ul:last-child {
+  margin-bottom: 0;
+}
+
+.jp-RenderedHTMLCommon .alert-success {
+  color: var(--jp-success-color0);
+  background-color: var(--jp-success-color3);
+  border-color: var(--jp-success-color2);
+}
+.jp-RenderedHTMLCommon .alert-success hr {
+  border-color: var(--jp-success-color3);
+}
+.jp-RenderedHTMLCommon .alert-success > p:last-child,
+.jp-RenderedHTMLCommon .alert-success > ul:last-child {
+  margin-bottom: 0;
+}
+
+.jp-RenderedHTMLCommon .alert-danger {
+  color: var(--jp-error-color0);
+  background-color: var(--jp-error-color3);
+  border-color: var(--jp-error-color2);
+}
+.jp-RenderedHTMLCommon .alert-danger hr {
+  border-color: var(--jp-error-color3);
+}
+.jp-RenderedHTMLCommon .alert-danger > p:last-child,
+.jp-RenderedHTMLCommon .alert-danger > ul:last-child {
+  margin-bottom: 0;
+}
+
+.jp-RenderedHTMLCommon blockquote {
+  margin: 1em 2em;
+  padding: 0 1em;
+  border-left: 5px solid var(--jp-border-color2);
+}
+
+a.jp-InternalAnchorLink {
+  visibility: hidden;
+  margin-left: 8px;
+  color: var(--md-blue-800);
+}
+
+h1:hover .jp-InternalAnchorLink,
+h2:hover .jp-InternalAnchorLink,
+h3:hover .jp-InternalAnchorLink,
+h4:hover .jp-InternalAnchorLink,
+h5:hover .jp-InternalAnchorLink,
+h6:hover .jp-InternalAnchorLink {
+  visibility: visible;
+}
+
+.jp-RenderedHTMLCommon kbd {
+  background-color: var(--jp-rendermime-table-row-background);
+  border: 1px solid var(--jp-border-color0);
+  border-bottom-color: var(--jp-border-color2);
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  display: inline-block;
+  font-size: 0.8em;
+  line-height: 1em;
+  padding: 0.2em 0.5em;
+}
+
+/* Most direct children of .jp-RenderedHTMLCommon have a margin-bottom of 1.0.
+ * At the bottom of cells this is a bit too much as there is also spacing
+ * between cells. Going all the way to 0 gets too tight between markdown and
+ * code cells.
+ */
+.jp-RenderedHTMLCommon > *:last-child {
+  margin-bottom: 0.5em;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/* This file was auto-generated by ensurePackage() in @jupyterlab/buildutils */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+.jp-MimeDocument {
+  outline: none;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/* This file was auto-generated by ensurePackage() in @jupyterlab/buildutils */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+| Variables
+|----------------------------------------------------------------------------*/
+
+:root {
+  --jp-private-filebrowser-button-height: 28px;
+  --jp-private-filebrowser-button-width: 48px;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+.jp-FileBrowser {
+  display: flex;
+  flex-direction: column;
+  color: var(--jp-ui-font-color1);
+  background: var(--jp-layout-color1);
+  /* This is needed so that all font sizing of children done in ems is
+   * relative to this base size */
+  font-size: var(--jp-ui-font-size1);
+}
+
+.jp-FileBrowser-toolbar.jp-Toolbar {
+  border-bottom: none;
+  height: auto;
+  margin: var(--jp-toolbar-header-margin);
+  box-shadow: none;
+}
+
+.jp-BreadCrumbs {
+  flex: 0 0 auto;
+  margin: 4px 12px;
+}
+
+.jp-BreadCrumbs-item {
+  margin: 0px 2px;
+  padding: 0px 2px;
+  border-radius: var(--jp-border-radius);
+  cursor: pointer;
+}
+
+.jp-BreadCrumbs-item:hover {
+  background-color: var(--jp-layout-color2);
+}
+
+.jp-BreadCrumbs-item:first-child {
+  margin-left: 0px;
+}
+
+.jp-BreadCrumbs-item.jp-mod-dropTarget {
+  background-color: var(--jp-brand-color2);
+  opacity: 0.7;
+}
+
+/*-----------------------------------------------------------------------------
+| Buttons
+|----------------------------------------------------------------------------*/
+
+.jp-FileBrowser-toolbar.jp-Toolbar {
+  padding: 0px;
+}
+
+.jp-FileBrowser-toolbar.jp-Toolbar {
+  justify-content: space-evenly;
+}
+
+.jp-FileBrowser-toolbar.jp-Toolbar .jp-Toolbar-item {
+  flex: 1;
+}
+
+.jp-FileBrowser-toolbar.jp-Toolbar .jp-ToolbarButtonComponent {
+  width: 100%;
+}
+
+/*-----------------------------------------------------------------------------
+| DirListing
+|----------------------------------------------------------------------------*/
+
+.jp-DirListing {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  outline: 0;
+}
+
+.jp-DirListing-header {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  border-top: var(--jp-border-width) solid var(--jp-border-color2);
+  border-bottom: var(--jp-border-width) solid var(--jp-border-color1);
+  box-shadow: var(--jp-toolbar-box-shadow);
+  z-index: 2;
+}
+
+.jp-DirListing-headerItem {
+  padding: 4px 12px 2px 12px;
+  font-weight: 500;
+}
+
+.jp-DirListing-headerItem:hover {
+  background: var(--jp-layout-color2);
+}
+
+.jp-DirListing-headerItem.jp-id-name {
+  flex: 1 0 84px;
+}
+
+.jp-DirListing-headerItem.jp-id-modified {
+  flex: 0 0 112px;
+  border-left: var(--jp-border-width) solid var(--jp-border-color2);
+  text-align: right;
+}
+
+.jp-DirListing-narrow .jp-id-modified,
+.jp-DirListing-narrow .jp-DirListing-itemModified {
+  display: none;
+}
+
+.jp-DirListing-headerItem.jp-mod-selected {
+  font-weight: 600;
+}
+
+/* increase specificity to override bundled default */
+.jp-DirListing-content {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: auto;
+  background-color: var(--jp-layout-color1);
+}
+
+/* Style the directory listing content when a user drops a file to upload */
+.jp-DirListing.jp-mod-native-drop .jp-DirListing-content {
+  outline: 5px dashed rgba(128, 128, 128, 0.5);
+  outline-offset: -10px;
+  cursor: copy;
+}
+
+.jp-DirListing-item {
+  display: flex;
+  flex-direction: row;
+  padding: 4px 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.jp-DirListing-item.jp-mod-selected {
+  color: white;
+  background: var(--jp-brand-color1);
+}
+
+.jp-DirListing-item.jp-mod-dropTarget {
+  background: var(--jp-brand-color3);
+}
+
+.jp-DirListing-item:hover:not(.jp-mod-selected) {
+  background: var(--jp-layout-color2);
+}
+
+.jp-DirListing-itemIcon {
+  flex: 0 0 20px;
+  margin-right: 4px;
+}
+
+.jp-DirListing-itemText {
+  flex: 1 0 64px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+}
+
+.jp-DirListing-itemModified {
+  flex: 0 0 125px;
+  text-align: right;
+}
+
+.jp-DirListing-editor {
+  flex: 1 0 64px;
+  outline: none;
+  border: none;
+}
+
+.jp-DirListing-item.jp-mod-running .jp-DirListing-itemIcon:before {
+  color: limegreen;
+  content: '\25CF';
+  font-size: 8px;
+  position: absolute;
+  left: -8px;
+}
+
+.jp-DirListing-item.lm-mod-drag-image,
+.jp-DirListing-item.jp-mod-selected.lm-mod-drag-image {
+  font-size: var(--jp-ui-font-size1);
+  padding-left: 4px;
+  margin-left: 4px;
+  width: 160px;
+  background-color: var(--jp-ui-inverse-font-color2);
+  box-shadow: var(--jp-elevation-z2);
+  border-radius: 0px;
+  color: var(--jp-ui-font-color1);
+  transform: translateX(-40%) translateY(-58%);
+}
+
+.jp-DirListing-deadSpace {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: auto;
+  background-color: var(--jp-layout-color1);
+}
+
+.jp-Document {
+  min-width: 120px;
+  min-height: 120px;
+  outline: none;
+}
+
+.jp-FileDialog.jp-mod-conflict input {
+  color: red;
+}
+
+.jp-FileDialog .jp-new-name-title {
+  margin-top: 12px;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/* This file was auto-generated by ensurePackage() in @jupyterlab/buildutils */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+| Private CSS variables
+|----------------------------------------------------------------------------*/
+
+:root {
+}
+
+/*-----------------------------------------------------------------------------
+| Main OutputArea
+| OutputArea has a list of Outputs
+|----------------------------------------------------------------------------*/
+
+.jp-OutputArea {
+  overflow-y: auto;
+}
+
+.jp-OutputArea-child {
+  display: flex;
+  flex-direction: row;
+}
+
+.jp-OutputPrompt {
+  flex: 0 0 var(--jp-cell-prompt-width);
+  color: var(--jp-cell-outprompt-font-color);
+  font-family: var(--jp-cell-prompt-font-family);
+  padding: var(--jp-code-padding);
+  letter-spacing: var(--jp-cell-prompt-letter-spacing);
+  line-height: var(--jp-code-line-height);
+  font-size: var(--jp-code-font-size);
+  border: var(--jp-border-width) solid transparent;
+  opacity: var(--jp-cell-prompt-opacity);
+  /* Right align prompt text, don't wrap to handle large prompt numbers */
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Disable text selection */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.jp-OutputArea-output {
+  height: auto;
+  overflow: auto;
+  user-select: text;
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+}
+
+.jp-OutputArea-child .jp-OutputArea-output {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+/**
+ * Isolated output.
+ */
+.jp-OutputArea-output.jp-mod-isolated {
+  width: 100%;
+  display: block;
+}
+
+/*
+When drag events occur, `p-mod-override-cursor` is added to the body.
+Because iframes steal all cursor events, the following two rules are necessary
+to suppress pointer events while resize drags are occurring. There may be a
+better solution to this problem.
+*/
+body.lm-mod-override-cursor .jp-OutputArea-output.jp-mod-isolated {
+  position: relative;
+}
+
+body.lm-mod-override-cursor .jp-OutputArea-output.jp-mod-isolated:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+}
+
+/* pre */
+
+.jp-OutputArea-output pre {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: auto;
+  overflow-y: auto;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* tables */
+
+.jp-OutputArea-output.jp-RenderedHTMLCommon table {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* description lists */
+
+.jp-OutputArea-output dl,
+.jp-OutputArea-output dt,
+.jp-OutputArea-output dd {
+  display: block;
+}
+
+.jp-OutputArea-output dl {
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.jp-OutputArea-output dt {
+  font-weight: bold;
+  float: left;
+  width: 20%;
+  padding: 0;
+  margin: 0;
+}
+
+.jp-OutputArea-output dd {
+  float: left;
+  width: 80%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Hide the gutter in case of
+ *  - nested output areas (e.g. in the case of output widgets)
+ *  - mirrored output areas
+ */
+.jp-OutputArea .jp-OutputArea .jp-OutputArea-prompt {
+  display: none;
+}
+
+/*-----------------------------------------------------------------------------
+| executeResult is added to any Output-result for the display of the object
+| returned by a cell
+|----------------------------------------------------------------------------*/
+
+.jp-OutputArea-output.jp-OutputArea-executeResult {
+  margin-left: 0px;
+  flex: 1 1 auto;
+}
+
+.jp-OutputArea-executeResult.jp-RenderedText {
+  padding-top: var(--jp-code-padding);
+}
+
+/*-----------------------------------------------------------------------------
+| The Stdin output
+|----------------------------------------------------------------------------*/
+
+.jp-OutputArea-stdin {
+  line-height: var(--jp-code-line-height);
+  padding-top: var(--jp-code-padding);
+  display: flex;
+}
+
+.jp-Stdin-prompt {
+  color: var(--jp-content-font-color0);
+  padding-right: var(--jp-code-padding);
+  vertical-align: baseline;
+  flex: 0 0 auto;
+}
+
+.jp-Stdin-input {
+  font-family: var(--jp-code-font-family);
+  font-size: inherit;
+  color: inherit;
+  background-color: inherit;
+  width: 42%;
+  min-width: 200px;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+  flex: 0 0 70%;
+}
+
+.jp-Stdin-input:focus {
+  box-shadow: none;
+}
+
+/*-----------------------------------------------------------------------------
+| Output Area View
+|----------------------------------------------------------------------------*/
+
+.jp-LinkedOutputView .jp-OutputArea {
+  height: 100%;
+  display: block;
+}
+
+.jp-LinkedOutputView .jp-OutputArea-output:only-child {
+  height: 100%;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/* This file was auto-generated by ensurePackage() in @jupyterlab/buildutils */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+.jp-Collapser {
+  flex: 0 0 var(--jp-cell-collapser-width);
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-radius: var(--jp-border-radius);
+  opacity: 1;
+}
+
+.jp-Collapser-child {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  /* height: 100% doesn't work because the height of its parent is computed from content */
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+| Header/Footer
+|----------------------------------------------------------------------------*/
+
+/* Hidden by zero height by default */
+.jp-CellHeader,
+.jp-CellFooter {
+  height: 0px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+| Input
+|----------------------------------------------------------------------------*/
+
+/* All input areas */
+.jp-InputArea {
+  display: flex;
+  flex-direction: row;
+}
+
+.jp-InputArea-editor {
+  flex: 1 1 auto;
+}
+
+.jp-InputArea-editor {
+  /* This is the non-active, default styling */
+  border: var(--jp-border-width) solid var(--jp-cell-editor-border-color);
+  border-radius: 0px;
+  background: var(--jp-cell-editor-background);
+}
+
+.jp-InputPrompt {
+  flex: 0 0 var(--jp-cell-prompt-width);
+  color: var(--jp-cell-inprompt-font-color);
+  font-family: var(--jp-cell-prompt-font-family);
+  padding: var(--jp-code-padding);
+  letter-spacing: var(--jp-cell-prompt-letter-spacing);
+  opacity: var(--jp-cell-prompt-opacity);
+  line-height: var(--jp-code-line-height);
+  font-size: var(--jp-code-font-size);
+  border: var(--jp-border-width) solid transparent;
+  opacity: var(--jp-cell-prompt-opacity);
+  /* Right align prompt text, don't wrap to handle large prompt numbers */
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Disable text selection */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+| Placeholder
+|----------------------------------------------------------------------------*/
+
+.jp-Placeholder {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+}
+
+.jp-Placeholder-prompt {
+  box-sizing: border-box;
+}
+
+.jp-Placeholder-content {
+  flex: 1 1 auto;
+  border: none;
+  background: transparent;
+  height: 20px;
+  box-sizing: border-box;
+}
+
+.jp-Placeholder-content .jp-MoreHorizIcon {
+  width: 32px;
+  height: 16px;
+  border: 1px solid transparent;
+  border-radius: var(--jp-border-radius);
+}
+
+.jp-Placeholder-content .jp-MoreHorizIcon:hover {
+  border: 1px solid var(--jp-border-color1);
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+  background-color: var(--jp-layout-color0);
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+| Private CSS variables
+|----------------------------------------------------------------------------*/
+
+:root {
+  --jp-private-cell-scrolling-output-offset: 5px;
+}
+
+/*-----------------------------------------------------------------------------
+| Cell
+|----------------------------------------------------------------------------*/
+
+.jp-Cell {
+  padding: var(--jp-cell-padding);
+  margin: 0px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+/*-----------------------------------------------------------------------------
+| Common input/output
+|----------------------------------------------------------------------------*/
+
+.jp-Cell-inputWrapper,
+.jp-Cell-outputWrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  margin: 0px;
+  /* Added to reveal the box-shadow on the input and output collapsers. */
+  overflow: visible;
+}
+
+/* Only input/output areas inside cells */
+.jp-Cell-inputArea,
+.jp-Cell-outputArea {
+  flex: 1 1 auto;
+}
+
+/*-----------------------------------------------------------------------------
+| Collapser
+|----------------------------------------------------------------------------*/
+
+/* Make the output collapser disappear when there is not output, but do so
+ * in a manner that leaves it in the layout and preserves its width.
+ */
+.jp-Cell.jp-mod-noOutputs .jp-Cell-outputCollapser {
+  border: none !important;
+  background: transparent !important;
+}
+
+.jp-Cell:not(.jp-mod-noOutputs) .jp-Cell-outputCollapser {
+  min-height: var(--jp-cell-collapser-min-height);
+}
+
+/*-----------------------------------------------------------------------------
+| Output
+|----------------------------------------------------------------------------*/
+
+/* Put a space between input and output when there IS output */
+.jp-Cell:not(.jp-mod-noOutputs) .jp-Cell-outputWrapper {
+  margin-top: 5px;
+}
+
+/* Text output with the Out[] prompt needs a top padding to match the
+ * alignment of the Out[] prompt itself.
+ */
+.jp-OutputArea-executeResult .jp-RenderedText.jp-OutputArea-output {
+  padding-top: var(--jp-code-padding);
+}
+
+.jp-CodeCell.jp-mod-outputsScrolled .jp-Cell-outputArea {
+  overflow-y: auto;
+  max-height: 200px;
+  box-shadow: inset 0 0 6px 2px rgba(0, 0, 0, 0.3);
+  margin-left: var(--jp-private-cell-scrolling-output-offset);
+}
+
+.jp-CodeCell.jp-mod-outputsScrolled .jp-OutputArea-prompt {
+  flex: 0 0
+    calc(
+      var(--jp-cell-prompt-width) -
+        var(--jp-private-cell-scrolling-output-offset)
+    );
+}
+
+/*-----------------------------------------------------------------------------
+| CodeCell
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+| MarkdownCell
+|----------------------------------------------------------------------------*/
+
+.jp-MarkdownOutput {
+  flex: 1 1 auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: var(--jp-code-padding);
+}
+
+.jp-MarkdownOutput.jp-RenderedHTMLCommon {
+  overflow: auto;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/* This file was auto-generated by ensurePackage() in @jupyterlab/buildutils */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+| Variables
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+
+/*-----------------------------------------------------------------------------
+| Styles
+|----------------------------------------------------------------------------*/
+
+.jp-NotebookPanel-toolbar {
+  padding: 2px;
+}
+
+.jp-Toolbar-item.jp-Notebook-toolbarCellType .jp-select-wrapper.jp-mod-focused {
+  border: none;
+  box-shadow: none;
+}
+
+.jp-Notebook-toolbarCellTypeDropdown select {
+  height: 24px;
+  font-size: var(--jp-ui-font-size1);
+  line-height: 14px;
+  border-radius: 0;
+  display: block;
+}
+
+.jp-Notebook-toolbarCellTypeDropdown span {
+  top: 5px !important;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+| Private CSS variables
+|----------------------------------------------------------------------------*/
+
+:root {
+  --jp-private-notebook-dragImage-width: 304px;
+  --jp-private-notebook-dragImage-height: 36px;
+  --jp-private-notebook-selected-color: var(--md-blue-400);
+  --jp-private-notebook-active-color: var(--md-green-400);
+}
+
+/*-----------------------------------------------------------------------------
+| Imports
+|----------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------
+| Notebook
+|----------------------------------------------------------------------------*/
+
+.jp-NotebookPanel {
+  display: block;
+  height: 100%;
+}
+
+.jp-NotebookPanel.jp-Document {
+  min-width: 240px;
+  min-height: 120px;
+}
+
+.jp-Notebook {
+  padding: var(--jp-notebook-padding);
+  outline: none;
+  overflow: auto;
+  background: var(--jp-layout-color0);
+}
+
+.jp-Notebook.jp-mod-scrollPastEnd::after {
+  display: block;
+  content: '';
+  min-height: var(--jp-notebook-scroll-padding);
+}
+
+.jp-Notebook .jp-Cell {
+  overflow: visible;
+}
+
+.jp-Notebook .jp-Cell .jp-InputPrompt {
+  cursor: move;
+}
+
+/*-----------------------------------------------------------------------------
+| Notebook state related styling
+|
+| The notebook and cells each have states, here are the possibilities:
+|
+| - Notebook
+|   - Command
+|   - Edit
+| - Cell
+|   - None
+|   - Active (only one can be active)
+|   - Selected (the cells actions are applied to)
+|   - Multiselected (when multiple selected, the cursor)
+|   - No outputs
+|----------------------------------------------------------------------------*/
+
+/* Command or edit modes */
+
+.jp-Notebook .jp-Cell:not(.jp-mod-active) .jp-InputPrompt {
+  opacity: var(--jp-cell-prompt-not-active-opacity);
+  color: var(--jp-cell-prompt-not-active-font-color);
+}
+
+.jp-Notebook .jp-Cell:not(.jp-mod-active) .jp-OutputPrompt {
+  opacity: var(--jp-cell-prompt-not-active-opacity);
+  color: var(--jp-cell-prompt-not-active-font-color);
+}
+
+/* cell is active */
+.jp-Notebook .jp-Cell.jp-mod-active .jp-Collapser {
+  background: var(--jp-brand-color1);
+}
+
+/* collapser is hovered */
+.jp-Notebook .jp-Cell .jp-Collapser:hover {
+  box-shadow: var(--jp-elevation-z2);
+  background: var(--jp-brand-color1);
+  opacity: var(--jp-cell-collapser-not-active-hover-opacity);
+}
+
+/* cell is active and collapser is hovered */
+.jp-Notebook .jp-Cell.jp-mod-active .jp-Collapser:hover {
+  background: var(--jp-brand-color0);
+  opacity: 1;
+}
+
+/* Command mode */
+
+.jp-Notebook.jp-mod-commandMode .jp-Cell.jp-mod-selected {
+  background: var(--jp-notebook-multiselected-color);
+}
+
+.jp-Notebook.jp-mod-commandMode
+  .jp-Cell.jp-mod-active.jp-mod-selected:not(.jp-mod-multiSelected) {
+  background: transparent;
+}
+
+/* Edit mode */
+
+.jp-Notebook.jp-mod-editMode .jp-Cell.jp-mod-active .jp-InputArea-editor {
+  border: var(--jp-border-width) solid var(--jp-cell-editor-active-border-color);
+  box-shadow: var(--jp-input-box-shadow);
+  background-color: var(--jp-cell-editor-active-background);
+}
+
+/*-----------------------------------------------------------------------------
+| Notebook drag and drop
+|----------------------------------------------------------------------------*/
+
+.jp-Notebook-cell.jp-mod-dropSource {
+  opacity: 0.5;
+}
+
+.jp-Notebook-cell.jp-mod-dropTarget,
+.jp-Notebook.jp-mod-commandMode
+  .jp-Notebook-cell.jp-mod-active.jp-mod-selected.jp-mod-dropTarget {
+  border-top-color: var(--jp-private-notebook-selected-color);
+  border-top-style: solid;
+  border-top-width: 2px;
+}
+
+.jp-dragImage {
+  display: flex;
+  flex-direction: row;
+  width: var(--jp-private-notebook-dragImage-width);
+  height: var(--jp-private-notebook-dragImage-height);
+  border: var(--jp-border-width) solid var(--jp-cell-editor-border-color);
+  background: var(--jp-cell-editor-background);
+  overflow: visible;
+}
+
+.jp-dragImage-singlePrompt {
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.12);
+}
+
+.jp-dragImage .jp-dragImage-content {
+  flex: 1 1 auto;
+  z-index: 2;
+  font-size: var(--jp-code-font-size);
+  font-family: var(--jp-code-font-family);
+  line-height: var(--jp-code-line-height);
+  padding: var(--jp-code-padding);
+  border: var(--jp-border-width) solid var(--jp-cell-editor-border-color);
+  background: var(--jp-cell-editor-background-color);
+  color: var(--jp-content-font-color3);
+  text-align: left;
+  margin: 4px 4px 4px 0px;
+}
+
+.jp-dragImage .jp-dragImage-prompt {
+  flex: 0 0 auto;
+  min-width: 36px;
+  color: var(--jp-cell-inprompt-font-color);
+  padding: var(--jp-code-padding);
+  padding-left: 12px;
+  font-family: var(--jp-cell-prompt-font-family);
+  letter-spacing: var(--jp-cell-prompt-letter-spacing);
+  line-height: 1.9;
+  font-size: var(--jp-code-font-size);
+  border: var(--jp-border-width) solid transparent;
+}
+
+.jp-dragImage-multipleBack {
+  z-index: -1;
+  position: absolute;
+  height: 32px;
+  width: 300px;
+  top: 8px;
+  left: 8px;
+  background: var(--jp-layout-color2);
+  border: var(--jp-border-width) solid var(--jp-input-border-color);
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.12);
+}
+
+/*-----------------------------------------------------------------------------
+| Cell toolbar
+|----------------------------------------------------------------------------*/
+
+.jp-NotebookTools {
+  display: block;
+  min-width: var(--jp-sidebar-min-width);
+  color: var(--jp-ui-font-color1);
+  background: var(--jp-layout-color1);
+  /* This is needed so that all font sizing of children done in ems is
+    * relative to this base size */
+  font-size: var(--jp-ui-font-size1);
+  overflow: auto;
+}
+
+.jp-NotebookTools-tool {
+  padding: 0px 12px 0 12px;
+}
+
+.jp-ActiveCellTool {
+  padding: 12px;
+  background-color: var(--jp-layout-color1);
+  border-top: none !important;
+}
+
+.jp-ActiveCellTool .jp-InputArea-prompt {
+  flex: 0 0 auto;
+  padding-left: 0px;
+}
+
+.jp-ActiveCellTool .jp-InputArea-editor {
+  flex: 1 1 auto;
+  background: var(--jp-cell-editor-background);
+  border-color: var(--jp-cell-editor-border-color);
+}
+
+.jp-ActiveCellTool .jp-InputArea-editor .CodeMirror {
+  background: transparent;
+}
+
+.jp-MetadataEditorTool {
+  flex-direction: column;
+  padding: 12px 0px 12px 0px;
+}
+
+.jp-RankedPanel > :not(:first-child) {
+  margin-top: 12px;
+}
+
+.jp-KeySelector select.jp-mod-styled {
+  font-size: var(--jp-ui-font-size1);
+  color: var(--jp-ui-font-color0);
+  border: var(--jp-border-width) solid var(--jp-border-color1);
+}
+
+.jp-KeySelector label,
+.jp-MetadataEditorTool label {
+  line-height: 1.4;
+}
+
+/*-----------------------------------------------------------------------------
+| Presentation Mode (.jp-mod-presentationMode)
+|----------------------------------------------------------------------------*/
+
+.jp-mod-presentationMode .jp-Notebook {
+  --jp-content-font-size1: var(--jp-content-presentation-font-size1);
+  --jp-code-font-size: var(--jp-code-presentation-font-size);
+}
+
+.jp-mod-presentationMode .jp-Notebook .jp-Cell .jp-InputPrompt,
+.jp-mod-presentationMode .jp-Notebook .jp-Cell .jp-OutputPrompt {
+  flex: 0 0 110px;
+}
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/* This file was auto-generated by ensurePackage() in @jupyterlab/buildutils */
+
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+</style>
+
+    <style type="text/css">
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*
+The following CSS variables define the main, public API for styling JupyterLab.
+These variables should be used by all plugins wherever possible. In other
+words, plugins should not define custom colors, sizes, etc unless absolutely
+necessary. This enables users to change the visual theme of JupyterLab
+by changing these variables.
+
+Many variables appear in an ordered sequence (0,1,2,3). These sequences
+are designed to work well together, so for example, `--jp-border-color1` should
+be used with `--jp-layout-color1`. The numbers have the following meanings:
+
+* 0: super-primary, reserved for special emphasis
+* 1: primary, most important under normal situations
+* 2: secondary, next most important under normal situations
+* 3: tertiary, next most important under normal situations
+
+Throughout JupyterLab, we are mostly following principles from Google's
+Material Design when selecting colors. We are not, however, following
+all of MD as it is not optimized for dense, information rich UIs.
+*/
+
+:root {
+  /* Elevation
+   *
+   * We style box-shadows using Material Design's idea of elevation. These particular numbers are taken from here:
+   *
+   * https://github.com/material-components/material-components-web
+   * https://material-components-web.appspot.com/elevation.html
+   */
+
+  --jp-shadow-base-lightness: 0;
+  --jp-shadow-umbra-color: rgba(
+    var(--jp-shadow-base-lightness),
+    var(--jp-shadow-base-lightness),
+    var(--jp-shadow-base-lightness),
+    0.2
+  );
+  --jp-shadow-penumbra-color: rgba(
+    var(--jp-shadow-base-lightness),
+    var(--jp-shadow-base-lightness),
+    var(--jp-shadow-base-lightness),
+    0.14
+  );
+  --jp-shadow-ambient-color: rgba(
+    var(--jp-shadow-base-lightness),
+    var(--jp-shadow-base-lightness),
+    var(--jp-shadow-base-lightness),
+    0.12
+  );
+  --jp-elevation-z0: none;
+  --jp-elevation-z1: 0px 2px 1px -1px var(--jp-shadow-umbra-color),
+    0px 1px 1px 0px var(--jp-shadow-penumbra-color),
+    0px 1px 3px 0px var(--jp-shadow-ambient-color);
+  --jp-elevation-z2: 0px 3px 1px -2px var(--jp-shadow-umbra-color),
+    0px 2px 2px 0px var(--jp-shadow-penumbra-color),
+    0px 1px 5px 0px var(--jp-shadow-ambient-color);
+  --jp-elevation-z4: 0px 2px 4px -1px var(--jp-shadow-umbra-color),
+    0px 4px 5px 0px var(--jp-shadow-penumbra-color),
+    0px 1px 10px 0px var(--jp-shadow-ambient-color);
+  --jp-elevation-z6: 0px 3px 5px -1px var(--jp-shadow-umbra-color),
+    0px 6px 10px 0px var(--jp-shadow-penumbra-color),
+    0px 1px 18px 0px var(--jp-shadow-ambient-color);
+  --jp-elevation-z8: 0px 5px 5px -3px var(--jp-shadow-umbra-color),
+    0px 8px 10px 1px var(--jp-shadow-penumbra-color),
+    0px 3px 14px 2px var(--jp-shadow-ambient-color);
+  --jp-elevation-z12: 0px 7px 8px -4px var(--jp-shadow-umbra-color),
+    0px 12px 17px 2px var(--jp-shadow-penumbra-color),
+    0px 5px 22px 4px var(--jp-shadow-ambient-color);
+  --jp-elevation-z16: 0px 8px 10px -5px var(--jp-shadow-umbra-color),
+    0px 16px 24px 2px var(--jp-shadow-penumbra-color),
+    0px 6px 30px 5px var(--jp-shadow-ambient-color);
+  --jp-elevation-z20: 0px 10px 13px -6px var(--jp-shadow-umbra-color),
+    0px 20px 31px 3px var(--jp-shadow-penumbra-color),
+    0px 8px 38px 7px var(--jp-shadow-ambient-color);
+  --jp-elevation-z24: 0px 11px 15px -7px var(--jp-shadow-umbra-color),
+    0px 24px 38px 3px var(--jp-shadow-penumbra-color),
+    0px 9px 46px 8px var(--jp-shadow-ambient-color);
+
+  /* Borders
+   *
+   * The following variables, specify the visual styling of borders in JupyterLab.
+   */
+
+  --jp-border-width: 1px;
+  --jp-border-color0: var(--md-grey-400);
+  --jp-border-color1: var(--md-grey-400);
+  --jp-border-color2: var(--md-grey-300);
+  --jp-border-color3: var(--md-grey-200);
+  --jp-border-radius: 2px;
+
+  /* UI Fonts
+   *
+   * The UI font CSS variables are used for the typography all of the JupyterLab
+   * user interface elements that are not directly user generated content.
+   *
+   * The font sizing here is done assuming that the body font size of --jp-ui-font-size1
+   * is applied to a parent element. When children elements, such as headings, are sized
+   * in em all things will be computed relative to that body size.
+   */
+
+  --jp-ui-font-scale-factor: 1.2;
+  --jp-ui-font-size0: 0.83333em;
+  --jp-ui-font-size1: 13px; /* Base font size */
+  --jp-ui-font-size2: 1.2em;
+  --jp-ui-font-size3: 1.44em;
+
+  --jp-ui-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+  /*
+   * Use these font colors against the corresponding main layout colors.
+   * In a light theme, these go from dark to light.
+   */
+
+  /* Defaults use Material Design specification */
+  --jp-ui-font-color0: rgba(0, 0, 0, 1);
+  --jp-ui-font-color1: rgba(0, 0, 0, 0.87);
+  --jp-ui-font-color2: rgba(0, 0, 0, 0.54);
+  --jp-ui-font-color3: rgba(0, 0, 0, 0.38);
+
+  /*
+   * Use these against the brand/accent/warn/error colors.
+   * These will typically go from light to darker, in both a dark and light theme.
+   */
+
+  --jp-ui-inverse-font-color0: rgba(255, 255, 255, 1);
+  --jp-ui-inverse-font-color1: rgba(255, 255, 255, 1);
+  --jp-ui-inverse-font-color2: rgba(255, 255, 255, 0.7);
+  --jp-ui-inverse-font-color3: rgba(255, 255, 255, 0.5);
+
+  /* Content Fonts
+   *
+   * Content font variables are used for typography of user generated content.
+   *
+   * The font sizing here is done assuming that the body font size of --jp-content-font-size1
+   * is applied to a parent element. When children elements, such as headings, are sized
+   * in em all things will be computed relative to that body size.
+   */
+
+  --jp-content-line-height: 1.6;
+  --jp-content-font-scale-factor: 1.2;
+  --jp-content-font-size0: 0.83333em;
+  --jp-content-font-size1: 14px; /* Base font size */
+  --jp-content-font-size2: 1.2em;
+  --jp-content-font-size3: 1.44em;
+  --jp-content-font-size4: 1.728em;
+  --jp-content-font-size5: 2.0736em;
+
+  /* This gives a magnification of about 125% in presentation mode over normal. */
+  --jp-content-presentation-font-size1: 17px;
+
+  --jp-content-heading-line-height: 1;
+  --jp-content-heading-margin-top: 1.2em;
+  --jp-content-heading-margin-bottom: 0.8em;
+  --jp-content-heading-font-weight: 500;
+
+  /* Defaults use Material Design specification */
+  --jp-content-font-color0: rgba(0, 0, 0, 1);
+  --jp-content-font-color1: rgba(0, 0, 0, 0.87);
+  --jp-content-font-color2: rgba(0, 0, 0, 0.54);
+  --jp-content-font-color3: rgba(0, 0, 0, 0.38);
+
+  --jp-content-link-color: var(--md-blue-700);
+
+  --jp-content-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+
+  /*
+   * Code Fonts
+   *
+   * Code font variables are used for typography of code and other monospaces content.
+   */
+
+  --jp-code-font-size: 13px;
+  --jp-code-line-height: 1.3077; /* 17px for 13px base */
+  --jp-code-padding: 5px; /* 5px for 13px base, codemirror highlighting needs integer px value */
+  --jp-code-font-family-default: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  --jp-code-font-family: var(--jp-code-font-family-default);
+
+  /* This gives a magnification of about 125% in presentation mode over normal. */
+  --jp-code-presentation-font-size: 16px;
+
+  /* may need to tweak cursor width if you change font size */
+  --jp-code-cursor-width0: 1.4px;
+  --jp-code-cursor-width1: 2px;
+  --jp-code-cursor-width2: 4px;
+
+  /* Layout
+   *
+   * The following are the main layout colors use in JupyterLab. In a light
+   * theme these would go from light to dark.
+   */
+
+  --jp-layout-color0: white;
+  --jp-layout-color1: white;
+  --jp-layout-color2: var(--md-grey-200);
+  --jp-layout-color3: var(--md-grey-400);
+  --jp-layout-color4: var(--md-grey-600);
+
+  /* Inverse Layout
+   *
+   * The following are the inverse layout colors use in JupyterLab. In a light
+   * theme these would go from dark to light.
+   */
+
+  --jp-inverse-layout-color0: #111111;
+  --jp-inverse-layout-color1: var(--md-grey-900);
+  --jp-inverse-layout-color2: var(--md-grey-800);
+  --jp-inverse-layout-color3: var(--md-grey-700);
+  --jp-inverse-layout-color4: var(--md-grey-600);
+
+  /* Brand/accent */
+
+  --jp-brand-color0: var(--md-blue-700);
+  --jp-brand-color1: var(--md-blue-500);
+  --jp-brand-color2: var(--md-blue-300);
+  --jp-brand-color3: var(--md-blue-100);
+  --jp-brand-color4: var(--md-blue-50);
+
+  --jp-accent-color0: var(--md-green-700);
+  --jp-accent-color1: var(--md-green-500);
+  --jp-accent-color2: var(--md-green-300);
+  --jp-accent-color3: var(--md-green-100);
+
+  /* State colors (warn, error, success, info) */
+
+  --jp-warn-color0: var(--md-orange-700);
+  --jp-warn-color1: var(--md-orange-500);
+  --jp-warn-color2: var(--md-orange-300);
+  --jp-warn-color3: var(--md-orange-100);
+
+  --jp-error-color0: var(--md-red-700);
+  --jp-error-color1: var(--md-red-500);
+  --jp-error-color2: var(--md-red-300);
+  --jp-error-color3: var(--md-red-100);
+
+  --jp-success-color0: var(--md-green-700);
+  --jp-success-color1: var(--md-green-500);
+  --jp-success-color2: var(--md-green-300);
+  --jp-success-color3: var(--md-green-100);
+
+  --jp-info-color0: var(--md-cyan-700);
+  --jp-info-color1: var(--md-cyan-500);
+  --jp-info-color2: var(--md-cyan-300);
+  --jp-info-color3: var(--md-cyan-100);
+
+  /* Cell specific styles */
+
+  --jp-cell-padding: 5px;
+
+  --jp-cell-collapser-width: 8px;
+  --jp-cell-collapser-min-height: 20px;
+  --jp-cell-collapser-not-active-hover-opacity: 0.6;
+
+  --jp-cell-editor-background: var(--md-grey-100);
+  --jp-cell-editor-border-color: var(--md-grey-300);
+  --jp-cell-editor-box-shadow: inset 0 0 2px var(--md-blue-300);
+  --jp-cell-editor-active-background: var(--jp-layout-color0);
+  --jp-cell-editor-active-border-color: var(--jp-brand-color1);
+
+  --jp-cell-prompt-width: 64px;
+  --jp-cell-prompt-font-family: 'Source Code Pro', monospace;
+  --jp-cell-prompt-letter-spacing: 0px;
+  --jp-cell-prompt-opacity: 1;
+  --jp-cell-prompt-not-active-opacity: 0.5;
+  --jp-cell-prompt-not-active-font-color: var(--md-grey-700);
+  /* A custom blend of MD grey and blue 600
+   * See https://meyerweb.com/eric/tools/color-blend/#546E7A:1E88E5:5:hex */
+  --jp-cell-inprompt-font-color: #307fc1;
+  /* A custom blend of MD grey and orange 600
+   * https://meyerweb.com/eric/tools/color-blend/#546E7A:F4511E:5:hex */
+  --jp-cell-outprompt-font-color: #bf5b3d;
+
+  /* Notebook specific styles */
+
+  --jp-notebook-padding: 10px;
+  --jp-notebook-select-background: var(--jp-layout-color1);
+  --jp-notebook-multiselected-color: var(--md-blue-50);
+
+  /* The scroll padding is calculated to fill enough space at the bottom of the
+  notebook to show one single-line cell (with appropriate padding) at the top
+  when the notebook is scrolled all the way to the bottom. We also subtract one
+  pixel so that no scrollbar appears if we have just one single-line cell in the
+  notebook. This padding is to enable a 'scroll past end' feature in a notebook.
+  */
+  --jp-notebook-scroll-padding: calc(
+    100% - var(--jp-code-font-size) * var(--jp-code-line-height) -
+      var(--jp-code-padding) - var(--jp-cell-padding) - 1px
+  );
+
+  /* Rendermime styles */
+
+  --jp-rendermime-error-background: #fdd;
+  --jp-rendermime-table-row-background: var(--md-grey-100);
+  --jp-rendermime-table-row-hover-background: var(--md-light-blue-50);
+
+  /* Dialog specific styles */
+
+  --jp-dialog-background: rgba(0, 0, 0, 0.25);
+
+  /* Console specific styles */
+
+  --jp-console-padding: 10px;
+
+  /* Toolbar specific styles */
+
+  --jp-toolbar-border-color: var(--jp-border-color1);
+  --jp-toolbar-micro-height: 8px;
+  --jp-toolbar-background: var(--jp-layout-color1);
+  --jp-toolbar-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
+  --jp-toolbar-header-margin: 4px 4px 0px 4px;
+  --jp-toolbar-active-background: var(--md-grey-300);
+
+  /* Input field styles */
+
+  --jp-input-box-shadow: inset 0 0 2px var(--md-blue-300);
+  --jp-input-active-background: var(--jp-layout-color1);
+  --jp-input-hover-background: var(--jp-layout-color1);
+  --jp-input-background: var(--md-grey-100);
+  --jp-input-border-color: var(--jp-border-color1);
+  --jp-input-active-border-color: var(--jp-brand-color1);
+  --jp-input-active-box-shadow-color: rgba(19, 124, 189, 0.3);
+
+  /* General editor styles */
+
+  --jp-editor-selected-background: #d9d9d9;
+  --jp-editor-selected-focused-background: #d7d4f0;
+  --jp-editor-cursor-color: var(--jp-ui-font-color0);
+
+  /* Code mirror specific styles */
+
+  --jp-mirror-editor-keyword-color: #008000;
+  --jp-mirror-editor-atom-color: #88f;
+  --jp-mirror-editor-number-color: #080;
+  --jp-mirror-editor-def-color: #00f;
+  --jp-mirror-editor-variable-color: var(--md-grey-900);
+  --jp-mirror-editor-variable-2-color: #05a;
+  --jp-mirror-editor-variable-3-color: #085;
+  --jp-mirror-editor-punctuation-color: #05a;
+  --jp-mirror-editor-property-color: #05a;
+  --jp-mirror-editor-operator-color: #aa22ff;
+  --jp-mirror-editor-comment-color: #408080;
+  --jp-mirror-editor-string-color: #ba2121;
+  --jp-mirror-editor-string-2-color: #708;
+  --jp-mirror-editor-meta-color: #aa22ff;
+  --jp-mirror-editor-qualifier-color: #555;
+  --jp-mirror-editor-builtin-color: #008000;
+  --jp-mirror-editor-bracket-color: #997;
+  --jp-mirror-editor-tag-color: #170;
+  --jp-mirror-editor-attribute-color: #00c;
+  --jp-mirror-editor-header-color: blue;
+  --jp-mirror-editor-quote-color: #090;
+  --jp-mirror-editor-link-color: #00c;
+  --jp-mirror-editor-error-color: #f00;
+  --jp-mirror-editor-hr-color: #999;
+
+  /* Vega extension styles */
+
+  --jp-vega-background: white;
+
+  /* Sidebar-related styles */
+
+  --jp-sidebar-min-width: 180px;
+
+  /* Search-related styles */
+
+  --jp-search-toggle-off-opacity: 0.5;
+  --jp-search-toggle-hover-opacity: 0.8;
+  --jp-search-toggle-on-opacity: 1;
+  --jp-search-selected-match-background-color: rgb(245, 200, 0);
+  --jp-search-selected-match-color: black;
+  --jp-search-unselected-match-background-color: var(
+    --jp-inverse-layout-color0
+  );
+  --jp-search-unselected-match-color: var(--jp-ui-inverse-font-color0);
+
+  /* Icon colors that work well with light or dark backgrounds */
+  --jp-icon-contrast-color0: var(--md-purple-600);
+  --jp-icon-contrast-color1: var(--md-green-600);
+  --jp-icon-contrast-color2: var(--md-pink-600);
+  --jp-icon-contrast-color3: var(--md-blue-600);
+}
+</style>
+
+<style type="text/css">
+a.anchor-link {
+   display: none;
+}
+.highlight  {
+    margin: 0.4em;
+}
+
+/* Input area styling */
+.jp-InputArea {
+    overflow: hidden;
+}
+
+.jp-InputArea-editor {
+    overflow: hidden;
+}
+
+@media print {
+  body {
+    margin: 0;
+  }
+}
+</style>
+
+
+
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe"> </script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    init_mathjax = function() {
+        if (window.MathJax) {
+        // MathJax loaded
+            MathJax.Hub.Config({
+                TeX: {
+                    equationNumbers: {
+                    autoNumber: "AMS",
+                    useLabelIds: true
+                    }
+                },
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true,
+                    processEnvironments: true
+                },
+                displayAlign: 'center',
+                CommonHTML: {
+                    linebreaks: { 
+                    automatic: true 
+                    }
+                },
+                "HTML-CSS": {
+                    linebreaks: { 
+                    automatic: true 
+                    }
+                }
+            });
+        
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+    }
+    init_mathjax();
+    </script>
+    <!-- End of mathjax configuration --></head>
+<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="An&#225;lise-b&#225;sica-de-rebalanceamento-de-carteira">An&#225;lise b&#225;sica de rebalanceamento de carteira<a class="anchor-link" href="#An&#225;lise-b&#225;sica-de-rebalanceamento-de-carteira">&#182;</a></h1><p>Foi feita uma análise do efeito do rebalanceamento numa carteira fictícia que procura investir valores proporcionais à carteira inicial.
+O rebalanceamento é feito num mês escolhido específico todos os anos, dividindo o capital entre Renda Fixa e Renda Variável (representadas pela taxa DI e IBOV, respectivamente).<br>
+A data estudada é de 2001 a 2020, com retornos mensais.<br>
+Desta forma, podemos analisar o retorno e efeito do rebalanceamento em diferentes portfolios no período em questão.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">chained_assignment</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># default=&#39;warn&#39;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="1)-Cria&#231;&#227;o-das-tabelas-que-ser&#227;o-utilizadas">1) Cria&#231;&#227;o das tabelas que ser&#227;o utilizadas<a class="anchor-link" href="#1)-Cria&#231;&#227;o-das-tabelas-que-ser&#227;o-utilizadas">&#182;</a></h2><h3 id="1.1)-Exporta-o-retorno-do-IBOV-para-um-dataframe">1.1) Exporta o retorno do IBOV para um dataframe<a class="anchor-link" href="#1.1)-Exporta-o-retorno-do-IBOV-para-um-dataframe">&#182;</a></h3>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">RV_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
+     <span class="s2">&quot;DADOS.xlsx&quot;</span><span class="p">,</span>
+     <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;openpyxl&#39;</span><span class="p">,</span>
+     <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Ibov 2001-2021&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">RV_df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Mês</th>
+      <th>Ano</th>
+      <th>Valor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2001</td>
+      <td>17672.77</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2001</td>
+      <td>15891.41</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>2001</td>
+      <td>14438.45</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>2001</td>
+      <td>14917.54</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>2001</td>
+      <td>14649.98</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>8</td>
+      <td>2020</td>
+      <td>99369.15</td>
+    </tr>
+    <tr>
+      <th>236</th>
+      <td>9</td>
+      <td>2020</td>
+      <td>94603.38</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>10</td>
+      <td>2020</td>
+      <td>93952.40</td>
+    </tr>
+    <tr>
+      <th>238</th>
+      <td>11</td>
+      <td>2020</td>
+      <td>108893.32</td>
+    </tr>
+    <tr>
+      <th>239</th>
+      <td>12</td>
+      <td>2020</td>
+      <td>119017.24</td>
+    </tr>
+  </tbody>
+</table>
+<p>240 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Para nossa análise é necessário transformar os ganhos da coluna Valor em percentual:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#modo alternativo: df2[&#39;Valor&#39;].pct_change()</span>
+<span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;Growth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;Valor&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;Valor&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">RV_df</span><span class="o">.</span><span class="n">index</span><span class="o">+=</span><span class="mi">1</span>
+<span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;period&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;Mês&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;Ano&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">RV_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Growth&#39;</span><span class="p">);</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXYAAAEJCAYAAACAKgxxAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjMuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8vihELAAAACXBIWXMAAAsTAAALEwEAmpwYAABwp0lEQVR4nO19d5wkR3n2U909YXc23YY7nXS6pIQQKB4SQkhIIKJkgskY+MDkz/5MMh8YjAGbYAsZbGFkBMYWwQb8EWxAFggJlNApnHKOF3R57/Y2T+ru+v6oequre7on7czs7F49v9/9dm+nZ6a6u/qtp543Mc45DAwMDAyWD6zFHoCBgYGBQWthDLuBgYHBMoMx7AYGBgbLDMawGxgYGCwzGMNuYGBgsMxgDLuBgYHBMkNNw84Yu4wxto8xxhljv0w45mzG2C2MsUn57yeMsbHWD9fAwMDAoBbqZew/rPH68QAOAPg4gP8B8IcALlnAuAwMDAwMmgSrJ0GJMbYewFYAV3HOL455Pc05L8nf+wFMA7iDc35mrc8eHR3l69evb3DYBgYGBoc37rzzzgOc81hlxGnFF5BRl3ip/HljPe9dv349tmzZ0ophGBgYGBw2YIxtT3qtpc5Txtg5AP4VwJ0APlvluPcyxrYwxraMj4+3cggGBgYGhz2aNuyMsSxjLK39/zwAvwLwJICXcs5nk97LOf8m53wT53zT2JjxsRoYGBi0EvVExVwE4I3yv0czxt7NGDsOQB7AXfKY0wFcDcAG8C0AL2aM/UF7hmxgYGBgUA31aOwfA/AC+fvJEIb7nZFjTgbQK3//uvy5HcAvFjpAAwMDA4PGUNOwc87PT3jpSu2YK/X/GxgYGBgsHkzmqYGBgcEygzHsBgYGBssMxrDXwC1PHMBT44kBPgYGBgZdB2PYa+DjP70P37jhycUehoGBgUHdMIa9Bkquj0LZX+xhGBgYGNQNY9hrwOeA6xvDbmBgsHRgDHsNcM5RcmsXSjMwMAjws7t3YsfB+cUexmELY9hrwDB2A4PGwDnHR/7zXvxoy47FHsphC2PYa8DzOVzPMHYDg3pRdH1wDuObWkQYw14DPucoeWaCGhjUC3peCmVvkUdy+MIY9hrgHHCNYTcwqBslVzwvRdc8N3HgnGO6UG7rdxjDXgM+5ygbKcbAoG6QYTeMPR43PDaO53z+WkzMlWof3CSMYa8Bz+codwlj932Oz/78QTyx//DMhHU9H5/7xYPYPZlf7KEYVEFg2Lvjuek27J0qoOj6GJ8ptu07jGGvAc7RNYZ9Yr6EK2/ZhhsfOzy7Tu2YmMe//X4brn1432IPxaAKSGMvuoaxx6HsCwVgruS27TuMYa8Bn3O4fndIMb4ch19HA/LliLzc2u+bLizySAyqQWnshrHHgnx288X2LXzGsNeAx7sn3JEWmGYWmqfGZ5EvLW0GRVv7fdPt28IaLBzE1A1jjwfZE8PYFwmcc3COrgl39KRB9xo07J7P8Qdfuxn/fltiU/MlgYJh7EsCRaOxVwURs3lj2BcHpHh0S7gjSTCN7iBKro+5kodD8+3zwncCZNj3G8be1QjCHQ1jjwPZkzkjxSwOyJB2S7gjrfRegxo7PWDdIik1C6WxzxjG3s0wUTHVUTaMvXW4c/sE9jdoEDxl2LtjgvpKimlsPLQ17hZJqVmQoZicL5sY6S6Gyjw1jD0WhrG3EO/8tzvw7Zu3NvQeJcV0SVRMs85Tik5YLowdQFtjgA0WBhMVUx2eYeytge9zTBdczBQau5AkxXg+V2x5MaGcpw0aaJJiumXn0SyKmmE3DtTuhXKeuh74YRqaWw1lFRVjGPuCQEyv0e27bsvLXVC612taY18eUowerrnfMPauBTF2kdxnDHsUVAZ8vmgY+4JA8aKNbg31sMJumKCetoNoBMvFeaprtoaxdy9KWvEvo7NXwjD2FoGYXqOMXd9GdkPIo1eHxs45x7/c9FSowBAtaEtdismXfOTSNlI2M0lKXQx9Z2h09kqozFOjsS8M82TYG2QPuv1sRsaYypdx8+MHMNmi+PF6NPZtB+fx+aseDtVTISlmqRv2guuhJ21jZX+24Qgng85BL9dropcqQc9xO6NinLZ9cheBVsZG42p1yaMZGePbNz2Fy377BFI2w1V/di6OX9Xf8GfEjacaY5/KizrPuhEPnKdLXIopecimbGQcyzDBLoYuxZia7JUwcewtwnxLpJj6jeKuyTw8n2NCMvWyx3HfzqmGvjsOXh1FwKalYdfHu5wYezZlI2VbS/5cljNKhrFXhYljbxHoAi4kKqZeKWYqX8YFl16PX963G/MlD0cMZGFbDFsPLLyGej2MnTqz6Mcsmzj2koeelA3HZl2TW2BQCb2UgCkrUAnaORvGvkDky81JMTozdmPCHX2f42d37wwxlMn5Ekquj71TBcwXPQz0OFg73IutB+aaHH0Ar47M0+m8OFc3RorphnDHsufjwGxzjs9C2Uc2ZcGxuo+x/92vHsFXfvPYYg+jKxCSYoxkVgF6fk1UzAJBjL1R9hAKd3QrGeKtTx3Eh390b6jxBck+c0UXcyUXvWkHG0dzeGp84YZdZZ5WYd6xjL2LpJj/3PI0Lrj0+tDDXy/yZZJiWNftPjY/eRC3PXVQ/f+ObRPYO3V4Onh1AqEHLPz9NY/iqvv2ABCk6H3f2xK6ZgvBlm0TeGp8aXQWo2ez5PpteyYPC8MehDs2dhF1KTsuQemhPdMAoLR0QDPsJQ/5kodcxsaG0Ry2HZxbcPYq7SCa1di7wRjuny5ipuAqJ28jKEjD7lhW7A5qMeH54YYs7/venbjixicXcUSLhyTG/oPbd+Cah/YCAGZLLn794D5s2X6oJd/50f93L7722yeaeq/v8476AnRjPt8m1n5YGPZmnae6AS3HMMxH9s4AAKbmAyOVDzF2Dz0pBxvGciiUfexZYFJNPbViAsauP1ydKSlwcLaI/7p7V9VjaFxT+cZDQAvlQGNvRYTPxV+7Cd/bvG3BnwOIe6Jf39miq2Sxww0lV+QbAAFj55xjOu8qQ19q8S7y0FwJc01mcv777Tvwgi//riXjqAc6wWpX85uahp0xdhljbB9jjDPGflnluB8zxg7J4/6ptcNcGMhJ4fq8oUQjL6SxVxqSR/YKxq6zT8pynS26mC+5irEDwNYFyjFBdcdqjF18fzkuKqbNLPfn9+7Gh350T1UJgib1oflmGLvQ2FN2axj7Y/tm8WQLJDJA6KZBKj0XNfDbmDLezSh5PgZ6UgACxl50fZQ8X+uu1LpdpO9zzBTdpkMrdx3KY990seGM7mah25J2dVGql7H/sI5jigB+toCxtA36dqfg+pgtunjOF67FLU8cqPo+Pdwxyixcz8dj+4SmN6mxT1qB50se5kue1Nj7AGDBkTGNaOy6g1UZ9hg/QStB13nXZD7xGNJfJ5sw7Hli7NbCNXbOBcNuFWN0NSmGfraz9Vk3o1j2MZAVhp12yUR+6P6XWkg2Zkuu6HRWp2GfK7r4j9t2qOeb3teM3yeKnYfm8e7v3FFVanR9H4yJ39vV97SmYeec/xmAr9Zx3B8B+G4rBtVq6A9Yoezh0FwJ4zNFPFUjUiVUBCxiSLYdnFMTQTdSZNxmiy7miy560zZWDWTgWAy7F+hMq4+xU4KSztg7I8XQArK7imEng9xMNm6h3Lo4ds8XbQ9b5XdwvUCKoXnRLv203bh7xyH87O6dAIBrHtzb8L0qej4GekTuI80JmpcBg29d/SKq2lpv1Ne1D+/DJ392P56UzlZ131rwfFz5+2249uH9+MHtOxKPcT2Ovoy4PovN2FsKxth7GWNbGGNbxsfHa79hgdB1rELZUzeylizjV6kV8/Aeoa/n0nZodSbZZ67oYr7sIZe2wRhDxrEWzAjq6aA0XSDZqdKB1X7DLq5zVcOuNPbGGLvvcxRdH5kWaex0LVt1TTyfKz8M3edulWL2TOXxtm/fFvIN6fj323bgS//zCGYKZbz3e3fip3dV95tEUXJ99CvGLg273EmSoQ9yKxZ+/dWiUWfUGy0EFC1Hc6AVc2HjmNidPyr9b3Eoez4GpVTVrlj2RTHsnPNvcs43cc43jY2Ntf375kKG3a8r0QcIM+Poar79oGD7J68ZChkpWkQOzpbAOdArV+Z0Cww7GfSqztM8STFx4Y7tlWLoYa1m2MuKsTdm2OkceigqZoEPYamFLA0QCxalitNnditjv2v7JG56/ACeSAgPLHtCD1flrhsMEy65QjJL2Uy9l3w/0ZyKcgt0bZrz9T5fZEzp/EotNOy5jHAaP1LFsLs+V1JVu7JPmzbsjLEsYyzdysG0C/mIFEPGpZah04lxdMtYdIVOtnIgE2bscrJQEk6vjA5oiXwg318tQWmqihTT7hBBMr67Jqs5T8UxjTbWJq1WOE/Zgg0C3c9WSTGeHyfFdCdjD/ww8efuesL5W2rSwVnyfKQdCxnHVot9Wxl7gRaNejV2MZeUYW+hxk4241EZWBEH1+OLz9gZYxcBeKP879GMsXczxo4DkAdwl3bcGwFcJP/7THnc6lYPuBnMFT2kbXGqRddTBq4RKSZqlMseR8qyMNSTCrFPYuzEqnvTC2Ps/37bdty1Q8T60vOV9KAVyp4WbRDjPPV4Wzva1CPFkEGebFCKoYdQlRSI3I+ZQlktardvnagZ4dDK7Tcgwx3JaCkppjsZ+1TMrk5H2fNRdP3YuVQPSq6PtG0hm7I0xh5m1SWvdRp7PYw9HDsuM9FLrZdiOCjXJDmU0fV9jPSl8epTj8SaFb0L/s441MPYPwbgb+XvJwP4FoBzYo77OwB/Ln+/QB53wkIH2Arkyx5W5ALNTzH2Gg9/uINS+FjX8+HYDIM9KUwXysqxGV2BibGnHQvFJibOl3/9KP7jNuGIIaaelKCkt/6LqxUDtFeOUc7TqSqGXR6TpO8mIWDsJMWEz+P//vg+fPQ/78GT47N4wxWbccNj+6t+XhCV0SLG7vFAipGfnS97HQuhawRxcp0Oz+fwfK4MU6PXqOTGMfYwq1Z+n1ZIMZHdQBT7pgs46a9+jbslQSJpNq/yO+i+tSL0Mvj97371CK6+f0/FMa7HMdSbwj+86TScc+zogr8zDvVExZzPOWeRf1fKn8/Sjlsfc9z1bRl1g5gvuRjOZQAIA6E09hqGNly2NxLu6HM4FsNgbxqcB0Y1qqsqw25bsUlOtVAs+9qDGHx3HGiCi/FWSjHive2TY+hhnZwvJzoOXcXYG5Ni8pphF1JM+Dx2TYpYZNo9TcxVXziU87RFZWXLvh8bXZHvwuqGxNiT5gIZW5rTjTL2ousj41jIxDD2YkTXbo3zVEbFVDHsJc/H04cE4dBDkoHWMnaddF15yzZ88Ef3VNSJKns+HKu97s3DI/O06GFYY+w0mWo5T6vFsZc9HylbSDFAYKii26+c7jxNmDi+z3H71onY7y+6nrZ1Jo09wbBr8kZcrRigvbHs+gKyJ4G103Vs1HlK0RXZlAXHrmTsswVXSFFlemira5cqMqpFCx2FT3o+DxmYdva1bBbEnpN2fvR8zBYrk93qQTxjj9fYW7GDDD47fhFVO/RItBLtAlvZE5gu6VvOWou/f/0pyDgWPv1fD4SO8SQpbCeWvWHnnGO+7IUYOzGSWit0tTh21+NKigECFhRl7D2pgLEnMYqbnjiAN1yxGQ/sCtdsd30OnwcPomLsCQ/DdEiKqdTYgfZmnxblAw0kO1Bp7M1KMT0pGylLlO3VF97ZoouC6ymGWCsiJWDXLYpj1+aUfp/bWcGvWUzF1BPSQX+fiSlPUQu+TNRKO0JjL0aiYlwp87TSoU/jLHs8th5TdCdFcyMfZewt2L3RYvl/XngsXnvGGrztuetw8xMHQram7HM4tmHsC0LRFeGNw72SsbtewNhrPNThZtYRxu5Lxi4/lxjofDmesVeLiqEEkG0Hw1u2aHJHLY2djuvPOmEpRhtTPdvN2aKLh/cke/WTUHR9rB7MAhB1Y+JAD/JM0W1o6xvS2OVDoe9KZosuCmVfMftaTLmsomJa8DBLtg4I40GOQaA7Y9lrOk/pHikppv7Fj4xn2rGQdWx133SZsBRyzLbCeRpc4zjWHZVa5iLhjq1MUKJLasnUUrIP+mLvej5StmHsCwKtygFj97XU7+o3sloHJdfjYcMuH5Z8ycVANug4mNOcp0mMnSZ/NJqEDLJ6EGvEsdNxI7l06NwKrq92DvVIMZ/9+YN4+T/ehPGZxuqmF8se+uW5JxltfefTSJKSiopJi6gYILgnns8xX/JkVFBQXbMaWqmr6veDQgUJ3WjYZyLzKQq6rs1IMWSw07bQ2KPkRBzjaZFajV3/bTHZ4vqiEedAdZVzlBb9iPPUrS/8uR4Q6aKSASlJQui7fbkLNxr7AkGrc6Cxe+pG17qR0Q5KulTi+j4ci6liR7oUM9qfUcf16FExiYZd/H3XoYhhdwOt0/WCBSmJaU3MCeY/1p+pYOy0c6hHitkvDfqvHtxb81gdJddHf6aSoejQH+RGdHalsTs2UvKhoHMhA1TUGXudhr0VjFFfRClUkNCNSUr1hDsC8XWHaoHue8axQtFLukxY1GPk5Rgm5kq46LKbqjakuefpSZx/6fW45+nJ0N/Dhr3yekeT0ebLYY09Wr9mISAySIydpMkgIUv8dAxjXxiIsQ/1psGYMHLNxLFf+9A+XPy1m1XGadkTOpnS2OcD5+lYX2DYVRx7FSmGJlhUl9YNxEzBVfph0rgn5krozzroSTuhMLKi69dk0jrWrOgBAFx13+6ax+ooaIw9aRFzPa4ihRop3RtExVgVjJ1YccnzlSGt7TwNZ4kuBDpj1xN7gMUtBHbXjkP43SPhsE/OeVDaOUljj0TFNBKSSIY17ViiWJtWQoJ2jWEpRvzcemAOD+6exn07JxM/+4n9IlP2sX3hrM6QFNMIYy+FE5RaExUjfirDHmHstJga5+kCQVvy3rTobl9w649j17eq2yfmAQQsk3SyjGOjJ2UHGrvG2LMpC7YVrNxJRiSvDHuUsQfsY7pQrsnYD86VMJJLI2UxxbKI6VPRoXoYKk3427ZOYH9MDfkvXPUQ3vFvt1cYjaJWIyR6rgdmi3A9H2Xfx3BOJCw3IsWQLJWRRcDo3ICAseufWSs5yG2hFONp19T1eejc21W9rx5c/rsn8fmrHgr9La9lXidLMfK6NhHuGDD2oDetqMVexph8LoQUE44hp/8fmkte7EmqjEqW04WyIlhxhj1JY4+GOza6yD+2bwaf/fmDIYetrxi7+H8FY5fna5ynCwTdaOGlt5Ev6c7T+jV2MqZFbQtJq24uYyNf9uD7HPlywNiJrQMUx56UMUpSzHzs3wFhsFR1x4QHcmKuiOFcGrZW1pYmFNWwqGfyzpdcOBYD58BPYgpA/ezu3bj+0XG8//t3hia1vjPQH7CS6+OCL1+PH9+5E67HkUvTMY1rtxnHUo6naLw1oO2cynWGO3oc4zNFXH79E01n5eqMvTIqZvEYe75c2alK/3+yFBOJimnSeUrllfNlD67PlWEvlHUpRoY/UqXUKos9GXRdsuScY6bgYrQvHfqcuDGVZCAFPVcVztMGpZhrH96HK2/ZFhozXVImGXvGCTN2sjnGebpA0OS1Laa89LXqmu84OI/LrnsccTZQL4FLq27GsVF0fRVqRxOYJAcASDks0agGkQOuepiAcDTLVL4Oxj5bwnAuE4rAoXjhPql9l6VU8LlfPJgYuTJf8nDSUYM4e+MIvn/r9tD3FcoeDswWMdafQdH1cWAu+Iyi66EnbcO2WOghKbgeZoou9k0L1p6V16WRULeodgsAT+6fxcv+4caQQ22yTsauSzHXPLQXl/zqUeyYmK/6niR4VaSYxdTYC2Ufk/Pl0IKlyxZJTnhvAVKMIlK2yDfwfK6+kwhPuFyBJExaclsSaEer72znSyLhcFR+djUppuzxkESnNPYmpZhoPDyga+zi/1HnqavZo3Zi2Rt22hrZjMnaFUGCUtKEveahvfjKbx6LLVQVFC/iatXNSMcoPcT9WQcZx1LMFADStp3ICHTJZbems+vsYzrvqnNJeiBJinFsVrHD6MvY6r2P75/Bv/1+G255Mr6RcL4kyg2//ex12DWZx3UP71Ov0UN15vphAMAeOV5RBIsj41gV/oSghorIIchKFtNIuj3FyDPGlMZ+/64pPLJ3Bndsm1DHBZJY/YxdlZZtspWdfq6ulqDEWONRMfc+PYmnm1xgosiXBInRF5cQY08wZG7EKd2MFEOMvez56nNWSAlOX/zKfjA3gOp1+nfHGHbyF4z2B4tGFIrkaM8oUFlSoFHDTlKVbtj9Gs5TenZTJipmYVDOCpshm4oy9uoheXE3Wi83SsxRhDJ6SpvuSdnIZRwVEaOOSdLYS7phDyatPkmn8mXFPDhHRSIG5xyH5koY6RNSTFS77COJxPPVRExizKLzk40XP3MVcmkbv9c6TdE2+DnrVwAIMkx1bTUa2lnWnFdlz1fXpbEwOk9ta4kFkdHcGsPYo0z515GGEbruSmNtpsE2UJnvQPe5P+M0zNg/+MO78Q/XPt7UOKKIdi8CwmGHSZc/kGKaiGPXDLttMdnkW14P5VgPNPaoYzNJiuGcY49sVLNnsqDVZhKfsyImXjw4n0BqCRn2kifaGEb073oxGwmbBJKdp2W1QzFRMS0BPXQWY8hIwx4kpyRtRcPbRH3XpKQY109k7L1pB7mMrXRtAEjbQp6I03ELZV/Fvu8MGfYw09K19ajOPp134focw7k0UpboCfrNG5/EC758PYBAinE9jnyp+kTOlz30pB04toWh3jRmNNa5kwz7BsHYKZKHxppxrIpFTHdOuR5X0RGNMEFRf0S8j3wbszGGfTrGsE/MlfC+792Jn2mNttUc8HlsEk0jCGnsko2mHQt9Gadhxj4xVwrJcQtBnGEPa+xJkUvhcMdGspWp0F3aod60XD1HtIPVwx0DAiL+n9QLdypfxnzJw/qRXpQ8X5XFpnOk+uZx4Y46UaP7MZB1Qjkt+hjqxWyxLMcQvC8ax06MvRhZPIzzdIEIa+wWimVfTeikCRvtrkMGBdCkGD8o5EM1MWj735u2sao/Gwp7pBscZ0wLroe1I72wGLBPa5+nV2WcLpRDzDAqYxyUWvdIXyDFXH79k+p1kmLKXtBAIWlhmy+56JXGtz/rqC0nAOyanIdjMZywqh8Zx8IeuRAp52ZKSDH6Q0JGvliWjD0VyEL1olj2Kxg7Gfb9WiIVsXLdoJIvQTf2+m6Mjm0JY/dlpyfbQm+DjJ1zjtmi27LCYfk4xq4XikvMPA0nKDXC2ImZpm1LOvGD4mhEdEIae8R5OpUgxZD88hwpARIBIqM6UEdUjM7YR/szyJe9yM6yUY1d1poJaeziJzH2So1dOk+Nxr4wELO1LSnFuPUw9nACExllINxdnbZTGVkTQ0kxaRuXv/V0fPaVJ6n3BYa9cvIUyh56Uw6GcxlloPXvAiRj1zMcIw8lJScN5zJS2+ShkqAU7hgy7ElSTNFTcklfxgmFE+48lMfqoSwc28JRQz1qe0yLUJwUo0fouD5HpinGHkgxdN3j2DAZMSolAQQsUH8A9XtPkSvTTRr2UIKS66tGE7m03VBUzFzJg8/DC/pCEGfY9d/j6qoAwX0hI9WIwdOfGQp3jPYmiCspoDT2hHtAvie1UzyUD70vYOxxztNAdqP7MZrLYL4ULmvRaK0Y2smGpBilEIj/V0bFGOdpSxBi7ClLauzVveBRjT0TMuxUo9pXq3HatkLJMb1pGyv7sxjqDRpMRVduHfmyj0zKwmhfGgdmA8ZC37WiN4XpiGH3IosSvU84T0U0ArEGAEg7ga5diDiNdFDRNIro6cuGDfuuQ3kcNSQSmFYPZVXt9ZAUE3Weyt+pZHJTjF0rMEY7pbjIF/0jaQdFTvC4XQQQaKXNMnZ9kSDNPu1Y6E07DcWxkwTTCsbOeeAU1s/r4GwpyGmIuf6U8q6jkftE9zplU4KSJsUoxu5VRKIUtbHGOdV3Rxg7MfiiYuyVYbaEkkYs6H4M59IolMNZws1HxehSjPgZdZ4G1USl89RIMQuDMuxMJBOVXD9oi5YY7hWedJmUZti1qBjSejMpIfFQATA9zJEQ9Y7rKJY9ZFM2RvsySjsEAkO0sj8bw9jDn0OMnaQYYWACA7F2uFedk3KeJjiHPT/IDu3LRKWYPI4aEp+1erBHPXA01myqkrHTOc+pHU1lEa8k/NNvH8c9T0+qRtZAEAOsa/9xBIgW2skYwx4nxbREY5dRMWnHQi7TGGMnZ2W9hn3vVAFfuOqhWF05HFEVnNed2w/h5DWDYCw+KilOnmwmKiZlMziWFXKe0oJSLPtadcewxi56G1Tehz1TBaRshnXDvcilbVXHqJKxx2nsgRRD92NExr3rORCNJijNxTH2BI09GsdunKcLhAo/spgyOLWiYgKNXW4rtdVV96BH49ipt2o2FWPYqzD2Qlk0/x3pS+OgztjlIjLWn6lk7BHn6YSUcIZzacWUiq6PU9YM4pG/eRmesbpfnXO0fZ+OvOYABoTGTga05PrYO11QJQeOHOrB/pmirI9SxXkqz5keBGLstcIdZ4suLr3mMfzy3t0olnUpJhwVQ+cdBb2upBg3XoqhhWuqyXDHkMZOzlNbMPZGnKeKsdepy3938zZ866atuP7R8YrX8jEhjpPzJTy8dxpnbRiBY7HY6x8nTzYSLaISlCRjBwJGS/WKdOepJzNT9ecizoE6lS9hqDcNy5Jdy/JhxyVp7NWkmJI290ek/0vfzTTaQSku3JFzDsaCBCW1U486T02448LgqgvJlMFxIxc5ikBjj3Geak6QcFSMpyaZnnFKqMbY82UP2ZQVw9g9OBbDily6MiqmwnkqttgZx1ZMqVD2kHFs0XXIou/nFRl3OnQ5CQgz9oNzRXAOHCFL8x45mAXnokNNoLFbFbXn6TqTkaOFr9bWlxKP8rKXqzLsVqXGPhrjqKZzUVJMqEVg8DstXC3R2D1NY884DdVjn44xFEngnONXD4gibdc8uK/i9YJbadhv3zoBzoHnbhxWoYgV5xLzTDSSSBaSYqRRo/kWRMV4kd0TDy26cbHsk/NB2YAB2Y6SPguAiiqLzzzVomJIY5eMXd+lxc3H8ZlibCQb5xyzpcr75XNEJNB456lh7AuEpyUMULQGef1rpVTHSzFBREk4jj1wSvY0zNh9ZCVjny95ShsmY9aTslAo+2Epxosy9pJirbTgzJc8NbFSDlPnVC0qZl5zAAMiTDJfFmUYyMBTPPJqqbXvnSpoUTFxcewkxbjqelkJUoCOJ8dF0ad8SWiytMBGo2KAsGEfkddBSTFzlT0x9UW91VExSopJ2w11UJptQIp5Yv8snjowh/6Mg+se2Vex+4xj7LdtnUDGsXDK0UOwGYvdscUZ8UYSyeheU4ISEBi+tCwHoTtP6Tv1/8c5UCfny6pb2UA2pc6JyJSqUVSNsbtCY7cY1CKhL+ZRw35wtohz/va3agHVMV/ylHM5mqCky4LpCGOna26KgC0Q5KW2LYYMSTFeePWMItDYxXuJKfam7VAd6WgcOz1MurOVUCsqpkdq7ACUHFN0vUCz9sKGPfqwHZovqyQN2woMX8Byg8JZqjt7zPlHpRhKbJoreorZ0pZ6WDqHJ+fLFVJMnJ5NjivHEmUBam3xnxoXjH2+JBJaaIGNi4ohzRQIZJm5CudpfLjjbCs1dl2KyTiYlzWEkvDf9+zC9zZvAxDW2GvVrfnVA3vBGPCxl52Ayfkybteyb+kzCGQE79g2gdPWDiGbspMZe5zu3kSCUsoOCuCR4RPPoK2kGCK2grH76vhYxp4vq94HAz2OyhKme9qbFr1wqzfa4JgrucilHTW/9XLC0UVh56E8Sp6vCAYAtaPW517Uecp0xh4Nd/SM87RuFMpeol5OjD0sxYQ19CiicexpR0yakb50uAiYMuyyVoyUVKyY1TgpKsanuOeUrbaHNHkodpvKEbhVNPap+RIGeyOMvRgYQ/pbSUuhj2fsQSw+ILInAWC25KrJTE6wwZ6gyYhepKsyKiYcF+3YoixALafc1gQphmQl3QYNZFPqISLDno9KMQnO09mFSjGh6o4+ilq4I+dhWSSKf/39Nnz/1h0AAo2d89rJMnc/PYkTVvXjlaccCQB4aHe44xXdY8YCw753qoB1wzkAUJFTUcQRj4acp8pwMTXnyLCnbCYXfbFQ92phr0WteF5cvZjpfBmDPeK+6lJMQZMA9R6r4XOSUTGSsfekbTW/9XseXRTIQUt5Evc8PYnnfOFa3L9zKuS4j2rs+uNvWUztUuhcASPF1IXX/vMtuOy6+DRslXlqCSlGf9ASF4OIYV89kMXG0T5kHRtFV7ApL1JSwPM5ZopurAxDxwCVhj2IJrFiGLsfkjb8Kox9Kh9okLoGTfIFY2KCuSEpJllj79HCHQEhE5BhJ610ULUFLAUau7bDIOi1OgAteaXGFv+pA4EUE8o81R6KlbJGSF/WUYuYYuxR52m5crEBgnsylS83VeHR88OfW5KLUG8m2O3omCmU8dmfP4iZQhlP7Z9VjR/0CI1aOvtT47M4ZqxPLbJRhyu9f7Qvowz7lMZ6rSQpJs552qAUk7IZGGNq50jG17EtZBwL+ZIond2rhV0WXR+j/aJnQpzzdHK+FGjsmhRDfijHJqd9lagYqbHnMo7y89DnWKxyUSOCRQZ++8E5cA787tH9IcYejYrRNXZAkLqgNo6RYurGrsk8th6ML5ykhztGnWpJE1aFQ8qfH3nJ8fh/HzhbGdiyxkqAQHrRmwlEkeQ81Zs0k6deMXaZlEOGUh9v9AEUhl08KDZFjZTckCwk5I/AsMedf5zzFBDp0xTvTX/rzziwJCOMxrHHhTuqcdhMppsnM0HOObaOa4y9XJmgBIjInPUjvXjGEf3qYV3RG9HYa0gxwd94aFtdLyobbXiKsYtxhHX2W5+awJW3bMOP7ngaM0VXGWU9zK+azl5yfTx9KI+NYzlh0GyrwklLn7lqQERUFeSuhxZjx2KxElHcPWmEsZelDAUE90kxdimHUiq+njQnGLwjjHZEihFhip4mxaQwWxSNZwpaRnLathIYe6Cx52UdJHpOibHn0k7FDj7K2GknccuTB0L+nagUEzXsaSfYwRIJMFExdaDs+onb6BBjJ8NerM7YaXKTQco6NgayKaWlB55tCneUhn2+HBvqCCQ7T2n3kE3Zyul3cE5j7I6lPl/PnNQZu+9zwcbkVpXSlX0e1vtTNgslKMUzdinFpMIa+4zO2GWiCYWeCY1dk2ISnKcEx7ISNV7C/pmiMlbzJTdWiqGxXP+xC/CqU49CVjJ23XnKOVcPZNRhF4dmHKjR/IKSF4Q7ApWMnUocUK37wLDHG4sodkzMwfM5No4JWaU3Y6tQW/V+Oa+OGBA5EHQNiPUm7Zji5EmfJ2epRlHyfKQi0Uthxm4rfZzmEfWJzaSsUHgtge6JMuxZR8S7F13lhwJEkEO8xh6OismlgwJ99Nm5jFPxbBLB2j8jsl5J0rtrx2QoLFmX2nwZ7qiDEhj1sRgppg6UPZ5YOElvRUWGnZxqSRM2KsUweZVIwytHHCCUODOZLyUb9oRaMfRQZ1OiEUh/xgmSL8pCfkhrYWP0sOga+2zJhc+Dh1YvMJTRxkN12lUce8xDTEyxNxPR2IuuYil9WrPuod50RGNPLikQjIMhpVWgjMN2uQNb2Z/RpJhKxq6Hombl74O9KTAmFoSZoluRBANUxiwTe5wulFFy/YYMfDjzNJygBFQydjIYD+8Ruvi8dJbqjrxqsezkVN4w2gcA6E3ZVRh7FmWPqyqctPiLekJx7DwhUqzOkEchxYTzDWhOOVJjn5GMnRY+iorJyMJpekIcEBhfmt96REujjH2+5KE3ozH2Ahl2u4KAjGtSjE4QSq6PGx8TuQO5tK2CEQDhH4lj7NESCsZ5WgNUdnM6MhkIeq0YMpChYlBxkzti2OlGUU2YaBcU+tzJ+XKoVK+OIOwpqoUGuwJARHcQYy/ISBBdQqLf9YdyKsLGdP1OT65Shr0RKSaisVM7QMJAj9A7i2UPjAUOsjiNneBoTRiSQAlXRw/3qgc7yDzVFi5tR0KLajZlI5d2MFf0VKijbbHQjqfs+SEnF2n1U/kyvnnjk7jospsSxxaFzv6p1jiVFABQYXT1shFA4CytV4p5SjqVA8buJGrsq2XOwTbZq1cxdsZiy/YmFsarMzKm5PJAipEXmK67I6UY2pn0RTT2jGOLonMVjF1cLyrRoTeQL7p+HYw9CHiYLYQZOxnrXMZJdJ4Wyj5mii4m50sYlWWxfyvbQo72ZyoYe1Q+16VJtds3Gnt1RNt4RREU5dE1dq2LTMyEjRYBs7U2V0UtOkVVd0zV1thpe5ooxciJdsRgFjc9Po6f3LkziIqR7y2UAp1ZH7diNKSfhhitZtgdJhtL1Hae0kLTpzH2uaKrQh0JQz1CEyXGJZy0IpSRHJHRByZlMdWEIQn0wK0ezCrDGE1Qip4fSTHZlI2etI182VXb55Wy4xPB9f1QIxTqejWdL2PXZB67JvN1O1LdqBTj+kjbQdnmaCz7eEznqvmSh9miq3IEqjlPnxqfxWhfRqXR98YUGyPCcLQsJfH4PuGIHuoNpJhqjJ0WdvpZr2Eve3pNH3GfFGO3LGRSgWHXP5v8SX0ZJyRJAaiQkei8pwvCd5DWGXtMBJJ+fybzgnyRf4iMd2+6krEfmC2pc9g/XcSh+TKOGurBCav6Ffka7cuEFtU456m+gw0SJg1jrwq6GUndb+heEVsAwg2G41Oo/dDPoO6DCGukv+vhjoDQSGtq7B5HvuThT//jLmw/OKceYDKkn774mTh6RS/+/Mf34sBsMSTFzJd1xh5j2BVj16UYzbBblmy0Edb7dORLIrKHQjbJ+M0UhKyRi2TVDvWmlBRD10FVtKPrGJE9UrLyXzXGTkkqR8okKP1zbStBiiHGTpUVix4mpGFfNZANhzu6PLS7WjkgmO1Uvoy5okg+IYP0jRuexOXXP5E4VjoP6msbVHdMYOwzRbVDoFOZL7mYKbjq77WkmI2jOfX/npRdUR6Yxk41gh7fLwx7SGOvkmVKuw36GcfkH9k7jf/1r7eHFqGSG+R3VDhP5W6P/GEh52lZ1rDPpioYOxn2oRgpJsTYnfguZfrfpvJl5NK28g+RLNYXo7GPzxRx7Mo+9fukDCk+be0QAHHvVvSmQv4QHoljB8LOU5N5WifoZoju65U3lViJFaOxA/ETNqqxWxpjrxYVAyBZitEY+68f3Itf3rcHX/nNY4Fhlwb4pCMH8Z7zNoJz4UDUGbvnc/W764uQy5/etVOxhzgpRjd8USkmzoFI3ZMIlsVU6d65oqseRsKQcp56Ia0TEPLN1Hw5xnkqQuGqaeyT82WkbStUAyYauqlfN/31bMoWlRVLrjIiqwYy4agY3w+dJzlc6TwB4fR8cnwWf3v1I7jkV48mjpUMZFZKAWWPSykmWWM/Y90KnLVhGC98xioAwpDPFMpq51BNitkxMY91I73q/7kYKSZf9pCymVoYH983AyDY1dUqKUC7Dd3BGcVtT03ghsfGQ41OdI1dD3e0LRECmXGsijK+gRQTz9grnKcy+ms678qyGUHYcbXWeIB4hijMckVvWuVC5DLhqJi83EE9c/UAAOFApSTA09aK7mF9GUc07wlJMZUF6YzztAmEan7E6Owe54rhpW0xSfX5HM9awuGOem1lXWPX49gJPan4S6pHxVCp21UDWbXa6wvCkVIXBRDS2PXP8TjH3TsO4SP/eS9+fo+IrhiqIcWIpCBe4TwtlD381927wLl4Lbo4kUNrruiFukIBwGBvGtMF0d2Gdgc03i//+lG87hu3VBj2lC1Sy6uFO07lSxjsTYWMr777CGQwnbEHUkxv2lbyBiCKPpU9Hlq0e7TdR8iwl8iwu7j014+GPjsO9JnZlK0WhYysFUOfqePAbAlj/Rn86H1n481nHg1ALKiCsYt7X82w58teSBLriZViPGQdEWnFmFgMbIspZ7hjsYokN6AKY48hTbRo6vWNSpphp+isghs4/fW5rDd/EZnFNgayjgqHJEzmy2AsKBtAGvt0IcrYrVjGHo3+oTBUel7oPPV67HROzzxSGHZi7Cs0xt6XcdCTijpPq8exK+epkWKqoxQy7JU6u+cHW3d9UhHiWX5YG6b3V0bFxDD2mlExvip1u7I/UyHFAEENFvpOfdzESj2Pq7Cwu3ZMAggYe8i5qEsxkjlEi4B9b/N2fOhH9+CRvTOYK7kVZYf7sg5mSyIqJqqxD/akwLmY+DQ2Gu8T+2exd6pQwcwdm9UMd6TaIPr1jC5S0b8FjF0kB82VPCW7jWiNlAEhxejn2Z914FgMswVXyRpT+TJ+9eDe0GfHgXZ9uoFNy2Qci4WlP4q4Gcll1HsAYGK+BNfnSoqpprHrOjYgDFWc8zSbtuHYFkZyGfhchAmSTEDXf9dkPtQ8m+4VGV0ygnGhkTT/dMNe9oI49qCkgB+UuNbGrRKUtKSuvoxoWac/l1PzJfRnHPV5fWlHZdQWExi7Hu1W1soVAMFitULrl5BL26p93aN7Z/DfkiwdM9aHtGNhz1QB0wUXgz0pbBjJYbAnhb6sI3o8aAtCbLijE3aeMobY7PRWYukbdu2ixunsnu8r52ecYa8Wy0urKwtFxWhx7FprPEI2QYqxLWHMSq6vusEAWlSMZsBW9mfU5Mg4FjKaodalGGIKE3MlpGymjKA+iWmXIn63QhlzdO7/88AeAEL6EVJM2HjnFGOPl2IAYO90oUKKOTBbjJXIHMtCyrJiF1XC5LzIkow2BCeoUNME5ykV4CK2TBEVeqMU3bBnZQPyOU2K2TtdAOdBF6kkZyo1PelJ2SpmPS0dybm0E2LT1CFrtD+t3gMA+6fFnBirQ2Mve1yRCgCx5YHzJU99Ni0WeuMX0thf/g834txLfqcMYeA8lYxdGd8qjH0miPKhiCAgCHcslD31+wUnrFTHEknIlz2VcxHUJnLVwi/qxARjtyyGgWwqUWOfLbrY+Mn/wfdv3S7G5IUXcdp10mdaTCywZU/0JP7Uz+7Hpdc8BkDcj5X9GTwmpawVvSlYFsPzjxvF2uFeZB27anVHgBrZy+vr87azdaAOw84Yu4wxto8xxhljv6xy3KsZY08wxgqMsesZYxtaO9R46GywJmPXDCT9LW7C6o02opXaSl5QS5pYY7oOxg5AFSkixl7WSujq70vZlnoYdY1d/y7P56Ht+mBPSqsBnSzF6PHZrhzL3ZLxH5gpqsw8Hf3VNHa5nX1qfA4bx/pCYzw4K1ho1LGXkrViajlPB3vSYSlGW0CJAWZTYeNM59wjpZh5uQOh66sXcQvtBlIyhrroqfHulW3/jhrqgRdzHgRaIDOaFEPXIJcJd1EiI0jlI8iA7psWBr+Wxu5J34q+KxMRQJVhtLTQrRoQn0kSBiAZuxY7//snD8hz8eW4KSpK/Lz6gb14y7duDS1uJH2GGXuw6OjVHelvL3/2avzovc/Fq089Es84oh8AQteM5tevH9yLZ33m15iYK4VKIRAGehxMF+I0dg/XyF3WVfftUeekO/0Dxh7scKncyFS+jLufnsRoXwYpm+GooR5sHOvDXdsPAQgWg6+84RR8/Y9OV9eerksyYw8i0dqtrwP1M/YfVnuRMXaEPGYawMcAnAHgOwsbWn0IMfYYw67HlcYZ4DgHnh7HHorASJHzlbz8layxmmGneNbAsAfdjDIRDXf1YI/8e1SKCTR23Rs/qD20SVExo30Z7JS9IsX381BJ0gOzRRyYLVY0rejLOJjOl2OlGP2BO3vjCIDgutBWPbrgUuW/as7TqfmSYOyp4PsyDTF24TydLYodSJC9G2id+rlkHBGeqDN26ue6eigrzyMp8kr4cTLajohIRG+kixIZwcCw2/K7xH0ZzqWRdqzEzFO93jkhl7ZVYhQhX9YZuxj/UGSOeD5XzsH/uG2H/HzpPI1o7LdvncAtTx4MLW70vI1HpJggQSkId9Tn5FkbR/APbzpNhS0GfglbhXve+tQE8mUPuyfzoVrshDjGvnE0hwOzJXz1WsG2T14zKMbk+irhTpyTLD0h53natlQ48s1PHIDnc1z2plOx5VMvxopcGqesGVTPPM33jGOrXgecB7JtbIJSxHna7hh2oA7Dzjn/MwBfrXHYmwFkAHyJc/41AD8DcC5j7JiFD7E6dI09LknJ83lF6j8QsLtq9afLHg+FLhFjpLhkvTUeISkqBhDhkgdmi2qcZVnVjrHKUr+UWBJl7Mqw+34FYyckhQOuHe6tiOV+aM80Vg1kkHEsHJgtYu90QX034cihHuw8lMdcyatg7FRxDwDOPmYkNEZC1CBSrZhajH2oJyzFhBh7JNQUCPwUWceWBlUw9r6Mre6RkmI8P8T207alJBcyXvukPEKRJVGnHsGVhj3lMGUAFGNPOyFjSEaQKhnS+e2S8tyK3rRwyCUwdlVxNMTYKwuB5ctBqv3KAZJigjliyZICNL1/89C+UJVUWvRIYycjru/4AuepJsWESgroUkylMaO/UQ0iobHTDnBWfcdURIoBxHyfkjVwaEF/29nrsG6kF09PBDtiQCTixTF2uh4px1KL0W8f2Y9sysLp61aoCKKT1wyp966IjIPmOi3E9SQotTvrFGidxk6yyy75c6f8uTHuYMbYexljWxhjW8bHK9t6NQJdp42rF+P6gZc6HcPuYhm7VltCv0l0E4PyszEaexXGnnEsPLE/qO1MjkxK7NGhGLtjhR5ipbFriUZA2LAnZWau1ULk0o4lE0PENnW0L4OnxudQKPtYNRA27BvGcsjLRtRxzlNA1CRZLz8/6suYiRjElEWMPZ6VFl0hhwxVjYqpXFTP2jiCFz9zFfqyDnpTIi55Ol+WjD0sxZCzTv+cXMbBxFxJ7diIRVPz7qTsZtcTzkHHsiqkmN60HdK/FWOXGrti7HIXJ3Yplc5QgmrXGHGeAlBVIoGgjy4QaOzhXZ0oAhYYHI65oquykWlcdL/JoOu7YiXFzGhRMa6vfEJBHHu8MSOtmcJBM6lAY6eyCaLOTUkVuCMM9aYwoRLjgjDXL77m2Wo3VPKERFL2/FA0F/1ORjptW0jLsV7/6Dies3449BwT86fv1UELMz2LyUXAxHWl3V270a6lg0YeS8k459/knG/inG8aGxtb0Bfp28+4rbLvc9CcCrEcrRZ0FG5IY6/Uq+lBbSQqho5/XDPsZZer7klRBIw9LMWocEefhx5+ndGEwh01w0fJKoCIkCj7vsrcG+1L44HdU/K7g6gcADhGS4bpi4Y7SmPx3I3DanGKGvaoU9uRtbqTyvYGmbTpxKiYOCnmzA3D+NbbN8G2mHp4x2eLsmVgmLG7PpflXgPm35dxVCU/IKyxA8lSjGLsdhCjTZJCLhNm7FPz5VC5Adpl7FaGPR2rmRPipBgyLnqxMV2KGYuRYqgImL64FrQmNIqxRwz7lFZSl4x8NCpGSTGaAYszZgFjr5RiSMabJMbeE2bKY30Z7JkswPN5KBT1nGNHseUvL8SqgQzKLpc9VRHP2CmKzAlyXCbmSjhz/XDou1YNZJWfIrpzoPsXGPbqUTHCB9HFjJ0xlmWM0VlulT/XyJ9HRf7eNugT845tE3jdP98S0nQ9zuPjzauEcelSjK3dpSDBKUiRBuIXjDhQ3XbHYiqFmZhjFKTrRuPYiZ240nmati0wVsnGoscDCCW19GdTirFnZPcmcuAdMRi0mQOgnKIAKhh72rHwqVeciPeeF6hu6cjEnSmUQ8xbaOzJUsyUlmlYU4pJuN708I7PFNGbsSs09rKUDPQFIpdxVNQKEGjsRyrDnlxozrFYyGlNi2g03b/o+shq99OyRDTTXMmDbTEMZEWtcN2w67p/0KEo+K5cjBRTKPvq2q2Mc54yUVKAkqnEezx1T2gXEG1IEZZiqBduSUXVlD2u2jDqxejidOVoJ6yMY6k4e8LuyTx8XsmUVw5k1TWKC0VVTXVoB6J9bjQqRuRVBGOl2HUdJ68ZUvdHB5EyGktcHHu4pECXOE8ZYxcBeKP879GMsXczxo4DkAdwl/z7DwGUAHycMfZ/ALwGwM2c8yfbMOYQdMN+y5MHsWX7IWw7EMTlej4H+W3CUoxd8X6CbuxZSIoR75mNMHZq4qF/bhzo+5+9ZhD9WQd64+MoiCX2pGxk9JBFeazPhRQz0OPgi695Nt585lp1jBMj3QDAqv6sGmefzLSjOGC9Z+gREca+aiBTsTXX8Z7zNoYehgrGXghH06RsS1Z3jJdiJrVMw8Q4dsuq+JsOGu+B2RJyMkMQEIZVbM956IGmqBg9opFkG9o9RasOElzpx1GJOTZTu55cOhwVU3R9pCOGiMZKkU2ix23wnvd//0588If3AAj3FI2+X19A8pr2vG64FxnHUkXDAMCWUUklz1fGqlD2lGRAyUD0kx4JveF2yfOxsj8Dz+eqJk/ZjWfs1aQYPUS0L2I4qcpn1HlK0UNAfPIY6drkg8tpBEFFxeRS6lh9fCeurjTsbz7zaLz1rLUVkmlPOqKx+5VSDOWPcC7IWLZKTkSrUA9j/xiAv5W/nwzgWwDO0Q/gnO+BcKAOAbgUwN0A3tGqQVaD3pWHoOuAnh+wbsdiylCTAaa4Vx16NqqeSKCiYiIaOxAYGLrRcSA7duaGYXWzi65XwXAB4NSjh/D3rz8FLzhhLNZ56spQyWzKxpvPXIsTZOgYEGT86cfTuawZFganP+uocqnUSBsQC9nK/jBjZ4xhg5Rjos7TOEQfYs/n6n2MBTH9SYw9qA2SrghJDL6j0nmqg4yd53Pk0gFjL5Q9tXCnNJZNUkwUubSt2GJyVIwvGbv4jjUrepX0EI2KEQXCosYhnAnZoyUcTc2X8fsnDmCr7CZVqiLFhBh7KdDYR/oyuOMvLwzFkDvy+pdcXxnvQjmQYl580ip86Q+fjRNXB/MKqNTaabEgByrVogfC8kt152kgxfSk7JBfa8dEvGHX52g8Y5d1ndxwJq34PaKxO2HDHg0eAIAXPmMVPveqZ1X8vR4pRq+ddGi+MnSzHagnKuZ8zjmL/LtS/nyWdtxPOefHcM4znPPzOsHWgcCZpDcz1p2oHufKODMWMGtK/f/Kbx7Dsz7za+yaDMIA9UiZeI09KENKIONbjbFT/e0z1w/LvqBUu7vyPYwxvPaMNZUauxbHXtAcZDrsBMMOCPYGSMPuBTU6iLGL+N3KadGIYY9j0cT0iaU5dnKtGOp4NCSTQYiRpUNb++qMPRfaeusae5DVmHKskEwXtxvpz6aQk5mOSVJMoLGL63605sugqBiKc45mjQKBoSHNt0eTYm56Yhw+D5qvUEG1ULijHDdp+ZxzzGsaOyDCA3W2abNAYyfGXix7ynnan3Hw5jPXVswFerZIhqGa8Admi6qENp2fnogTl5RDn61LMYyx0ByjrNiotq07+KOhwgCQtsWOkBZxkl90dp5N2cimxP8VMUvZFay8GjIRKSbWeWoHgRqH5koV4cTtQPtV/DaDHlL9YumM3fd5rAGmSf/IXpFR9uEf3qMYpM4krZhwx8B5GsPYqxh2wqZ1grGXXV9uzavfBmK4+vhd6TyN+77wTiL8+lpl2FNBjQ7HUgvjEQOVbAUIdPY44xdF3PnQg0UsLZXQ6AGoLEPck7Jhy76WBPqcpBouujafS+tSTCA36M1XRKhdpeTVn3VUIbTkqBgeYuzrNMPem7HhySJXQDgzMxhrOMU9oxn26x8VUWOTsphawNiDeUlzgHYGRdePjWDSYcuomLKnMXZZB8mRBbvoGumge0OL3DGKsReVo1IVAbNrMHYrwthTdM0DRksLWoXGXpOxW6o2PqBn0oaPXdGbRspmivxRNcd6oRLfdI09MiX1AoCCsRvDXhN041YNZJVx1aMw9HBHQJdMwjf49m0TuH/XlHoPIS7ckR6gcPSJHfu5OmjbOtibQsphVZ2nUdCqH9bY/VjDTg89Nb7QcdraFVjRm8JwLi2q6skuTRRXfUTMNhQAnn/sKNaN9Ca+HjdWHcTC6GFOKhsLCCNmMVETBEAowSg4RzLI8ddbj4JIYuxiCx5ENumGkAwHORwp+zYOFMJG82JthLEDARmI86nQ7lFfyAqS5d/w2Li6ZhNzpdg4dhr3DY+N4wtXPaS+q9ruyrEZyr7wNQQ14H3pL0jWxhVjl4vccauEVLN7MqgJVG9UDP2Ndhp0L2ncuo4+FJFiVvSmtezjGMYecZ4GtW/C12Q4l0Y2Zat2hcetatCwqwqegRQTp7EDglSIQmJdIMV0O2iif+TFx+PKd54Ji1Uy9nDtlErJRE0w2SBXd6DFLQrKeapneNbB2H/xp8/HvZ95iXgvlSfw6jTslDZtRzT2mIUkKFpWGR//qlOPxB2fuhA9KWKSoirjqHyIkhj7mRuGccPHLqhLiolj7MSYAgejlRjuSCFzlvbgRq9RXBx7+PvCcct6VIzenkyv9xNn2Mno9WdTVaQYMd49MslIzxeg60VMt6Q1ew7GGmbs/VkHU/ky9k4XMD5TxHNlRu/4TLGq8/Sq+/bgWzdtVUY3WhpCh8WYqjXUH3Ke+qF5HWXa9GyRgT9yMIvhXBo7JuYqdhO1nKdUflmXYvTxHKex54GIYbcspgx/LGO3qcR2tFpl+NjPvvIkfOTFx+MlJx2B156+Bn950TMrPqsachWGPb4eOwCVI2GkmDpAW9xjV/bh7GNGMNCTqtDYa2nh9BCXPL+iPntcFmfgPG1MY89lnFAFRmLscQw3CqVbyvBGT8agZ2OMaCqmOBmBMSYjOIJtcMaxFGPXG1s0CxqrPr9TthVyUok46ngpxovIZ3qCkf55QG3nKSClGEeXYqiIG0PKsdTORg+1G1OGnaJDHGw9MIfzLvkd7tpxqGK8tsWwV2aq6oyd9PanZSmHkluZrNMT0dg3jOYwV/Jw61MHAYhFFRCyRFwce0aeA4EyZqtJMY7FlNwzEHKehhl7lGkHUox4BgZ6Ulg73IsdE/Nq9xzXECUpjd6xLEWUaN70ZR2kbIZ1I2KHS/2Ao6DnNo6x688XoHWEilyT56wfxslrhtCXcfD3bzilYaPbq/wb1Ec5JvNUntd+GU5spJg6EN2aDmRTIS1UhDsma+yAZtilNqkjFO6oomKC5rzqNflw1cO+abx64+N6jgfEw+LI5JJ8ubJ2OiDYjMXimTMhqLwnpJgVuTSueNsZqj74QkDRRyPaQ5J2RJMFpbHLWjFxFRPdyD3rSdkVzDwuOUxH2HlqCx2VCSJQ0qUYGarKGAu9hwz7gGLsDh7bN4sdE/P4xb27K8brWEyFqOrO0/Wj4vftsudonBTTK+fikLxex0h/xm8e2gcgMOwHZoqqCbdu2KmKJKEew25bejIVGXYPru+HfBlRpyfJnMTc+7MO1g73YvvB+YpFhzGmDHpSUo5jM60RujhmqCeFVQNZRYKiyUkESryqprHTOWalnyZXZRfTDMiOBI7rZOcp3ZdOSDG199VdjrJ09pAhGOhxwozdj08y0g27mCBTIU2OUL8UYzfkUU/ZDNOF5Dj2KHQWRJX5kpyngOwvWc2wx0TOvPSkI+oaey1Q39OBHtHmjFLKMyHGTr4CIOpX83lYPuvRwhXV+GMyT3XQQsu5MHCie48IgdP7TuoREWQIe1J2RRx3n+bQu+nxA6Hvcj0x3q+9+TQ8um8mJFeN9YkcAMqtiPOpBOF34jvIgXfDo+PoSdk4SeYIHJwrBpKcUxkySfNSGfYqRky3s0qKkY5lfW5E2bvuPHVkctW6kV788r7dyrjpRtyRGcZJSTn6scTKP3Th8Tg4V8LtWycAVDpOCZR4laSxR9tYpm2rqjzVDGwZtRXW2KNjEX/YZxh7/YhubQeyqVB2XLQ2g9LYtRtM6cIl11e1tQn6TaKJN1Mow9YWE0BMpHoiYgjUVaVRKcaWNUk8LzncERATuZphj3ugWomMbWEgGyQYCQNqK6NBD3pSgphuXC46eTVec9qa0DEpeX5JC6nOYklfzaQsEdKnacGOzZTjmwxyLmMro0ht2Mj4MSYaiFAdGTFeH45lYUUurfRwfRzrRnJVGXuPSnEXD/zK/gz6ZKOQDaM5VRLhwGy8FAOEjTgZkFqMndCXFeGchbIvi+bFa+Or+jNBHHvexYBMqFo73AufA9tki7yUdn7kw0hq3kz3+aihHvVd60dzOGPdCnXtozHsBFXaOmb+ZhwhxVAcO3XtivYaaAWoDSNAcexRxi7Gt29GLLhGY68Deko0QFJMFcNOWrj2HiprWo7R2HXjnZWtu3xeqRlmnHgdMAkpOfHqCXfUx20zISm4Pg+ljUchmncnjyepfV6rkHYEY89qhj3tWIppk5QSl6TkRyKZ3rDpaHzg/GNCx2Qcu2oEEhAwYTLYmQiLozrcAWOnNHpHGUVdYweAV55yJIAwa48awyjWj/RiGxn2WOdpOEGJMYZjJGvfOJYDYwyjfRkcmC0mG/aMU7Hlj0aA6Iju2DJOsOiFnKfacauHepAve6K4WqGsrgn5FJ6QFRnj+h4kaex0HnFhhmTQkwz7KWuGMNqXwXAMA6bgBIrLT9kMK3LpUL5Lq9CbtlV2sR/X81Rp7J2TYpa8Ydd7LAIkxWgaO48advEQ6UY4xNirSDFA0M0++mCde9xYQ1JGsxq7YwvnJ2nFSenJjm0lRowAERmpynHNIu1Y6M86irGn5VaYDDoxxqSes7VqVr/znPX46htPrXqMcpjJnyTFkI+kJy2Sv2gu5LTICfqdNHZyML7tueswkksrmYDGW61i37qRHJ6eyKtMz8QEJe2Bp/hwyh8Y7UvjwGxJqxUT/oyPv+wZ+OwrTwKga+zVpJgwK8/KUsHVnKcU6jpdKGOm4KprQk5Oqlyqy0QqQiZh4aNpWM2wJ0kxFzxjJbb85YWxC7yKitGu13feeSY++KLjYj9rIdC7ZMXViqFnYPvBeVgsmEvtxJLX2KMp2lHGHmV/ejy4xcQKS1qdrr8Sos/ryv4Mntg/WzFR33LWWjSClB3EsTfC2C0mNHaKzEkqYSAYezXnaWW0Tyvxpy88FhtGcvibqx6W3ycWmlSEscdFxvgR52kc1o3klEFJAm27w4zdw/isMHwr+zN4/wuOUXVOLOlcy2UCxk4P4XNlSeCT1wzhmJV9SlrhnFdE8USxfqQXJc/Hnql8qPoh4dzjxvD6M2ZCoaZk6MjAj/ZlsGeqoFqsRVn/ecePKXmoPikmYtgdW8ax+yHZhEISyx7Hajm+6XwZ0/mAsa/szyDtWHhSMvZUDGNPcp6Oy2qacYadrn0zmnTgPA0M+/rR6vOlWVC3LiA+8/TYlX1wLFHZdTiXbnu/U2AZGPZoivZATwrzJU89QNFwRzJ2Kcl8S66vpJiSV5uxUypzkmZYL5TG7vl1GVbVR1JGxSjDniD/COmjmhQTDpdrNf7orHUAguSblHRc0XVTrQnjqmvy1nSZUdKK/JlJic5EZEzG+jOhypXiPQ560zZG5ZadomPOWLcC33r7JgBCerjp8XHcuX0Cb/v27ehNO2oOxYEWoO0H52MX8hOO6MeXX39K6G8nHzUExqAcpyOyrHJQDqHy+tACtm+6IDo6VbmvYcPOZFNmr6KfKiDmetnzVJP1qXwZ04UyNspyApYldPYn91ca9kBjj7+fVDyrGSmmGihPouiGY+vbgVzGDjlPo26fnrSNk44axL1PT3akTgywTAx72Hkq6zkXXJFd6cWHO4qGygwlhMMdowyyQoqRxy50oqRsS23fGsk8tWRUDEVAJOn6tR7spEJhrUagsTN8+uJngoHCHaUUE2PYo+GOzaIn7UgnK8WJp3FovoTxmSKyKSs22Wo4l8ZQbxpnbhjGTz7wPDzrqMGKY9YN9+LH00X87pFx2VfVq7oQUcLSjol5FOuMgjrn2BHc/PEXqhDK0b4MDs6WVNnhOIc7yUdF10d/1qkaoRXN7VBSTCTcEZC7u3JQHGsqL6UYrfnF6sGskmKiUTHiZ/VzPmas0rCvHMhgtC+teqM2ArrGcZE6rUZv2sHBWRH1FMfYAWDTuhW49+nJig5M7cKSN+wVUTFydZ/OlzGcS4vQuRgpxlG1RzysyKVVR5+KcMfIfCAGt9Caynpfy0aiYpyIYU9yII70pUMp2VGEGHsbomIISmN3LJx0ZGAkqzUTj9b3aRa5tB2KgjhyKIvrHx3HuuFejPVnYg3fV994KvpkeOQZ61bEfi4Z6msf3qf+Vm0+kGQxV3RDHYaqgbEgLh4QOrPrc0zly6pCZhRU02Y2pul4FNFIsUxKSDFxPTnp+aLxTM6TFBOwT11GCpdXJimm+v2MixTpTTvY8pcvrvq+JFQ2xWmnYbcj9dgrjzlj3Qp8++atxrDXi1IkKoa2baSzez4PFSNSBlI68vozjoqOKMVq7AnO0wVLMZVjqgalsUcZe4Lc8i9v31TVYLc7KoagR8XEfX9SM/E41tMoVg1kQwbnqKFe7J8pYtdkXmXaRhFXizsKSkCiAnJAstQABIsb5VfUc7+joAVqKl+W2cfx30eGvVa8dqXGbqmep9GQQDo3yko+MFvEXMkLOQH1UrdxUkwn2sHpoGs8G5Ml3mr0ph3lkI+rFQMIxg50JiIGWA6GPVLPPGDs4oYmJSg5togHz/YGUkE9UTGrWsTY9cnfSIISaexkJJIZezJbB+Lr3LQDZNijho8e+KRwx1YYgj9/6QkqvhgQjB0AHtw9jXOPG236c/XqjQS7ykJPMdQUA94MeyRDPZUvVd3h9WUdYLp2eeVoHZdsysZkvgzOK689JXEN59JgLCilq0sxq0KGvTLBKemc7/p0c4y8Fuj7SIqpZ1fcLHJpO4hj9ytrxQCCEL7q1CNx3vELawVaL5a8YS97vKLuNKAx9opwR+nMs0R6e1Bs35aZp1GNPfx9K1voPFVjqkeKoYxNxmBblqrV0Wxykb4wtSNBiUBRO9HFq5EEpWbRl3FCBo6khPmSV1WmqoXhXBq5tK1aJALVGTsgrvHUghg7GfZyVVmDzrdWIk7U75RNWShOeyoKRodji1aOojVcSjW/6K+LsVePY29Xsg49L3FNcVoNkmJ8n8dmnhL+8U2ntW0MUSz5OHbhPNXCHXvC1fSirar0ePCUbSkvdcaxUHJ5bSmmRc7TdIOMPZx5GtTXaCTbVUeqU1KMEy/FVE1Q4q1xnkZx1IpAsx7rq11+OAmMMSXH0PW3a8yH3vTCDDtlp07Ol6sy/qCJdvV54UQ0dnKeepFwRzo2qECZwnZi7FobuyMGgmurzyeVoNRGwxoHusbUjavZ56Qe9MqWigXZKL0VMuJCseQNe9R5OpxLI+1YykMfjTHWnZCnHT2ETeuG1d9jwx0jBiYnWeBCJ2qzGrttsVA506RGE7XghBKU2snY4w27SlCKiWN3Yxx4rYBeS34hjB0QjcEdi+H0dUMAwlFGcejRGXsTcycXYuz1GPZaztPgM1IOC+LYvcos2pRthRpA75wQ8fJ6Kd0jkhh7JG+hU9BL5ebkbqNdoN3UfMmTpKRtX1U3lrwUE629kXFsnLVhGDc+JjrPREPnMprz9Cta5qJwnnoxRcAqv3Nlf2bBhkevp1Ff5qlkhhbD2ceM4Kd37wJQvbFHNXTeeRoxFioqJj6OvR2sJ+PYWNmfwf6Z4oIN++vPOBonrOrHLlmDvZrGDkBp2ECzjF1cx8l8ORQtE0W9Uoy+NgjGLuLYUw6LWYQZsnZQqIyqY/ZrjH1Fb0olBYVrxTD1GZ0ELZ4Tc6WKBtmtBl3r+aIXW499MdAFa8vCUPYqa2+cd9wYHt8/i92TeVkpMHhNZ+w6Uk7Yeapnekbx3GNGYuObG0FcW71q0Bn72ccEhaaal2I66zyNMxZAfBy7X6P2ykJAkR3Rht2N4sJnrsJHXnJC3eGvvWlbOfSbud5kPGoVjevLyGqUNaSYMGOPlBSIqYNEC4YerqdHxTDGVARS2Hka+LQ6CXpeDs6V6moOsxDQbmqu5CZGxXQaS96wxzUueMEJwvN842PjUooJXj96uDfUeZ6QpqJBXrg2dNxN+uJrno1PX9xYp5Uo0gsw7GtWBFEZTTtPQ7uY9kkxWS3zNPT9dpCg9OjeGfzRv9yqIgtaFe4YB2K7C2XsBMpQrcVIe9K2imRqJipGr94Yl3VKIHZai7FHNXaKYz84V8KKiEPzYy99Bj78YlFjZSjBsAOBHBNuOk4a++JIMYfmS6GSy+2A3h6PxxQBWwwsecMere4IiJZaRwxk8fsnD4pGG5qROP/4Mdz9Vy8JefQBMRHKLleMnYxdu+o6hKNi6i8pQAaEmHqzbDtohtBe/bMnQYpxlBTj47pH9uH3TxzE9oOUvdcejR0A1gz3wGJoWZU/xdjr0Nj1Bh+NQpfcqmrsmXB9nCToz0RKSjGAIEpHrwhLPWcfM4IzpC9Kj8OOShyrB7NI2SwkRQSGvcOM3Q7Cafvbzdi1LkrdwtiXvMZejmHsjDGsWdGDibmiLNsbfi3apAAQ4Y5T+bKSBgLG3p5xN+o8pWxFelCu++gLcP+uqab1PGJQ1WqatwI06aM7Cz1B6alxUVCLIhiocUU78M7nbcAZa1e0bJcy2keGvbbGTmjGeaoz8GqGXTH2OqNiqHGLnui2JiZOn0BdnvozTsU9OunIAdz79GT4e7SOWZ2Efo3aLcWQ83SuKJyni2/Wl4FhL3p+7NY07Vgoln3hiKtjUqUjCUrVpJhWoFHn6ZFDPUjbltoKHznUs6D+pGSI2hnDDgDnnzCGS19/SkW9j5TGqKgqoApRbSPrOWIwiyMGW9MpCtAMex0aO6EZxk61f4o1Nfb6GLutEofET30eHL0i2bATY++PcUi++/kb8Y7nbQj9TRUBW6RwR6ByZ9Fq0KKbL7uJCUqdxpKWYjjnKHvxtTfoIai37ojw6AfdddJtZuyNxrGfc+wIbv/Ui5QhWShq9QxtFTKOjdedsaZisgfOU18xdtKgq7VS6zY0IsUQmjHsQLA4VE1QqlNjp2xsWmD1sNk1K5IJAzlPB2IqLloWq0xEq5Gg1C7o87pjztOil1grptNY0obd8zk4j9+aZhxbNbO161hBqfFFxxh7g5mnjLGW9koMeoa2l7EngaIk9k0XFFMPksq6Q6esB8O5NP72D5+NV556ZNXj9FaMzaa3k7GuJsVsGMkhbVvYMJrMuoHA0KpWkXLhGevPVN3FUdBBvc0i7EVynurXKG530Ur0yoUjX/ISqzt2GktaiqnmjEo7VpAJVjdj9zWNXTpP22bYG9PYWw16sNvN2JNAUsCje2fV3ybzouFFq0oKdApvOrN2k5XeVPCoNXu/VbJXlfevH83hkb95Wc05TwZXtYqUjD3qOI2CGHu9xtJRvqFFlGLazNhpN6bCHbuALnfBEJpH2aV+hvFSDBUAqluK8WLi2Nt0hToVR17r+9vRFq+u75f35LF9okIiYwFj91pUj72boHe6ataw05a/FuOv59pFOxuR83RNFX0dqC7FxKHesr2tRic1dtsSjUrmS92ToLSkGXvRk0X0Exj7vCwAVM9Ep45G9cSxtwL6xGtn5bkk2BYDY4snxZBheXz/DLIpCyv7s5jKB53elxJjrwc9C4yKAQLG3or5YkcMLpWVOHq4OmPvSdvoTdt1dzWqt9FGq5HuYFQMIGSy+ZLbNRr7kjbsVMs73nkaFL+vS2OPMHZisu3W2FM2WzR2mrKsRZNi6EEvlH2cuHoAaa2sba3m0EsRPemFSzFKY6+SoFQvSBoJmruTFFOdsQPA199yemwru/jvWRznqb5DaLfGDgBZx0K+5Js49lZAdSBPCHekbPV6jETGDmvsqhVdm+PYF4OtExy7evu8tn63dmE3juUwU3AxJZtKt6oeezehtVExC79nJDFSI/jjV/Xjj8/ZgAufuarmey94xsq6v0dp7B2WYhhjKpucyiy0E7bN4HPeNc7TJa2xk/M0SWMn1GMk6GErSJbfbucpGfTFcJwSHIstmhSjP+jHjPVhsCcVZuxd8HC0ErrG3mzdlN4WSjHE2IOdo4W/+oNntiycNvgeYuydn+f0bHVCinEsC56sx94NU7euq80YO4cxdh9jrMgYu4sxdnrCcZ9kjO1kjM0xxn7EGKvdZ2wBeHjPNABg9WClLphu0rCr5rdyF9DukgKLadj1VPKOf7f2oB8zlsNgjxMOd1x2jJ1CFZuX3uoJd6wXUedpuxAsIJ2/n/RsdUKKsS2mwq+XBGNnjGUB/ARAP4APA1gF4MeMMTty3GsBfAHAHQC+COANAD7f6gHruOq+PVg1kMFpRw9VvKYz9noudNBKyxUNo+V72ibFOItv2Ad7Uy2NjW8ElnTeAmHG7vt8yYU71oNWOD5bKcWoOPY2z7/Fcp4CwWLSCcZuMwbX96t2UOok6rnaL4cw5pdzzi8H8G0AGwCcHzmO/n8p5/wLAPYCeEdLRhmD2aKL6x8bx8uftTqWAcV1Sq8GmuD5kifrZ7Tbebr4Gvt33nkmPnzh8Yv2/cTaN4zmMNSThs+B2ZJbdxmIpQTS2BdiSJVhb4HztHOMfXFqxQDBta7VdKQVIMbeLc7Teu4qFX/YJX/ulD83Ro7bL3+ezxh7DoBRAP2MsRG0Ab97ZD9Kro9XPHt17Ou6dlxfrZhAiknZlioc1jYpJhKVsBg4ergXgx3qmh4H22JYPZhFLuOo8Lmp+XJF16vlgFYYdoqsaWW4Y1xBvFZisVrjAbIcsWN1ZFfs2GTYuyOOvZkzplFHOyT8M4BHIOSX2wEU5N8LkePAGHsvY2wLY2zL+Ph4E0MQCS3P3TiMM9atiH09pLHXGe4IAPlylLE3NbyasGTv0sWUYhYbjs2wcSwHIEh4mcoLw778nKcLl1GU87QFc8bpEGN/wfFjeOtz12Kozrj3ViLt2B2RYQCxs3d9vqTi2LfKn2vkz6Po71J/9znnJc75AcbYKQBOBjAF4JcAspzzuegHcs6/CeCbALBp06bKFjp14OKTj8TFJyfX5whJMXU4bnTG7lgsYOxtNDApe/HiyLsBK/szOGXNEAAoxk6le2u1mltq6GmBUW5tuGNnpMDjVvXj869+dlu/Iwlpm7U965TgWAFj7wYppp6zvhpCZvkAY2wGwLsAbANwPQAXwIMAnsUYOxLAnwJ4DMDLABwP4M9aP+T6kG7QeapHxdgh52k7DfvixZF3A372J+eoVHYqLnVwrggg3JNzOUBJMQti7K2LilGMfRnPv7TW0q/dsC3B2LvFeVrzrDnnBcbY6wF8HcA/Qhjy93DOvYiW5AN4DYT2fhDA5wD8U8tHXCd0jb2RcMc8RcW02XlK37mYztPFhl4hkBj7xJxIUlpujN2WsttCFvJ6yvY2Mh5gcZ337capRw+hJJMY2w3HZiiUffAu0djrWs445zcCqNhPcc6Z9vteACe2bmgLQ8OMXZNisilbk2LaMjwAgnkdzhq7jqALjagXsxztTU/KbokU01rn6TK80BKfumhhfYkbgcUYXJkw2Q1SzLK9qwsJdwwx9jZa9r6M05HkiaUAvXYMsPwYO7Bww37CEf246OTVOD0hYKARRIuAGSwMjsVQkrWrloQUs1Shl6OtR4oh3XKu5OIIK6sYYzsX38v/6PS6y58ud5CBCQq3LeZo2oPetL3AqBgHX39LbNJ3w3AsCymb1ey0ZFAfbMsKGHsXWPZle1f17Wo9F5oYvs/FQkDbqXaG3R23qr/2QYcJKK6favUstyJggCi0Va3tXCdhWwzff9dZON7MwZbAtqBKfneBErN8DXtGq6bXiBQDCPZO7+kGvexwAMX1L2cp5htvO2OxhxDCWRvbkjt4WMKxLFVGvBtsxvJ7eiRCjL2BcEcAyGVsxRiXIXHsWjg2U+0Ml6Pz1GD5wraYYuzdYDOW7ePTqMauLwTPP3a0I85TgzBStoWikmKW7dQ0WIagOHbAMPa2QjfUdTlPNcb+wmes6kjmqUEYadvSpJhFHoyBQQOwLaYa/3RDHPuyfXwabrShWZITV/crg24Ie+eQsi3Nebpsp6bBMoQIdzRSTNtBrbGAOouAyWOPGuoBY0zVl+mG1fdwgWOzhvrUGhh0C6wuk2KWbVQMIFh7yfNRD/mzLIYfvfe5eMYRoumTCnfshuX3MEE6xNjNdTdYOqAiYEB3MPZlbdjTjgUU6++3qId/OW0u22tQiZRtYVaVFDAX3mDpQJ+v3bDLX7ZSDBDo7M044ozztPNIOQxFE+5osASh58p0g81Y1o8PxaY3c6GtDpTtNQjDsSzkS8Z5arD0YIUM+yIOhMaw2ANoJ6h0b71SjA5ynnbDTTpckLYtFGXImHGeGiwlGMbeQSjG3sRZKsZuLHvHkHKCyAKjsRssJeg7zC6w68vbsAcae+NXmt7TDY6QwwWpBpPKDAy6BfoOsxtsxrI27MTYm9nWk2ExkkDnoEtmxrAbLCXofZW7Yeoua8O+IMZuMk87jrQTXGxj2A2WEmyjsXcO5DxtxkgEztPFv0mHC3Qppp5SywYG3YKwFLOIA5FY1oY9cJ4uINzRGJiOIdVgqWUDg26BYewdBEkxzbA/U4+989D7bxopxmApIayxL/7cXdaGfSEJSoFhX/ybdLjARMUYLFXYJkGpc1iIxh6EO7Z0SAZVYAy7wVKFCXfsIBYS7jjal0HGsbqm+fDhAOM8NViq6DbGvqyrOz7jiH6cuHqgKQfoaF8GD37upXBMNaqOQdfYjdPaYCmh2zT2ZW3YX33aUXj1aUc1/X5j1DsLw9gNlip0Y94N9eu6YAgGBgIm3NFgqcIJ1YpZ/LlrDLtB10CXYgxjN1hKMHHsBgYJCDF2Y9gNlhC6zXlqDLtB18Bo7AZLFaYeu4FBAkzmqcFSRbjn6SIORMIYdoOuAeUdAN3BegwM6oXR2A0MEqBHFhgpxmApYUkadsbYOYyx+xhjRcbYXYyx02OOYYyxLzHGdjPGCoyxRxhjb2z9kA2WK0yCksFShbPUnKeMsSyAnwDoB/BhAKsA/JgxZkcOvRDAJwDsAfAxAEcBuJIxlmrpiA2WLVILqMZpYLCYCGvsiz9/62HsL4cw5pdzzi8H8G0AGwCcn/BZTwL4DYApADMA/JaM1GDZI203Xz/fwGAxsRTDHTfIn7vkz53y58bIcdcA+DqA1wN4GMAIgLdwzr3oBzLG3ssY28IY2zI+Pt74qA2WJYipG8ZusNSwJDX2CGjUPPL3EwC8FcLA/yGAfRBSTC76AZzzb3LON3HON42NjTUxBIPliNQCqnEaGCwmdMf/UjHsW+XPNfInVdXayhjLMsbS8v+vBDAI4Huc858BuFYe+8xWDdZgeYOkGNte/AfDwKAR6PUCu8Cu11Xd8WoA+wF8gDE2A+BdALYBuB6AC+BBAM+C0NYhj+sBcDGAEoKFwcCgKijz1DB2g6UGe6kxds55AUI3nwXwjxBG/vUx2vlPAVwCYD2ArwGYAPBWzvmBVg7YYPmCalob56nBUkMo3LELsoPqqsfOOb8RwLNj/s603zmAj8t/BgYNg6QY4zw1WGqwloHz1MCgLSApphseDAODRrDkEpQMDDoFyjx1jPPUYIlhKSYoGRh0BI5xnhosUZiyvQYGCVDhjt2wlzUwaACWkWIMDOJBUowx7AZLDYaxGxgkwLYYGDOG3WDpwTTaMDBIAGMMKcsyht1gyUH3CxnnqYFBBCmbdcVW1sCgESzF6o4GBh1DyrFMgpLBkgNjTBn3biAmxrAbdBVStmVKChgsSZAc0wV23Rh2g+5CymKGsRssSRjGbmCQgJRjnKcGSxOOMewGBvFI2cawGyxNWMqwL/JAYAy7QZch41ihbjQGBksFxNi7IdyxrrK9BgadwqdecSJyGTMtDZYe7C5i7OYJMugqPO/Y0cUegoFBUzAau4GBgcEyg2UMu4GBgcHyQqCxL/JAYAy7gYGBQUtg4tgNDAwMlhm6yXlqDLuBgYFBC2Bb3dOz1xh2AwMDgxagmzT2rgx3LJfL2LlzJwqFwmIPZUkgm81izZo1SKVSiz0UA4PDFpZsFGMSlBKwc+dO9Pf3Y/369V1xkboZnHMcPHgQO3fuxIYNGxZ7OAYGhy0cq3t6CXSlFFMoFDAyMmKMeh1gjGFkZMTsbgwMFhm2xbrCcQp0qWEHumM7s1RgrpWBweLDsVjXPItda9i7AXNzc/joRz+KdevWIZ1OY/Xq1XjVq16FHTt2tOX7Lr/8cnz2s59V/9+2bRsYY7j44ovb8n0GBgatg2HsSwCcc1x00UX4yle+go0bN+Kyyy7DBz/4QWzfvj3WsHuet+DvvPzyy/G5z31uwZ9jYGDQedhGY+9+/Pa3v8UNN9yAE088Eddeey3e//734xOf+ATuuusunHHGGVi/fj1yuRz+9//+3xgcHMT999+Pm2++GWeddRb6+vpw7LHH4pvf/CYA4JOf/CQYY3j00UexefNmMMbwd3/3dwCA0dFRPP/5z8c73vEOPPjggwCEtHL++eersczMzOB1r3sdBgcH8Za3vAWc845fDwMDg+roJudpV0bF6PjcLx7EQ7unW/qZzzxyAJ/5g5OqHnPnnXcCAF7ykpfAtm0UCgXMzs4CAHp7ewEA8/Pz2L17Ny699FKMjY3hhS98IdLpNC699FJ897vfxfve9z4ce+yxOO+88/ClL30JmzdvxsTEBABg8+bNePTRR3Hw4EGce+65ePWrX43rrrsOO3fuxA9+8AOsXLlSjeXmm2/G5z//eWzfvh0/+MEP8IEPfADnnntuS6+JgYHBwmAx1hUx7IBh7DVBzpBvfOMbGBsbw9jYGC655BL1+ne+8x285z3vwd13341Dhw7hXe96F97//vcrSeXqq6/G8573PNi2jc2bN+PWW2/FS1/6UmzevBmbN28GAJx77rk466yzMDg4CAB405vehBe+8IXqO8466yz8xV/8BV772tcCENq7gYFBd8GxDWOvG7WYdbuwadMmAMB1110Hzjle+9rX4tChQ/jrv/5rdUwul1PGmBDnFR8YGMDJJ5+MzZs349ChQ/jGN76B17zmNfj+978Py7JwzjnnJL4XAIaHhwEAjiNuVyv0fAMDg9bCtqyl5TxljJ3DGLuPMVZkjN3FGDs95pjPMsZ49F/rh9wZXHDBBTj//PNx//334+UvfzmuueYa7NmzJ/H4s88+GytWrMC3v/1tXHHFFYqxv+IVrwAAnHfeeXjggQewZ88evOAFL8Cpp56K6667DieffLJaHFasWAFAOFHvuOOONp+hgYFBK2Gz7qgTA9Rh2BljWQA/AdAP4MMAVgH4MWPMjhz6YwBvlv/+VP7t7tYNtbNgjOEXv/gFPvShD+GBBx7ABz7wAVx99dV43eteh4suuqji+JGREfz85z/H2rVr8ZGPfAR79+7FFVdcgQsuuACAkFs453jWs56Fvr4+nH322ervhA9+8INYuXIl/uRP/gRXXHFFZ07UwMCgJbAtq2vi2FmtCAvG2GsA/BTA/+Wcf5kx9tcAPg3gQs75dQnv+XMAXwbwPs75N6t9/qZNm/iWLVtCf3v44Ydx4okn1n8WBuaaGRgsMj7+4/vwu0f34/ZPXdiR72OM3ck53xT3Wj0aOxUg2SV/7pQ/NwKoMOxMLFnvBTAN4D8SBvReeQzWrl1bxxAMDAwMuhtveM7ROG3t0GIPA0BzUTG010ii+hcAOA7A9znns3EHcM6/yTnfxDnfNDY21sQQDAwMDLoLZ6xbgTed2R1EtR7DvlX+XCN/HkV/Z4xlGWPpyPHvlz+/sdDBGRgYGBg0jnqkmKsB7AfwAcbYDIB3AdgG4HoALoAHATwLABhjKwG8GsDvOef3L2RgnPOucUR0O0wmqoGBgY6ajJ1zXgDwegCzAP4Rwsi/nnMeF0z9xwBSWCBbz2azOHjwoDFYdYDqsWez2cUeioGBQZegZlRMuxEXFWM6KDUG00HJwODww0KjYjqOVCplugEZGBgYNAlTK8bAwMBgmcEYdgMDA4NlBmPYDQwMDJYZFt15yhgbB7C9ibeOAjjQ4uEsJZjzN+dvzv/wxSiAHOc8NsNz0Q17s2CMbUnyCB8OMOdvzt+cvzn/pNeNFGNgYGCwzGAMu4GBgcEyw1I27FXLAR8GMOd/eMOc/+GNque/ZDV2AwMDA4N4LGXGbmBgYGAQg44bdsbYZYyxfbIn6i8jr32dMfbXjLF3M8YeZIzNM8b2MMYuYVqpR8bYZxhj44yxWcbYlbJ9X9XXGGNrGWO/l31bOWPsdZ0769A53sYYm5HntoUxdp72WjvP//yYnrQf6ujJi3Fsi4zhHu21dp7/AGPsO4yxCfn65zp64mIM74jrC8wYW9+K8682xxljFzLGnpSvHWCM/YAx1r8I1+CP5TjyjLFfM8aO0l5r5/lfH3Pdr+/oyXcSnPOO/gNwGUSVSA7gl5HXngRwNoArAPwzgHcDuEMe+7/kMa+R//8hgC/K3/+6jteOA/A9AL+Rf39dp89djuOrAN4J4C8gyh4/1qHzP5/+D+BN8t/xi3D+2wDcoI3hpR06/6/J/38RwPfl73/Y4XPfoJ33WwEUAewFkGrR+SfOcQDnAfgEgLcD+G/5+ic7fP6bAPgAbgTwZ/L8f97C+1/t/F+oXfuvy9e/0un537FrvShfCqxHxLADOB7AQQA2gLT29z+Qx14i/0+Tckz+fweAp2u9pn3eZ6M3vcPnziCSC84EMAfgkU6cPwLD/mIA2UWbcMKwXwmgP/L3dp///QBK8vcT5HE/b8c51nkdXifH8MVWnX+tOQ4gC+AI7fVPdPicPyq/94/k/zdDGPqRTpy/9vov5esnLNb9b/e/btLYXw7g15xzj3Ne0v7+UvnzRvlzA4Ay53xc/n8ngKOY6ORU7bVuwSCAcQC3AShBsBKgc+f/awDzjLFbGWPHt/LEGsDbAUwzxvYzxt4l/9bu898PIMUYuwDAhdpnLRbeB2HUKLqhFedfC+8HsAfAZyB2Tf+0gPE3g/3y5/MZY8+AYNgMguh14vzBGDtaftdvOeePNn0mXY5uM+xX639gjH0QwJ8AuIJz/svYdwU9WBt9bbEwC+AlEFvRLIQ0ArT//PcB+DiAVwH4EoCzILa7nca3ALwBwNsgFrYrGGMb0P7z/wyASQC/BfBlAB6ARSn4zxg7BsCLAPyKc75N/rkd5x/FTwBcBOAHAF4A4LUNvLcV+E8Av4dYYB4GQMa4gM6cPwC8B8LuLe/WnYuxTUBEigHQAyFLrIzZtl0JwNL+TluxldGtWLXX6t2mdfg63CDHcnSnzl/7nIMA9izy+f+9HO+rOnH+ELulswGcJo/7ziKd9yXy+y9u5fyvd45DsN6QFNrBc7cAnALgJAgtPN+p84foP7ELYteSWsy53+5/HW+0wRi7CLJHKoCjGWPvBpAD8CDnfL885v0ALoVwplwD4A2Msa2c89sAfAfAKwH8I2NsK4RR/Lz8vMTXGGN9EI6T0+WxL2KMDXHO/6WtJ6yBMfZSCLZ6ixzb8yCY9Mlo//n/FYBhAPcCeI78/b/bfc46GGPPhnB4XQ3xkL0d4sHuxP2/EMKgTwD4AIQM8pV2n3MUUjJ4B4RB+h/55wvQgvOvNscZY1+F2LFsh2h1CQAPtfFUK8AYsyGu+d0Qc/BC+f+2n7/8/x8AOBLAFzjn5Xaf76JiEVbs6yFWU/3fDIDPacdcGXPMldrrn4Oo7DYL4LsAemq9hmCXEPrX4XN/DoAHIIzZJIDfyb99rQPn/zoA90AwowMQ2/FVHT7/1RDG7ACAeQBbIDTUTpz/yyDYWglCBnhtp+e+HMeb5Pn8pfa3lpx/tTkO4NMAdsvz3wUhw/V2+NwtOQcLEDvGrwHIdOL85eu/gpDg1i7Gve/kv67IPGWMPQHgrZzzWxd7LIsBc/7m/GHO/7A9/3agKwy7gYGBgUHr0E1RMQYGBgYGLYAx7AYGBgbLDMawGxgYGCwzGMNuYGBgsMxgDLuBQRUwxtazmEqkdbxvk3zflW0amoFBIjqeoGRgsFTAGHMg6vq8GSL228BgScAwdoNlCY1p38AY+xljbJIx9j3GWIYxdjZjbLOs5/0YY+zNkffcwhi7FsKYj0Ekc31cHnM0Y+y/GGOHGGO7GWP/wBjLyNdexBjbyhjbDpGIZGCwKDCG3WC54xyIEg6/haiB/nGIsq1DAL4AUUb4e4yxU7X3nA3gTohszSj+HSI1/RKISpkfBPApady/D1GC9hKIjGIDg0WBSVAyWJZgoivRVgA3c87PlRUVn4Ao5TAU85aPAvipfM/dnPPTI59zFQQLnwFwC+f8HGnM5wHcBVF++R4A3+ecv40x9iIA10IUGntHW07SwCABRmM3OFxA5V2JyXwXotsOYZv2++46P6Oe7zMw6DiMYTdY7jibMfYxCHkFEG0Z/wyiKNgdEM/AxQD+BqLyYSI45zOMsRsBnMMY+wREowgLorDZIxBt7l7FGPsTiCqeBgaLAqOxGyx33AxRHvlFEPr430IY8ifk75+CkFO21fl5b4XQ6D8B4BUQPXy/yDkvytcOAvgkgNtbdgYGBg3CaOwGyxK6Ns45v3iRh2Ng0FEYxm5gYGCwzGAYu4GBgcEyg2HsBgYGBssMxrAbGBgYLDMYw25gYGCwzGAMu4GBgcEygzHsBgYGBssMxrAbGBgYLDP8f+Y+P9cI/luZAAAAAElFTkSuQmCC
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="1.2)-Exporta-o-retorno-da-taxa-DI-para-um-dataframe">1.2) Exporta o retorno da taxa DI para um dataframe<a class="anchor-link" href="#1.2)-Exporta-o-retorno-da-taxa-DI-para-um-dataframe">&#182;</a></h3>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">RF_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
+     <span class="s2">&quot;DADOS.xlsx&quot;</span><span class="p">,</span>
+     <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;openpyxl&#39;</span><span class="p">,</span>
+     <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Taxa DI&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">RF_df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Mês</th>
+      <th>Ano</th>
+      <th>%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2001</td>
+      <td>1.26</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2001</td>
+      <td>1.01</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>2001</td>
+      <td>1.25</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>2001</td>
+      <td>1.18</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>2001</td>
+      <td>1.33</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>8</td>
+      <td>2020</td>
+      <td>0.16</td>
+    </tr>
+    <tr>
+      <th>236</th>
+      <td>9</td>
+      <td>2020</td>
+      <td>0.16</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>10</td>
+      <td>2020</td>
+      <td>0.16</td>
+    </tr>
+    <tr>
+      <th>238</th>
+      <td>11</td>
+      <td>2020</td>
+      <td>0.15</td>
+    </tr>
+    <tr>
+      <th>239</th>
+      <td>12</td>
+      <td>2020</td>
+      <td>0.16</td>
+    </tr>
+  </tbody>
+</table>
+<p>240 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Podemos ver que a coluna % representa a taxa DI no mês indicado. É necessário mudar o formato dos valores de forma a coincidir com o dataframe do IBOV:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;%&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+<span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;%&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;%&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+
+<span class="n">RF_df</span><span class="o">.</span><span class="n">index</span><span class="o">+=</span><span class="mi">1</span>
+
+<span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;period&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;Mês&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;Ano&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">RF_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;%&#39;</span><span class="p">);</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="1.3)-Cria-se-uma-c&#243;pia-de-um-dos-dataframes-para-utilizar-como-base">1.3) Cria-se uma c&#243;pia de um dos dataframes para utilizar como base<a class="anchor-link" href="#1.3)-Cria-se-uma-c&#243;pia-de-um-dos-dataframes-para-utilizar-como-base">&#182;</a></h3>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">portfolio_df</span> <span class="o">=</span> <span class="n">RF_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">del</span> <span class="n">portfolio_df</span><span class="p">[</span><span class="s1">&#39;%&#39;</span><span class="p">]</span>
+
+<span class="n">portfolio_df</span><span class="p">[</span><span class="s1">&#39;Total&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+<span class="n">portfolio_df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Mês</th>
+      <th>Ano</th>
+      <th>period</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>2001</td>
+      <td>1/2001</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>2001</td>
+      <td>2/2001</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>2001</td>
+      <td>3/2001</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>2001</td>
+      <td>4/2001</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>2001</td>
+      <td>5/2001</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>236</th>
+      <td>8</td>
+      <td>2020</td>
+      <td>8/2020</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>9</td>
+      <td>2020</td>
+      <td>9/2020</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>238</th>
+      <td>10</td>
+      <td>2020</td>
+      <td>10/2020</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>239</th>
+      <td>11</td>
+      <td>2020</td>
+      <td>11/2020</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>240</th>
+      <td>12</td>
+      <td>2020</td>
+      <td>12/2020</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>240 rows × 4 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="2)-Criados-nossos-dataframes-da-taxa-DI,-IBOV-e-base,-podemos-come&#231;ar-a-an&#225;lise.">2) Criados nossos dataframes da taxa DI, IBOV e base, podemos come&#231;ar a an&#225;lise.<a class="anchor-link" href="#2)-Criados-nossos-dataframes-da-taxa-DI,-IBOV-e-base,-podemos-come&#231;ar-a-an&#225;lise.">&#182;</a></h3><p>A análise é feita criando-se uma função que calcula o retorno do portfolio dado o Mês de rebalanceamento (1 dos 12 meses do ano) com divisão de ativos dentro do portfolio (X% em RF e Y% em RV).</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">portfolio_growth</span><span class="p">(</span><span class="n">target_month</span><span class="p">,</span> <span class="n">initial_money</span><span class="p">,</span> <span class="n">RV</span><span class="p">):</span>
+    <span class="n">portfolio_copy_df</span> <span class="o">=</span> <span class="n">portfolio_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1">#cria uma cópia do dataframe base para não reescrever por cima</span>
+    <span class="n">RF</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">RV</span> <span class="c1">#o % investido em RV É o complemento do RF</span>
+    <span class="n">assets</span> <span class="o">=</span> <span class="p">[</span><span class="n">initial_money</span><span class="o">*</span><span class="n">RV</span><span class="p">,</span> <span class="n">initial_money</span><span class="o">*</span><span class="n">RF</span><span class="p">]</span> <span class="c1">#valor inicial investido, divido em seus respectivos ativos</span>
+    <span class="n">portfolio_copy_df</span><span class="p">[</span><span class="s1">&#39;Total&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">assets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">assets</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#inicializa o primeiro valor do primeiro período</span>
+
+    <span class="n">last_month</span> <span class="o">=</span> <span class="n">portfolio_copy_df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#&quot;pega&quot; o último mês a ser analisado</span>
+    <span class="n">rebal_months</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#inicializa a lista a ser criada dos meses onde ocorrerão o rebalanceamento</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">target_month</span><span class="p">,</span> <span class="n">last_month</span><span class="p">,</span> <span class="mi">12</span><span class="p">):</span> <span class="c1">#este loop pega todos os meses entre target_month e last_month em pulos de 12</span>
+        <span class="k">if</span> <span class="n">target_month</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rebal_months</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">last_month</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#realiza o loop para cada período exceto o primeiro (onde não há dados de retorno)</span>
+
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">rebal_months</span><span class="p">:</span> <span class="c1">#se o mês em questão estiver na lista de rebal, o dinheiro total da carteira é redistribuído</span>
+            <span class="n">assets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">assets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">assets</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">RV</span>
+            <span class="n">assets</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">assets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">assets</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">RF</span>
+
+        <span class="n">assets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">assets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">RV_df</span><span class="p">[</span><span class="s1">&#39;Growth&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="c1">#o dinheiro investido em cada ativo é remunerado pela sua respectiva taxa</span>
+        <span class="n">assets</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">assets</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">RF_df</span><span class="p">[</span><span class="s1">&#39;%&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+
+        <span class="n">portfolio_copy_df</span><span class="p">[</span><span class="s1">&#39;Total&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">assets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">assets</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        
+    <span class="k">return</span> <span class="n">portfolio_copy_df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Feita nossa função (com parâmetros de mês de rebalanceamento e divisão de ativos) podemos realizar um loop para obter o retorno final de cada portfolio com diferentes níveis de rebalanceamento e em diferentes períodos:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">order_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span> <span class="c1">#mês de rebalanceamento</span>
+    <span class="n">order_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span> <span class="c1">#divisão do portfolio</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">portfolio_growth</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+        <span class="n">order_dict</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:][</span><span class="s1">&#39;Total&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        
+<span class="n">df_X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">order_dict</span><span class="p">)</span>
+<span class="nb">round</span><span class="p">(</span><span class="n">df_X</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+      <th>12</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0.0</th>
+      <td>975.59</td>
+      <td>975.59</td>
+      <td>975.59</td>
+      <td>975.59</td>
+      <td>975.59</td>
+      <td>975.59</td>
+      <td>975.59</td>
+      <td>975.59</td>
+      <td>975.59</td>
+      <td>975.59</td>
+      <td>975.59</td>
+      <td>975.59</td>
+      <td>975.59</td>
+    </tr>
+    <tr>
+      <th>0.1</th>
+      <td>945.37</td>
+      <td>981.93</td>
+      <td>982.39</td>
+      <td>991.15</td>
+      <td>1028.50</td>
+      <td>1014.58</td>
+      <td>1004.95</td>
+      <td>996.51</td>
+      <td>989.04</td>
+      <td>992.35</td>
+      <td>999.73</td>
+      <td>1001.28</td>
+      <td>986.76</td>
+    </tr>
+    <tr>
+      <th>0.2</th>
+      <td>915.16</td>
+      <td>997.90</td>
+      <td>997.14</td>
+      <td>1013.04</td>
+      <td>1069.28</td>
+      <td>1042.06</td>
+      <td>1025.76</td>
+      <td>1012.80</td>
+      <td>1000.62</td>
+      <td>1005.19</td>
+      <td>1023.28</td>
+      <td>1026.85</td>
+      <td>1005.15</td>
+    </tr>
+    <tr>
+      <th>0.3</th>
+      <td>884.95</td>
+      <td>1016.71</td>
+      <td>1014.83</td>
+      <td>1035.85</td>
+      <td>1094.75</td>
+      <td>1055.77</td>
+      <td>1035.81</td>
+      <td>1021.96</td>
+      <td>1007.65</td>
+      <td>1011.29</td>
+      <td>1043.26</td>
+      <td>1048.76</td>
+      <td>1024.51</td>
+    </tr>
+    <tr>
+      <th>0.4</th>
+      <td>854.73</td>
+      <td>1028.19</td>
+      <td>1026.04</td>
+      <td>1049.77</td>
+      <td>1098.66</td>
+      <td>1051.01</td>
+      <td>1029.98</td>
+      <td>1018.02</td>
+      <td>1004.15</td>
+      <td>1005.32</td>
+      <td>1052.05</td>
+      <td>1059.31</td>
+      <td>1035.16</td>
+    </tr>
+    <tr>
+      <th>0.5</th>
+      <td>824.52</td>
+      <td>1021.13</td>
+      <td>1019.27</td>
+      <td>1043.08</td>
+      <td>1074.61</td>
+      <td>1023.06</td>
+      <td>1002.80</td>
+      <td>994.44</td>
+      <td>983.21</td>
+      <td>981.61</td>
+      <td>1039.86</td>
+      <td>1048.91</td>
+      <td>1026.51</td>
+    </tr>
+    <tr>
+      <th>0.6</th>
+      <td>794.31</td>
+      <td>987.80</td>
+      <td>985.99</td>
+      <td>1007.46</td>
+      <td>1020.58</td>
+      <td>970.99</td>
+      <td>952.76</td>
+      <td>948.39</td>
+      <td>941.06</td>
+      <td>937.70</td>
+      <td>999.88</td>
+      <td>1010.72</td>
+      <td>991.44</td>
+    </tr>
+    <tr>
+      <th>0.7</th>
+      <td>764.09</td>
+      <td>927.84</td>
+      <td>925.38</td>
+      <td>942.75</td>
+      <td>941.88</td>
+      <td>900.07</td>
+      <td>884.87</td>
+      <td>883.65</td>
+      <td>880.15</td>
+      <td>876.63</td>
+      <td>932.87</td>
+      <td>944.89</td>
+      <td>930.02</td>
+    </tr>
+    <tr>
+      <th>0.8</th>
+      <td>733.88</td>
+      <td>848.36</td>
+      <td>845.13</td>
+      <td>857.37</td>
+      <td>849.84</td>
+      <td>820.26</td>
+      <td>809.11</td>
+      <td>809.48</td>
+      <td>808.64</td>
+      <td>806.24</td>
+      <td>847.66</td>
+      <td>859.11</td>
+      <td>849.50</td>
+    </tr>
+    <tr>
+      <th>0.9</th>
+      <td>703.66</td>
+      <td>760.25</td>
+      <td>757.41</td>
+      <td>763.91</td>
+      <td>757.18</td>
+      <td>742.19</td>
+      <td>736.12</td>
+      <td>736.61</td>
+      <td>736.83</td>
+      <td>735.95</td>
+      <td>757.17</td>
+      <td>765.00</td>
+      <td>760.69</td>
+    </tr>
+    <tr>
+      <th>1.0</th>
+      <td>673.45</td>
+      <td>673.45</td>
+      <td>673.45</td>
+      <td>673.45</td>
+      <td>673.45</td>
+      <td>673.45</td>
+      <td>673.45</td>
+      <td>673.45</td>
+      <td>673.45</td>
+      <td>673.45</td>
+      <td>673.45</td>
+      <td>673.45</td>
+      <td>673.45</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Podemos ver que, para divisão de portfolio = 0.0 ou 1.0 os valores para todos os meses são iguais, pois significa que todo dinheiro está sendo investido em RV ou RF, não havendo rebalanceamento.
+Além disso podemos ver que o retorno para 0.0 é maior que 1.0. Isto significa que no período estudado, caso o investimento tivesse sido feito em jan/2001 sem rebalanceamento, o RF renderia mais que o RV.</p>
+<p>Com a tabela acima podemos ver também que a divisão de portfolio em RF e RV COM REBALANCEAMENTO pode ter retornos maiores ou menores que o investimento num ativo único.
+Uma observação muito interessante é que, ignorando custos de operação, o rebalanceamento trouxe rendimentos superiores (ao sem rebalanceamento) para todo os portfolios estudados.
+Isto é: no exemplo estudado, caso o indivíduo deseje investir em ativos mais arriscados (RV), poderá sempre se beneficiar com uma estratégia de rebalanceamento.</p>
+<p>Pode-se concluir então que: acumuladamente, RF rendeu mais que RV. Além disso, podemos ver que o rebalanceamento é uma estratégia que pode trazer resultados positivos.
+É importante observar que um mesmo portfolio com rebalanceamento é superior a um portfolio sem rebalanceamento, porém pode  ser inferior a um outro portfolio sem rebalanceamento.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Podemos mostrar o gráfico para melhor mostrar estes resultados.
+Por exemplo, o retorno entre um portfolio com investimento inteiro em taxa DI (0/100) sem rebalanceamento vs. 20/80 (20 em RV e 80 em DI) com rebalanceamento em abril.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x_00</span><span class="o">=</span><span class="n">portfolio_growth</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="n">x_02</span><span class="o">=</span><span class="n">portfolio_growth</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">x_02</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Total&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;20/80&#39;</span><span class="p">)</span>
+<span class="n">x_00</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Total&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;0/100&#39;</span><span class="p">);</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Podemos analisar o retorno deste mesmo portfolio (20/80) COM e SEM rebalanceamento.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_00</span><span class="o">=</span><span class="n">portfolio_growth</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="n">y_02</span><span class="o">=</span><span class="n">portfolio_growth</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">y_02</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Total&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;COM Rebal&#39;</span><span class="p">)</span>
+<span class="n">y_00</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Total&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;period&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SEM Rebal&#39;</span><span class="p">);</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Conclusão:</p>
+<p>a) A diversificação é uma estratégia feita para diminuir o risco como um todo da carteira em detrimento de uma menor rentabilidade. No entanto, como pode ser visto, é possível criar um portfolio que gera retornos superiores a uma carteira arriscada através do rebalanceamento.</p>
+<p>b) Embora o rebalanceamento tenha gerado retornos superiores (à estratégia de não rebalanceamento) em todos os portfolios estudados, este não é necessariamente sempre verdade.</p>
+<p>c) A diversificação, mesmo com rebalanceamento, pode gerar retornos inferiores a uma carteira não diversificada.</p>
+
+</div>
+</div>
+</body>
+
+
+
+
+
+
+
+</html>
