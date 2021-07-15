@@ -10,11 +10,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus metus est, ul
 
 LinkedIn: [https://www.linkedin.com/in/marcelo-kim/](https://www.linkedin.com/in/marcelo-kim/)
 
-GitHub: [https://github.com/jekyll/minima](https://github.com/jekyll/minima)
+GitHub: [https://github.com/marcelokim/](https://github.com/marcelokim/)
 
 
 <h2>Website</h2>
 
-Este website foi gerado utilizando ruby Jekyll e hospedado no GitHub, utilizando o tema base do Jekyll, minima.
+Este website foi gerado utilizando ruby [Jekyll](https://github.com/jekyll/minima/) e hospedado no GitHub, utilizando o tema base do Jekyll, minima.
 Foram realizadas pequenas alterações para melhorar o uso pessoal.
 
