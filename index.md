@@ -1,5 +1,5 @@
 ---
-title: "Bem-vindo!"
+title: ' '
 list_title: ' '
 ---
 
