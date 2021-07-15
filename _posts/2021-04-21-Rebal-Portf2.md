@@ -1,6 +1,7 @@
 ---
 title: "Rebalanceamento de Ativos - Parte 2"
 date: 2021-04-21
+tags: jupyter python
 ---
 
 Aprofundamento da análise de rebalanceamento de ativos.
