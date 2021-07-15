@@ -1,5 +1,6 @@
 ---
 title: "Bem-vindo!"
+list_title: ' '
 ---
 
 Este espaço será utilizado para:
