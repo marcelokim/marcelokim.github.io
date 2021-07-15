@@ -1,5 +1,5 @@
 ---
-title: 'Home'
+title: ''
 list_title: ' '
 ---
 
