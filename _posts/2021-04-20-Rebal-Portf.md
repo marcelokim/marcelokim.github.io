@@ -1,7 +1,7 @@
 ---
 title: "Rebalanceamento de Ativos"
 date: 2021-04-20
-tags: python jupyter
+tags: jupyter-notebook python
 ---
 
 Análise dos efeitos de rebalanceamento em um portfólio fictício.
