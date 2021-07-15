@@ -3,7 +3,4 @@ title: ' '
 list_title: ' '
 ---
 
-Este espaço será utilizado para:
-- servir de referência pessoal (de habilidades técnicas)
-- analisar assuntos do meu interesse
-- etc.
+Este espaço será utilizado para servir de referência pessoal (evolução, desenvolvimento), analisar assuntos do meu interesse, etc.
