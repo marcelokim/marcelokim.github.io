@@ -1,6 +1,7 @@
 ---
 title: "Twitter Grab Parte 2"
 date: 2021-05-24
+tags: jupyter-notebook python
 ---
 
 Utilizando a API do Twitter para criar uma base de tweets dos perfis desejados.
