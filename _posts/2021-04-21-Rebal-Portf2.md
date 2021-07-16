@@ -1,7 +1,7 @@
 ---
 title: "Rebalanceamento de Ativos - Parte 2"
 date: 2021-04-21
-tags: jupyter-notebook python
+tags: jupyter-notebook python pandas
 ---
 Objetivo: Aprofundar a análise de rebalanceamento de ativos.
 
