@@ -1,10 +1,11 @@
 ---
 title: "Scraping e análise de dados de LoL"
 date: 2021-07-14
-tags: jupyter-notebook python
+tags: jupyter-notebook python pandas
 ---
-Scraping usando BeautifulSoup para obter dados do jogo LoL.
+Objetivo: Realizar scraping  para obter dados dos campeões do jogo LoL.
 
+Utilização de BeautifulSoup e python para realizar data scraping do site de fandom do jogo LoL e analizar o tamanho das descrições de habilidades ao longo do tempo.
 <!--more-->
 
 <html>
