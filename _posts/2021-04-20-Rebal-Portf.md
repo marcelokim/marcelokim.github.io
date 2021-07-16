@@ -4,7 +4,8 @@ date: 2021-04-20
 tags: jupyter-notebook python
 ---
 
-Análise dos efeitos de rebalanceamento em um portfólio fictício.
+Utilização do Jupyter Notebook e Python para realizar a criação de um portfólio fictício de dois ativos, e utilizar os retornos do IBOVESPA e da taxa DI para estudar os efeitos que o rebalanceamento da carteira pode (ou não) beneficar o portfólio.
+
 <!--more-->
 
 <html>
