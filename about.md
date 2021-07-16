@@ -17,4 +17,4 @@ GitHub: [https://github.com/marcelokim/](https://github.com/marcelokim/)
 
 Este website foi gerado utilizando ruby [Jekyll](https://github.com/jekyll/minima/) e hospedado no GitHub, utilizando o tema base do Jekyll, minima.
 Foram realizadas pequenas alterações para melhorar o uso pessoal.
-
+Funcionalidade de tags obtidas e adaptadas de [https://longqian.me/2017/02/09/github-jekyll-tag/](https://longqian.me/2017/02/09/github-jekyll-tag/).
