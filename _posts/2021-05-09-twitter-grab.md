@@ -5,7 +5,7 @@ tags: jupyter-notebook python
 ---
 Objetivo: Utilizar a API do Twitter para obter dados de contas.
 
-Utilização da API do Twitter e do Python para obter dados como número e nome de seguidores de determinadas contas empresariais, e análise simples destes dados, como a quantidade de seguidores que seguem todas as contas simultaneamente.
+Utilização da API do Twitter e do Python para obter dados como número e nome de seguidores de determinadas casas de análises, e realização de análise simples destes dados, como a quantidade de seguidores que seguem todas as casas de análise simultaneamente.
 
 <!--more-->
 
