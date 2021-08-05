@@ -14,6 +14,7 @@ LinkedIn: [https://www.linkedin.com/in/marcelo-kim/](https://www.linkedin.com/in
 
 GitHub: [https://github.com/marcelokim/](https://github.com/marcelokim/)
 
+Certificado de Inglês: [EFSET C2](https://marcelokim.github.io/assets/EF%20SET%20Certificate.pdf)
 
 <h2>Website</h2>
 
