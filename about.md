@@ -8,6 +8,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus metus est, ul
 
 <h2>Links</h2>
 
+CV:  [CV - Marcelo Kim Imai](https://marcelokim.github.io/assets/CV_MarceloKim.pdf)
+
 LinkedIn: [https://www.linkedin.com/in/marcelo-kim/](https://www.linkedin.com/in/marcelo-kim/)
 
 GitHub: [https://github.com/marcelokim/](https://github.com/marcelokim/)
