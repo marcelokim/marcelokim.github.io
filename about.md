@@ -8,13 +8,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus metus est, ul
 
 <h2>Links</h2>
 
-CV:  [https://marcelokim.github.io/assets/CV_MarceloKim.pdf](https://marcelokim.github.io/assets/CV_MarceloKim.pdf)
+CV -  [https://marcelokim.github.io/assets/CV_MarceloKim.pdf](https://marcelokim.github.io/assets/CV_MarceloKim.pdf)
 
-LinkedIn: [https://www.linkedin.com/in/marcelo-kim/](https://www.linkedin.com/in/marcelo-kim/)
+LinkedIn - [https://www.linkedin.com/in/marcelo-kim/](https://www.linkedin.com/in/marcelo-kim/)
 
-GitHub: [https://github.com/marcelokim/](https://github.com/marcelokim/)
+GitHub - [https://github.com/marcelokim/](https://github.com/marcelokim/)
 
-Certificado de Inglês: [EFSET C2](https://marcelokim.github.io/assets/EF%20SET%20Certificate.pdf)
+Certificado de Inglês - [EFSET C2](https://marcelokim.github.io/assets/EF%20SET%20Certificate.pdf)
 
 <h2>Website</h2>
 
