@@ -3,7 +3,7 @@ title: 'Sobre'
 layout: page
 permalink: /sobre/
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus metus est, ultricies et ultricies a, eleifend id elit. Vivamus iaculis tristique nulla, vel malesuada lacus efficitur nec. Mauris odio neque, feugiat sit amet massa quis, porttitor cursus est. Etiam molestie velit lectus, in venenatis lorem porttitor non. Nullam ut rhoncus tellus, eget pretium ipsum. Nullam vitae ante sed nisl dignissim scelerisque eget quis augue. Morbi porttitor lorem vitae elementum sagittis. Integer scelerisque vel ante ut rutrum. Phasellus vel congue tortor.
+Meu nome é Marcelo Kim Imai. Sou formado em Economia pela FGV-RJ (EPGE) com pós-graduação em Administração de Empresas. Criei este blog para servir de referência pessoal na evolução de minhas habilidades. Gosto de estudar e analisar dados, e tenho como objetivo aprofundar e aprender novas ferramentas para aprender a realizar análises, relatórios e dashboards mais elaborados e interessantes.
 
 
 <h2>Links</h2>
