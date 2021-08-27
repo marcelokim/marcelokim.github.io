@@ -14265,12 +14265,7 @@ a.anchor-link {
     </script>
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-
-<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Regress&#227;o-Log&#237;stica,-Confusion-Matrix-e-visualiza&#231;&#227;o">Regress&#227;o Log&#237;stica, Confusion Matrix e visualiza&#231;&#227;o<a class="anchor-link" href="#Regress&#227;o-Log&#237;stica,-Confusion-Matrix-e-visualiza&#231;&#227;o">&#182;</a></h1><p>Objetivo: Entender melhor a Confusion Matrix através do exemplo de Regressão Logística já estudado.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 
