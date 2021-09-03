@@ -8,6 +8,7 @@ Objetivo: Realizar scraping  para obter dados dos campeões do jogo LoL.
 Utilização de BeautifulSoup e python para realizar data scraping do site de fandom do jogo LoL e analizar o tamanho das descrições de habilidades ao longo do tempo.
 <!--more-->
 
+
 <html>
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14308,16 +14309,77 @@ a.anchor-link {
 <p>Utilizaremos BeautifulSoup para obtermos as informações desejadas e criar um dicionário para armazenar os dados de forma mais simples, facilitando a utilização.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">abilities_url</span> <span class="o">=</span> <span class="s1">&#39;https://www.mobafire.com/league-of-legends/abilities&#39;</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">abilities_url</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+<span class="n">abilities_table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;tooltip-ajax&#39;</span><span class="p">)</span>
+
+<span class="n">abilities_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">ability_tags</span> <span class="ow">in</span> <span class="n">abilities_table</span><span class="p">:</span>
+    <span class="n">champion_name</span> <span class="o">=</span> <span class="n">ability_tags</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)[</span><span class="s1">&#39;champ&#39;</span><span class="p">]</span>
+    
+    <span class="k">if</span> <span class="n">abilities_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">champion_name</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    
+        <span class="n">abilities_dict</span><span class="p">[</span><span class="n">champion_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">abilities_dict</span><span class="p">[</span><span class="n">champion_name</span><span class="p">][</span><span class="s1">&#39;abilities&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">abilities_dict</span><span class="p">[</span><span class="n">champion_name</span><span class="p">][</span><span class="s1">&#39;abilities&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ability_tags</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;desc&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">abilities_dict</span><span class="p">[</span><span class="n">champion_name</span><span class="p">][</span><span class="s1">&#39;abilities&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ability_tags</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;desc&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Existem atualmente 156 personagens, sendo 1 deles recém-lançado: Akshan, que não consta nesta lista.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">abilities_dict</span><span class="p">[</span><span class="s1">&#39;Nunu&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">abilities_dict</span><span class="p">[</span><span class="s1">&#39;Nunu &amp; Willump&#39;</span><span class="p">]</span>
+<span class="n">abilities_dict</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;Nunu &amp; Willump&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">abilities_dict</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 
@@ -14344,9 +14406,46 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="2)-Obtendo-as-datas-de-lan&#231;amento">2) Obtendo as datas de lan&#231;amento<a class="anchor-link" href="#2)-Obtendo-as-datas-de-lan&#231;amento">&#182;</a></h3>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">release_date_url</span> <span class="o">=</span> <span class="s1">&#39;https://leagueoflegends.fandom.com/wiki/List_of_champions&#39;</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">release_date_url</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+<span class="n">release_date_table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;article-table&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">)</span>
+<span class="n">release_date_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">champ_info</span> <span class="ow">in</span> <span class="n">release_date_table</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">champ_info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">td_for_champ</span> <span class="o">=</span> <span class="n">champ_info</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span>
+        <span class="n">release_date_dict</span><span class="p">[</span><span class="n">td_for_champ</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;data-sort-value&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">td_for_champ</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">release_date_dict</span><span class="p">[</span><span class="s1">&#39;Nunu&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">release_date_dict</span><span class="p">[</span><span class="s1">&#39;Nunu &amp; Willump&#39;</span><span class="p">]</span>
+<span class="n">release_date_dict</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;Nunu &amp; Willump&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 
@@ -14370,7 +14469,48 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="3)-Obtendo-as-datas-de-atualiza&#231;&#227;o-dos-her&#243;is">3) Obtendo as datas de atualiza&#231;&#227;o dos her&#243;is<a class="anchor-link" href="#3)-Obtendo-as-datas-de-atualiza&#231;&#227;o-dos-her&#243;is">&#182;</a></h3>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">update_date_url</span> <span class="o">=</span> <span class="s1">&#39;https://leagueoflegends.fandom.com/wiki/Champion_updates&#39;</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">update_date_url</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+<span class="n">update_date_info</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;stdt&#39;</span><span class="p">)</span>
+
+<span class="n">update_date_table</span> <span class="o">=</span> <span class="n">update_date_info</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">)</span>
+
+<span class="n">updated_champ_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">champ_update_info</span> <span class="ow">in</span> <span class="n">update_date_table</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">champ_update_info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">td_for_champ</span> <span class="o">=</span> <span class="n">champ_update_info</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Gameplay&#39;</span><span class="p">,</span> <span class="n">td_for_champ</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)):</span>
+            <span class="n">old_date</span> <span class="o">=</span> <span class="n">release_date_dict</span><span class="p">[</span><span class="n">td_for_champ</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;data-sort-value&#39;</span><span class="p">]]</span>
+            <span class="n">updated_champ_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">td_for_champ</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;data-sort-value&#39;</span><span class="p">])</span>
+            
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">new_date</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">td_for_champ</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
+            <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>            
+
+            <span class="k">if</span> <span class="n">new_date</span> <span class="o">&gt;</span> <span class="n">old_date</span><span class="p">:</span>
+                <span class="n">release_date_dict</span><span class="p">[</span><span class="n">td_for_champ</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;data-sort-value&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">new_date</span>
+            
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">continue</span>        
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 
@@ -14388,7 +14528,19 @@ a.anchor-link {
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">updated_champ_set</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 
@@ -14410,15 +14562,59 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="4)-Juntamos-agora-as-habilidades-e-as-datas-de-lan&#231;amento-de-cada-campe&#227;o">4) Juntamos agora as habilidades e as datas de lan&#231;amento de cada campe&#227;o<a class="anchor-link" href="#4)-Juntamos-agora-as-habilidades-e-as-datas-de-lan&#231;amento-de-cada-campe&#227;o">&#182;</a></h3>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">champion</span> <span class="ow">in</span> <span class="n">abilities_dict</span><span class="p">:</span>
+    <span class="n">ability_len</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">ability</span> <span class="ow">in</span> <span class="n">abilities_dict</span><span class="p">[</span><span class="n">champion</span><span class="p">][</span><span class="s1">&#39;abilities&#39;</span><span class="p">]:</span>
+        <span class="n">ability_len</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ability</span><span class="p">)</span>
+
+    <span class="n">temp_dict</span><span class="p">[</span><span class="n">champion</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ability_len&#39;</span><span class="p">:</span><span class="n">ability_len</span><span class="p">}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">champion</span> <span class="ow">in</span> <span class="n">release_date_dict</span><span class="p">:</span>
+    <span class="n">temp_dict</span><span class="p">[</span><span class="n">champion</span><span class="p">][</span><span class="s1">&#39;release_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">release_date_dict</span><span class="p">[</span><span class="n">champion</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="5)-Agora-&#233;-poss&#237;vel-come&#231;ar-a-analisar-os-dados-obtidos">5) Agora &#233; poss&#237;vel come&#231;ar a analisar os dados obtidos<a class="anchor-link" href="#5)-Agora-&#233;-poss&#237;vel-come&#231;ar-a-analisar-os-dados-obtidos">&#182;</a></h3>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">temp_dict</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 
@@ -14436,7 +14632,24 @@ a.anchor-link {
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">temp_dict</span><span class="p">)</span>
+<span class="n">df_transposed</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">T</span>
+<span class="n">df_to_analyze</span> <span class="o">=</span> <span class="n">df_transposed</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;index&#39;</span><span class="p">:</span><span class="s1">&#39;champion_name&#39;</span><span class="p">})</span>
+<span class="n">df_to_analyze</span><span class="p">[</span><span class="s1">&#39;ability_len&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_to_analyze</span><span class="p">[</span><span class="s1">&#39;ability_len&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="n">df_to_analyze</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 
@@ -14548,7 +14761,21 @@ a.anchor-link {
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_to_analyze</span><span class="p">[</span><span class="s1">&#39;reworked&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span>
+<span class="n">df_to_analyze</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_to_analyze</span><span class="p">[</span><span class="s1">&#39;champion_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">updated_champ_set</span><span class="p">),</span> <span class="s1">&#39;reworked&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
+<span class="n">df_to_analyze</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 
@@ -14676,7 +14903,19 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Abaixo,-mostro-em-vermelho-os-campe&#245;es-que-sofreram-rework-e-em-azul-os-que-n&#227;o-sofreram.">Abaixo, mostro em vermelho os campe&#245;es que sofreram rework e em azul os que n&#227;o sofreram.<a class="anchor-link" href="#Abaixo,-mostro-em-vermelho-os-campe&#245;es-que-sofreram-rework-e-em-azul-os-que-n&#227;o-sofreram.">&#182;</a></h3>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_to_analyze</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;ability_len&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;release_date&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;reworked&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 
@@ -14713,7 +14952,23 @@ a.anchor-link {
 <p>Comparação da média de tamanho da descrição de habilidades de personagens que sofreram rework com os que não sofreram.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;reworked mean: &#39;</span><span class="p">,</span> <span class="n">df_to_analyze</span><span class="p">[</span><span class="n">df_to_analyze</span><span class="p">[</span><span class="s1">&#39;reworked&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;red&#39;</span><span class="p">][</span><span class="s1">&#39;ability_len&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_to_analyze</span><span class="p">[</span><span class="n">df_to_analyze</span><span class="p">[</span><span class="s1">&#39;reworked&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;red&#39;</span><span class="p">][</span><span class="s1">&#39;champion_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;non-reworked mean: &#39;</span><span class="p">,</span> <span class="n">df_to_analyze</span><span class="p">[</span><span class="n">df_to_analyze</span><span class="p">[</span><span class="s1">&#39;reworked&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;blue&#39;</span><span class="p">][</span><span class="s1">&#39;ability_len&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_to_analyze</span><span class="p">[</span><span class="n">df_to_analyze</span><span class="p">[</span><span class="s1">&#39;reworked&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;blue&#39;</span><span class="p">][</span><span class="s1">&#39;champion_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 
@@ -14739,9 +14994,47 @@ non-reworked mean:  1671.7777777777778
 <p>Uso dos dados de campeões anuais para realizar análise.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_to_analyze</span><span class="p">[</span><span class="s1">&#39;year_of_release&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">df_to_analyze</span><span class="p">[</span><span class="s1">&#39;release_date&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">year</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">a_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">b_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">c_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df_to_analyze</span><span class="p">[</span><span class="s1">&#39;year_of_release&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()):</span>
+    <span class="n">a_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+    <span class="n">b_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_to_analyze</span><span class="p">[</span><span class="n">df_to_analyze</span><span class="p">[</span><span class="s1">&#39;year_of_release&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">year</span><span class="p">][</span><span class="s1">&#39;ability_len&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+    <span class="n">c_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_to_analyze</span><span class="p">[</span><span class="n">df_to_analyze</span><span class="p">[</span><span class="s1">&#39;year_of_release&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">year</span><span class="p">][</span><span class="s1">&#39;ability_len&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+    
+<span class="n">test_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
+<span class="n">test_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b_list</span><span class="p">)</span>
+<span class="n">test_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c_list</span><span class="p">)</span>
+
+<span class="n">df_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">test_list</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span><span class="s1">&#39;Mean&#39;</span><span class="p">,</span><span class="s1">&#39;std&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">df_test</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 
@@ -14864,7 +15157,19 @@ non-reworked mean:  1671.7777777777778
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_test</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;Mean&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 <div class="jp-Cell-outputWrapper">
 
@@ -14905,7 +15210,22 @@ non-reworked mean:  1671.7777777777778
 <p>5) Por fim, irei extrair os dados para uso futuro num arquivo json para reutilizar futuramente com o objetivo de melhorar os gráficos. Como o objetivo principal era extrair os dados utilizando BeautifulSoup, considero concluído.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_to_analyze</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s1">&#39;./championabilities.json&#39;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;abilitiesdescription.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">abilities_dict</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
 
 </div>
 </body>
