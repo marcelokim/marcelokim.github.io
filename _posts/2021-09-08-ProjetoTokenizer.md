@@ -12,7 +12,7 @@ Objetivo: Criar um site para auxiliar o estudo da língua japonesa para brasilei
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Untitled</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Criação</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14266,14 +14266,12 @@ a.anchor-link {
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Como: Criando um site parecido com <a href="https://jisho.org/">https://jisho.org/</a> e <a href="https://ichi.moe/">https://ichi.moe/</a>. São sites que realizam a tokenização da língua japonesa, porém não existe atualmente (de meu conhecimento) um serviço em português.</p>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Motivação: Diversas pesquisas apontam que um número percentual muito pequeno de brasileiros falam inglês, e um número ainda menor (~1%) é fluente na língua. Apesar de na internet haver uma multitude de conteúdo de aprendizado de japonês, a maioria está em inglês.</p>
 <p>Por exemplo, podemos encontrar facilmente conteúdo gratuito e de qualidade no YouTube ou websites pessoais sobre gramática, pronúncia, assim como diversos métodos de aprendizado, uso de softwares de memorização, apps para uso de legendas, etc. em inglês, porém em português a maior parte do conteúdo é de ensino superficial ou de baixa qualidade.</p>
 <p>Isso não é uma surpresa, uma vez que o inglês é uma língua global. Por esta razão, pessoas de outros países criam projetos em inglês (mesmo não sendo a língua nativa) para conseguir atingir um maior público.</p>
@@ -14282,13 +14280,11 @@ a.anchor-link {
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="In&#237;cio-do-projeto">In&#237;cio do projeto<a class="anchor-link" href="#In&#237;cio-do-projeto">&#182;</a></h3>
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Tendo feito minha pesquisa inicial e conhecendo minhas próprias limitações de conhecimento em web dev, pretendo usar diversos frameworks e web applications para facilitar a construção deste site, assim como libraries simples de tokenização, pois não tenho como objetivo aprender/aprofundar conhecimentos de NLP, apenas utilizar as ferramentas já criadas.</p>
 <p>Sobre o site:</p>
 <p>Irei inicialmente construir o site com Django (um web framework para python considerado ótimo para pequenas e simples applications) e Google App Engine para web hosting (que irá lidar com domain name e hosting) pois me parecem as soluções mais simples para criar um MVP.</p>
@@ -14297,8 +14293,7 @@ a.anchor-link {
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Alguns links relevantes para complementar a leitura:</p>
 <p>Tokenizers de japonês em Python (incluem wrappers):</p>
 
@@ -14320,14 +14315,12 @@ https://news.ycombinator.com/item?id=24142172</code></pre>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Etapas-e-Atividades">Etapas e Atividades<a class="anchor-link" href="#Etapas-e-Atividades">&#182;</a></h3><p>Obs.: Não farei um cronograma e dividirei em etapas, pois não vejo a necessidade da formalização de um projeto "hobby".</p>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Passos:</p>
 
 <pre><code>Início:
@@ -14346,20 +14339,17 @@ Projeto concluído.</code></pre>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Futuramente">Futuramente<a class="anchor-link" href="#Futuramente">&#182;</a></h3><p>No "melhor" cenário possível o aplicativo será útil para estudantes, então terei que melhorar a performance e dedicar um pouco mais de tempo: trocar de webhosting e trocar o algoritmo usado, provavelmente um algoritmo baseado em dicionários (sinceramente, ainda estou um pouco confuso na diferença entre libraries de tokenização).</p>
 <p>No "pior" cenário possível não será um projeto útil para estudantes, mas pelo menos terei aprendido um pouco mais sobre web dev, tokenização e criação de projetos.</p>
 
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="D&#250;vidas-e-Considera&#231;&#245;es">D&#250;vidas e Considera&#231;&#245;es<a class="anchor-link" href="#D&#250;vidas-e-Considera&#231;&#245;es">&#182;</a></h3>
 </div>
 </div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="jp-Cell-inputWrapper"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>O "cliente"/"consumidor" realmente existe? Não sei. Infelizmente, não encontrei dados da quantidade de pessoas que não falam inglês E desejam aprender a língua japonesa, pode ser um projeto fútil. No entanto, além de algo potencialmente útil me parece divertido.</p>
 <p>Custos: caso seja utilizado por um número não insignificante de pessoas, pode se tornar necessário um web host pago e registro de domain name, algo a ser considerado.</p>
 <p>Pela simplicidade do projeto, é algo facilmente "clonado". Não vejo problemas, uma vez que acredito que o aumento de variedade/competição é positivo.</p>
