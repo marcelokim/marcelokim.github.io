@@ -3,9 +3,6 @@ title: 'Sobre'
 layout: page
 permalink: /sobre/
 ---
-Meu nome é Marcelo Kim Imai. Sou formado em Economia pela FGV-RJ (EPGE) com pós-graduação em Administração de Empresas. Criei este blog para servir de referência pessoal na evolução de minhas habilidades. Gosto de estudar e analisar dados, e tenho como objetivo aprofundar e aprender novas ferramentas para aprender a realizar análises, relatórios e dashboards mais elaborados e interessantes.
-
-
 <h2>Links</h2>
 
 CV -  [https://marcelokim.github.io/assets/CV_MarceloKim.pdf](https://marcelokim.github.io/assets/CV_MarceloKim.pdf)
